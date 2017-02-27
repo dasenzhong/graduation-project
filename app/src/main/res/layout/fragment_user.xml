@@ -125,7 +125,7 @@
 
                     <!--能力值-->
                     <fragment
-                        android:id="@+id/user_ability"
+                        android:id="@+id/user_agent"
                         class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
 
                     <!--代理过的兼职-->
                     <fragment
-                        android:id="@+id/user_agent"
+                        android:id="@+id/user_ability"
                         class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
