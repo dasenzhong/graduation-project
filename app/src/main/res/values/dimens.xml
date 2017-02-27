@@ -1,0 +1,23 @@
+<resources>
+    <!--标题字体大小-->
+    <dimen name="titlesize">20sp</dimen>
+    <!--文章字体大小-->
+    <dimen name="articletextsize">16sp</dimen>
+    <!--输入框字体大小-->
+    <dimen name="inputtextsize">14sp</dimen>
+    <!--信息字体大小-->
+    <dimen name="infosize">10sp</dimen>
+
+    <!--actionbar高度-->
+    <dimen name="actionbarheight">40dp</dimen>
+    <!--actionbar内容器高度-->
+    <dimen name="actionbar_thingsheight">30dp</dimen>
+    <!--actionbar图像容器高度-->
+    <dimen name="actionbar_imageheight_big">28dp</dimen>
+    <!--actionbar图像容器高度-->
+    <dimen name="actionbar_imageheight">25dp</dimen>
+    <!--actionbar图像容器高度-->
+    <dimen name="actionbar_imageheight_small">20dp</dimen>
+
+
+</resources>

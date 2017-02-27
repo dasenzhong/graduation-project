@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff9900</color>
+    <color name="colorPrimaryDark">#ff6f00</color>
+    <color name="colorAccent">#0099ff</color>
+
+    <color name="mainbar_home">#ff6f00</color>
+    <color name="mainbar_share">#59493f</color>
+    <color name="mainbar_news">#8f40bc</color>
+    <color name="mainbar_user">#313131</color>
+
+    <color name="mainbar_background">#e5e5e5</color>
+    <color name="mainbar_inActive">#b5b5b5</color>
+
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="gray_85">#434343</color>
+    <color name="gray_90">#313131</color>
+    <color name="gray_30">#c9c9c9</color>
+    <color name="gray_25">#d2d2d2</color>
+    <color name="orange">#ff6f00</color>
+
+    <color name="transparent">#00000000</color>
+</resources>

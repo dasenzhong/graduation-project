@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_25">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:orientation="vertical">
+
+            <!--actionbar-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_90"
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/user_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/transparent" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/actionbarheight">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/actionbar_thingsheight"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="@string/user_actionbar_title"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/titlesize" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!--个人资料-->
+            <fragment
+                android:id="@+id/user_info"
+                class="bishe.dgut.edu.cn.reallygoodapp.model.UserInfoCellFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
+                tools:layout="@layout/fragment_user_infocell" />
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <!--吐过的槽-->
+                    <fragment
+                        android:id="@+id/user_chat"
+                        class="bishe.dgut.edu.cn.reallygoodapp.model.UserCellFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:layout="@layout/fragment_user_cell" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_25" />
+
+                    <!--发表过的经验-->
+                    <fragment
+                        android:id="@+id/user_experience"
+                        class="bishe.dgut.edu.cn.reallygoodapp.model.UserCellFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:layout="@layout/fragment_user_cell" />
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <!--简历-->
+                    <fragment
+                        android:id="@+id/user_resume"
+                        class="bishe.dgut.edu.cn.reallygoodapp.model.UserCellFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:layout="@layout/fragment_user_cell" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_25" />
+
+                    <!--能力值-->
+                    <fragment
+                        android:id="@+id/user_ability"
+                        class="bishe.dgut.edu.cn.reallygoodapp.model.UserCellFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:layout="@layout/fragment_user_cell" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_25" />
+
+                    <!--代理过的兼职-->
+                    <fragment
+                        android:id="@+id/user_agent"
+                        class="bishe.dgut.edu.cn.reallygoodapp.model.UserCellFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:layout="@layout/fragment_user_cell" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_25" />
+
+                    <!--收藏-->
+                    <fragment
+                        android:id="@+id/user_collect"
+                        class="bishe.dgut.edu.cn.reallygoodapp.model.UserCellFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:layout="@layout/fragment_user_cell" />
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white">
+
+                <!--设置-->
+                <fragment
+                    android:id="@+id/user_set"
+                    class="bishe.dgut.edu.cn.reallygoodapp.model.UserCellFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    tools:layout="@layout/fragment_user_cell" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ReallygoodApp</string>
+    <string name="pleaseInput">请输入内容</string>
+    <string name="user_actionbar_title">我</string>
+    <string name="user_name">昵称</string>
+    <string name="user_log">个性签名</string>
+</resources>
