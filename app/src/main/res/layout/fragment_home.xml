@@ -1,30 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--首页-->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_25"
-    android:orientation="vertical">
+    android:background="@color/gray_25">
 
     <!--首页正文-->
     <ListView
         android:id="@+id/home_listview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:listheader="@layout/fragment_home_listhead"
+        tools:listitem="@layout/fragment_home_listitem">
 
     </ListView>
 
     <!--actionbar-->
     <LinearLayout
-        android:background="@color/colorPrimaryDark"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical">
 
         <View
             android:id="@+id/home_status"
-            android:background="@color/transparent"
             android:layout_width="match_parent"
-            android:layout_height="1dp"/>
+            android:layout_height="1dp"
+            android:background="@color/transparent" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,7 +36,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/actionbar_thingsheight"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:background="@color/transparent"
                 android:ellipsize="end"

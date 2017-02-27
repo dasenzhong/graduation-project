@@ -4,4 +4,6 @@
     <string name="user_actionbar_title">我</string>
     <string name="user_name">昵称</string>
     <string name="user_log">个性签名</string>
+    <string name="news_title_news">消息</string>
+    <string name="news_title_notice">通知</string>
 </resources>

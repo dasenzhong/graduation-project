@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 
 import bishe.dgut.edu.cn.reallygoodapp.R;
 import bishe.dgut.edu.cn.reallygoodapp.api.GetAppSize;
-import bishe.dgut.edu.cn.reallygoodapp.model.UserCellFragment;
-import bishe.dgut.edu.cn.reallygoodapp.model.UserInfoCellFragment;
+import bishe.dgut.edu.cn.reallygoodapp.cell.UserCellFragment;
+import bishe.dgut.edu.cn.reallygoodapp.cell.UserInfoCellFragment;
 
 /**
  * Created by Administrator on 2017/2/25.

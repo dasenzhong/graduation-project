@@ -1,4 +1,4 @@
-package bishe.dgut.edu.cn.reallygoodapp.model;
+package bishe.dgut.edu.cn.reallygoodapp.cell;
 
 import android.app.Fragment;
 import android.graphics.Bitmap;
@@ -28,7 +28,7 @@ public class UserInfoCellFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         if (view == null) {
-            view = inflater.inflate(R.layout.fragment_user_infocell, null);
+            view = inflater.inflate(R.layout.fragment_user_cell_info, null);
 
             name = (TextView) view.findViewById(R.id.user_infocell_name);
             introduce = (TextView) view.findViewById(R.id.user_infocell_introduce);

@@ -81,7 +81,7 @@ public class HomeFragment extends Fragment {
             }
 
             TextView textView = (TextView) convertView.findViewById(R.id.home_listview_item);
-            textView.setText("" + stringList.get(position) + position);
+            textView.setText("" + getItem(position) + position);
 
             return convertView;
         }
