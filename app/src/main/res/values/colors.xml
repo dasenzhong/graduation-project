@@ -14,6 +14,8 @@
 
 
     <color name="white">#ffffff</color>
+    <color name="actionbar_white_alpha_50">#77ffffff</color>
+    <color name="actionbar_black_alpha_50">#77000000</color>
     <color name="black">#000000</color>
     <color name="gray_85">#434343</color>
     <color name="gray_90">#313131</color>

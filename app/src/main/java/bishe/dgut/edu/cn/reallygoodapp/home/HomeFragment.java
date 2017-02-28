@@ -6,7 +6,9 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,11 +22,13 @@ import bishe.dgut.edu.cn.reallygoodapp.api.GetAppSize;
  * Created by Administrator on 2017/2/25.
  */
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements AbsListView.OnScrollListener {
 
     private View homeview;
-//    private View listhead;
-//    private ListView listView;
+
+    private LinearLayout actionbar;         //actionbar
+    private View listHead_advertisement;    //广告
+
 
     //测试例子
     private List<String> stringList;
@@ -35,17 +39,28 @@ public class HomeFragment extends Fragment {
 
         //测试例子
         stringList = new ArrayList<>();
-        for (int i = 0 ; i < 10 ; i++) {
+        for (int i = 0; i < 10; i++) {
             stringList.add("测试，待服务器连接\n" + "这是放最新讯息的地方");
         }
 
         if (homeview == null) {
             homeview = inflater.inflate(R.layout.fragment_home, null);
-            View listHead = inflater.inflate(R.layout.fragment_home_listhead, null);
+            actionbar = (LinearLayout) homeview.findViewById(R.id.home_actionbar);
+            actionbar.getBackground().setAlpha(0);
 
+            //listhead的广告轮播位置
+            listHead_advertisement = inflater.inflate(R.layout.fragment_home_listhead_advertisement, null);
+
+            //listhead的导航栏配置
+            View listHead_navigation = inflater.inflate(R.layout.fragment_home_listhead_navigation, null);
+
+            //listview的配置
             ListView listView = (ListView) homeview.findViewById(R.id.home_listview);
-            listView.addHeaderView(listHead);
+            listView.addHeaderView(listHead_advertisement);
+            listView.addHeaderView(listHead_navigation);
             listView.setAdapter(listViewAdapter);
+            listView.setOnScrollListener(this);
+
 
             //沉浸式状态栏
             View view = homeview.findViewById(R.id.home_status);
@@ -56,6 +71,7 @@ public class HomeFragment extends Fragment {
 
         return homeview;
     }
+
 
     BaseAdapter listViewAdapter = new BaseAdapter() {
         @Override
@@ -86,4 +102,24 @@ public class HomeFragment extends Fragment {
             return convertView;
         }
     };
+
+    @Override
+    public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+    }
+
+    @Override
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+
+        if (firstVisibleItem == 0) {
+            int alpha = (int) ((((float) -listHead_advertisement.getTop()) / listHead_advertisement.getMeasuredHeight()) * 255);
+            if (alpha > 200) {
+                actionbar.getBackground().setAlpha(255);
+            } else {
+                actionbar.getBackground().setAlpha(alpha);
+            }
+        }
+
+    }
 }

@@ -10,16 +10,17 @@
         android:id="@+id/home_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listheader="@layout/fragment_home_listhead"
+        tools:listheader="@layout/fragment_home_listhead_navigation"
         tools:listitem="@layout/fragment_home_listitem">
 
     </ListView>
 
     <!--actionbar-->
     <LinearLayout
+        android:id="@+id/home_actionbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/black_blue"
         android:orientation="vertical">
 
         <View
@@ -62,7 +63,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
-                android:background="@android:color/white"
+                android:background="@color/actionbar_white_alpha_50"
                 android:orientation="horizontal"
                 android:paddingBottom="2dp"
                 android:paddingTop="2dp">
@@ -82,7 +83,7 @@
                     android:hint="@string/pleaseInput"
                     android:minHeight="0dp"
                     android:minWidth="0dp"
-                    android:textColorHint="@android:color/darker_gray"
+                    android:textColorHint="@color/actionbar_black_alpha_50"
                     android:textSize="@dimen/inputtextsize" />
 
             </LinearLayout>
