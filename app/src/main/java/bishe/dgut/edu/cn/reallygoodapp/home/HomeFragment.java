@@ -1,6 +1,7 @@
 package bishe.dgut.edu.cn.reallygoodapp.home;
 
 import android.app.Fragment;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -26,7 +27,8 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
 
     private View homeview;
 
-    private LinearLayout actionbar;         //actionbar
+//    private LinearLayout actionbar;         //actionbar
+    private Drawable actionbarDrawable;     //获取actionbar背景资源
     private View listHead_advertisement;    //广告
 
 
@@ -45,8 +47,9 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
 
         if (homeview == null) {
             homeview = inflater.inflate(R.layout.fragment_home, null);
-            actionbar = (LinearLayout) homeview.findViewById(R.id.home_actionbar);
-            actionbar.getBackground().setAlpha(0);
+            LinearLayout actionbar = (LinearLayout) homeview.findViewById(R.id.home_actionbar);
+            actionbarDrawable = actionbar.getBackground().mutate();
+            actionbarDrawable.setAlpha(0);
 
             //listhead的广告轮播位置
             listHead_advertisement = inflater.inflate(R.layout.fragment_home_listhead_advertisement, null);
@@ -115,9 +118,9 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
         if (firstVisibleItem == 0) {
             int alpha = (int) ((((float) -listHead_advertisement.getTop()) / listHead_advertisement.getMeasuredHeight()) * 255);
             if (alpha > 200) {
-                actionbar.getBackground().setAlpha(255);
+                actionbarDrawable.setAlpha(255);
             } else {
-                actionbar.getBackground().setAlpha(alpha);
+                actionbarDrawable.setAlpha(alpha);
             }
         }
 

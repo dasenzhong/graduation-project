@@ -6,4 +6,5 @@
     <string name="user_log">个性签名</string>
     <string name="news_title_news">消息</string>
     <string name="news_title_notice">通知</string>
+    <string name="share_actionbar_title">社区</string>
 </resources>

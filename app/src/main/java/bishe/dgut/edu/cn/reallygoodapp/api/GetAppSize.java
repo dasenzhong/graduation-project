@@ -1,6 +1,5 @@
 package bishe.dgut.edu.cn.reallygoodapp.api;
 
-import android.content.Context;
 import android.content.res.Resources;
 
 /**
@@ -19,18 +18,19 @@ public class GetAppSize{
         return result;
     }
 
-    public static int getStatusHeight(Context context) {
-
-        int statusHeight = -1;
-        try {
-            Class<?> clazz = Class.forName("com.android.internal.R$dimen");
-            Object object = clazz.newInstance();
-            int height = Integer.parseInt(clazz.getField("status_bar_height")
-                    .get(object).toString());
-            statusHeight = context.getResources().getDimensionPixelSize(height);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return statusHeight;
-    }
+    //计算status状态栏的另一种方法
+//    public static int getStatusHeight(Context context) {
+//
+//        int statusHeight = -1;
+//        try {
+//            Class<?> clazz = Class.forName("com.android.internal.R$dimen");
+//            Object object = clazz.newInstance();
+//            int height = Integer.parseInt(clazz.getField("status_bar_height")
+//                    .get(object).toString());
+//            statusHeight = context.getResources().getDimensionPixelSize(height);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return statusHeight;
+//    }
 }
