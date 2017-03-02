@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!--首页-->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -97,4 +97,15 @@
         </LinearLayout>
     </LinearLayout>
 
-</FrameLayout>
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/home_totop"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="@dimen/totop"
+        android:layout_height="@dimen/totop" />
+
+</RelativeLayout>

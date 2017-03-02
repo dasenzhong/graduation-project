@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,6 +28,7 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
 
     private View shareview;
     private View sharelistHead;
+    private ImageView toTop;
 
     private LinearLayout actionbar;
     private int actionbarheight;
@@ -45,6 +47,7 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
             stringList.add("你收到了一条来自别人的推送");
         }
 
+
         if (shareview == null) {
             shareview = inflater.inflate(R.layout.fragment_share, null);
             sharelistHead = inflater.inflate(R.layout.fragment_share_listhead, null);
@@ -60,10 +63,8 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
             actionbarDrawable = actionbar.getBackground().mutate();
 //            actionbar.setVisibility(View.GONE);
 
-
-
             //信息列表
-            ListView shareList = (ListView) shareview.findViewById(R.id.share_list);
+            final ListView shareList = (ListView) shareview.findViewById(R.id.share_list);
 //            Log.d("padding---------------" , "" +shareList.getPaddingTop());
             actionbarheight = shareList.getPaddingTop() + params.height;
             shareList.setPadding(0, actionbarheight, 0, 0);
@@ -72,6 +73,15 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
             shareList.setAdapter(shareListAdapter);
             shareList.setOnScrollListener(this);
 
+            //回到顶部按钮
+            toTop = (ImageView) shareview.findViewById(R.id.share_totop);
+            toTop.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    shareList.smoothScrollToPosition(0);
+                    v.setVisibility(View.GONE);
+                }
+            });
         }
 
         return shareview;
@@ -115,6 +125,7 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 
+
         if (firstVisibleItem < 2) {
 
             alpha = (int) (((float) sharelistHead.getTop() / actionbarheight) * 255);
@@ -136,5 +147,15 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
 //            Log.d("TOP--------------", "" + sharelistHead.getTop());
 //            Log.d("alpha--------------", "" + alpha);
         }
+
+        if (firstVisibleItem > 5) {
+            toTop.setVisibility(View.VISIBLE);
+        } else {
+            if (toTop !=null && toTop.getVisibility() == View.VISIBLE ) {
+                toTop.setVisibility(View.GONE);
+            }
+        }
+
+
     }
 }

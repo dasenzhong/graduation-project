@@ -28,5 +28,7 @@
     <dimen name="userinfocell_log">10sp</dimen>
     <dimen name="userinfocell_forward">25dp</dimen>
 
+    <!--回到顶部按钮-->
+    <dimen name="totop">30dp</dimen>
 
 </resources>

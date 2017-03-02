@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,6 +27,7 @@ import bishe.dgut.edu.cn.reallygoodapp.api.GetAppSize;
 public class HomeFragment extends Fragment implements AbsListView.OnScrollListener {
 
     private View homeview;
+    private ImageView toTop;
 
 //    private LinearLayout actionbar;         //actionbar
     private Drawable actionbarDrawable;     //获取actionbar背景资源
@@ -58,12 +60,21 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
             View listHead_navigation = inflater.inflate(R.layout.fragment_home_listhead_navigation, null);
 
             //listview的配置
-            ListView listView = (ListView) homeview.findViewById(R.id.home_listview);
+            final ListView listView = (ListView) homeview.findViewById(R.id.home_listview);
             listView.addHeaderView(listHead_advertisement);
             listView.addHeaderView(listHead_navigation);
             listView.setAdapter(listViewAdapter);
             listView.setOnScrollListener(this);
 
+            //回到顶部
+            toTop = (ImageView) homeview.findViewById(R.id.home_totop);
+            toTop.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listView.smoothScrollToPosition(0);
+                    v.setVisibility(View.GONE);
+                }
+            });
 
             //沉浸式状态栏
             View view = homeview.findViewById(R.id.home_status);
@@ -121,6 +132,14 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
                 actionbarDrawable.setAlpha(255);
             } else {
                 actionbarDrawable.setAlpha(alpha);
+            }
+        }
+
+        if (firstVisibleItem > 2) {
+            toTop.setVisibility(View.VISIBLE);
+        } else {
+            if (toTop !=null && toTop.getVisibility() == View.VISIBLE ) {
+                toTop.setVisibility(View.GONE);
             }
         }
 
