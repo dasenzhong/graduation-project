@@ -17,7 +17,7 @@ import bishe.dgut.edu.cn.reallygoodapp.R;
  */
 
 //设置的条目模型fragment
-public class UserCellFragment extends Fragment {
+public class UserCellOfItemFragment extends Fragment {
 
     private View view;
     private ImageView image;

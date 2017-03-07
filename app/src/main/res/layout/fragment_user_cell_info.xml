@@ -8,6 +8,7 @@
     android:layout_height="wrap_content">
 
     <RelativeLayout
+        android:id="@+id/user_infocell_layout"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
@@ -16,8 +17,8 @@
         <ImageView
             android:scaleType="fitCenter"
             android:id="@+id/user_infocell_avatar"
-            android:layout_width="@dimen/userinfocell_image"
-            android:layout_height="@dimen/userinfocell_image"
+            android:layout_width="@dimen/user_infocell_image"
+            android:layout_height="@dimen/user_infocell_image"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
             android:src="@mipmap/ic_launcher" />
@@ -30,7 +31,7 @@
             android:layout_marginStart="10dp"
             android:layout_toEndOf="@id/user_infocell_avatar"
             android:text="@string/user_name"
-            android:textSize="@dimen/userinfocell_name" />
+            android:textSize="@dimen/user_infocell_name" />
 
         <TextView
             android:id="@+id/user_infocell_introduce"
@@ -40,11 +41,11 @@
             android:layout_below="@id/user_infocell_name"
             android:layout_marginTop="3dp"
             android:text="@string/user_log"
-            android:textSize="@dimen/userinfocell_log" />
+            android:textSize="@dimen/user_infocell_log" />
 
         <ImageView
-            android:layout_width="@dimen/userinfocell_forward"
-            android:layout_height="@dimen/userinfocell_forward"
+            android:layout_width="@dimen/user_infocell_forward"
+            android:layout_height="@dimen/user_infocell_forward"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"

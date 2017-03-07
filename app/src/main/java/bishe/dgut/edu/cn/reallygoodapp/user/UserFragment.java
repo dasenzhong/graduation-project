@@ -1,6 +1,7 @@
 package bishe.dgut.edu.cn.reallygoodapp.user;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,19 +11,19 @@ import android.view.ViewGroup;
 
 import bishe.dgut.edu.cn.reallygoodapp.R;
 import bishe.dgut.edu.cn.reallygoodapp.api.GetAppSize;
-import bishe.dgut.edu.cn.reallygoodapp.cell.UserCellFragment;
-import bishe.dgut.edu.cn.reallygoodapp.cell.UserInfoCellFragment;
+import bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfItemFragment;
+import bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfInfoFragment;
 
 /**
  * Created by Administrator on 2017/2/25.
  */
 
-public class UserFragment extends Fragment {
+public class UserFragment extends Fragment{
 
     private View userview;
     //吐槽，分享，简历，代理，能力，收藏，设置
-    private UserCellFragment chatCell,experienceCell,resumeCell,agentCell,abilityCell,collectCell,settingCell;
-    private UserInfoCellFragment infoCell;
+    private UserCellOfItemFragment chatCell,experienceCell,resumeCell,agentCell,abilityCell,collectCell,settingCell;
+    private UserCellOfInfoFragment infoCell;
 
     @Nullable
     @Override
@@ -31,14 +32,14 @@ public class UserFragment extends Fragment {
         if (userview == null) {
             userview = inflater.inflate(R.layout.fragment_user, null);
 
-            infoCell = (UserInfoCellFragment) getChildFragmentManager().findFragmentById(R.id.user_info);
-            chatCell = (UserCellFragment) getChildFragmentManager().findFragmentById(R.id.user_chat);
-            experienceCell = (UserCellFragment) getChildFragmentManager().findFragmentById(R.id.user_experience);
-            resumeCell = (UserCellFragment) getChildFragmentManager().findFragmentById(R.id.user_resume);
-            agentCell = (UserCellFragment) getChildFragmentManager().findFragmentById(R.id.user_agent);
-            abilityCell = (UserCellFragment) getChildFragmentManager().findFragmentById(R.id.user_ability);
-            collectCell = (UserCellFragment) getChildFragmentManager().findFragmentById(R.id.user_collect);
-            settingCell = (UserCellFragment) getChildFragmentManager().findFragmentById(R.id.user_set);
+            infoCell = (UserCellOfInfoFragment) getChildFragmentManager().findFragmentById(R.id.user_info);
+            chatCell = (UserCellOfItemFragment) getChildFragmentManager().findFragmentById(R.id.user_chat);
+            experienceCell = (UserCellOfItemFragment) getChildFragmentManager().findFragmentById(R.id.user_experience);
+            resumeCell = (UserCellOfItemFragment) getChildFragmentManager().findFragmentById(R.id.user_resume);
+            agentCell = (UserCellOfItemFragment) getChildFragmentManager().findFragmentById(R.id.user_agent);
+            abilityCell = (UserCellOfItemFragment) getChildFragmentManager().findFragmentById(R.id.user_ability);
+            collectCell = (UserCellOfItemFragment) getChildFragmentManager().findFragmentById(R.id.user_collect);
+            settingCell = (UserCellOfItemFragment) getChildFragmentManager().findFragmentById(R.id.user_set);
             setCellAttribute();
 
             //沉浸式状态栏
@@ -46,6 +47,14 @@ public class UserFragment extends Fragment {
             ViewGroup.LayoutParams params = view.getLayoutParams();
             params.height = GetAppSize.statusBarHeight(getResources());
             view.setLayoutParams(params);
+
+            infoCell.setOnCellClickListener(new UserCellOfInfoFragment.OnCellClickListener() {
+                @Override
+                public void onCellClickListener() {
+                    startActivity(new Intent(getActivity(),UserInfoActivity.class));
+                }
+            });
+
         }
 
         return userview;

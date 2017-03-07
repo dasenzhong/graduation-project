@@ -14,8 +14,8 @@
         <ImageView
             android:scaleType="fitCenter"
             android:id="@+id/user_cell_image"
-            android:layout_width="@dimen/usercell_image"
-            android:layout_height="@dimen/usercell_image"
+            android:layout_width="@dimen/user_cell_image"
+            android:layout_height="@dimen/user_cell_image"
             android:layout_centerVertical="true"
             android:src="@mipmap/ic_launcher" />
 
@@ -28,11 +28,11 @@
             android:layout_toEndOf="@id/user_cell_image"
             android:text="@string/pleaseInput"
             android:textColor="@color/black"
-            android:textSize="@dimen/usercell_text" />
+            android:textSize="@dimen/user_cell_text" />
 
         <ImageView
-            android:layout_width="@dimen/usercell_forward"
-            android:layout_height="@dimen/usercell_forward"
+            android:layout_width="@dimen/user_cell_forward"
+            android:layout_height="@dimen/user_cell_forward"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:src="@drawable/forward_40gray" />

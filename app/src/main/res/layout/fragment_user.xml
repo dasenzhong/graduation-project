@@ -1,10 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--我的页-->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray_25">
+
+    <!--actionbar-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black_blue"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/user_status"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/transparent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionbarheight">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/user_actionbar_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbar_titletextsize" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,40 +46,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--actionbar-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/black_blue"
-                android:orientation="vertical">
-
-                <View
-                    android:id="@+id/user_status"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/transparent" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/actionbarheight">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:gravity="center"
-                        android:text="@string/user_actionbar_title"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/actionbar_titletextsize" />
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
             <!--个人资料-->
             <fragment
                 android:id="@+id/user_info"
-                class="bishe.dgut.edu.cn.reallygoodapp.cell.UserInfoCellFragment"
+                class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfInfoFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -74,7 +75,7 @@
                     <!--吐过的槽-->
                     <fragment
                         android:id="@+id/user_chat"
-                        class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellFragment"
+                        class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfItemFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:layout="@layout/fragment_user_cell_item" />
@@ -87,7 +88,7 @@
                     <!--发表过的经验-->
                     <fragment
                         android:id="@+id/user_experience"
-                        class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellFragment"
+                        class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfItemFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:layout="@layout/fragment_user_cell_item" />
@@ -112,7 +113,7 @@
                     <!--简历-->
                     <fragment
                         android:id="@+id/user_resume"
-                        class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellFragment"
+                        class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfItemFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:layout="@layout/fragment_user_cell_item" />
@@ -125,7 +126,7 @@
                     <!--能力值-->
                     <fragment
                         android:id="@+id/user_agent"
-                        class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellFragment"
+                        class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfItemFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:layout="@layout/fragment_user_cell_item" />
@@ -138,7 +139,7 @@
                     <!--代理过的兼职-->
                     <fragment
                         android:id="@+id/user_ability"
-                        class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellFragment"
+                        class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfItemFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:layout="@layout/fragment_user_cell_item" />
@@ -151,7 +152,7 @@
                     <!--收藏-->
                     <fragment
                         android:id="@+id/user_collect"
-                        class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellFragment"
+                        class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfItemFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:layout="@layout/fragment_user_cell_item" />
@@ -169,7 +170,7 @@
                 <!--设置-->
                 <fragment
                     android:id="@+id/user_set"
-                    class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellFragment"
+                    class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfItemFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
@@ -180,4 +181,4 @@
 
         </LinearLayout>
     </ScrollView>
-</FrameLayout>
+</LinearLayout>

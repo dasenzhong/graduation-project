@@ -17,8 +17,9 @@
     <color name="actionbar_white_alpha_50">#77ffffff</color>
     <color name="actionbar_black_alpha_50">#77000000</color>
     <color name="black">#000000</color>
-    <color name="gray_85">#434343</color>
     <color name="gray_90">#313131</color>
+    <color name="gray_85">#434343</color>
+    <color name="gray_70">#707070</color>
     <color name="gray_30">#c9c9c9</color>
     <color name="gray_25">#d2d2d2</color>
     <color name="orange">#ff6f00</color>
