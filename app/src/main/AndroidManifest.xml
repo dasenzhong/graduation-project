@@ -19,6 +19,9 @@
         <activity
             android:name=".user.UserInfoActivity"
             android:theme="@style/UserActivityTheme" />
+        <activity
+            android:name=".user.UserChatActivity"
+            android:theme="@style/UserActivityTheme" />
     </application>
 
 </manifest>

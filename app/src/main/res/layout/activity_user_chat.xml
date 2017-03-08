@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_25"
+    android:orientation="vertical">
+
+    <!--我的吐槽activity布局-->
+    <!--actionbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarheight"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:id="@+id/userchat_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/actionbar_imageheight_small"
+                android:layout_height="@dimen/actionbar_imageheight_small"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/user_actionbar_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbar_textviewtextsize" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/user_chat_actionbar_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_titletextsize" />
+
+        <TextView
+            android:id="@+id/userchat_sand"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="@dimen/actionbar_textviewtextsize"
+            android:textColor="@color/white"
+            android:text="@string/user_chat_actionbar_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/userchat_list"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/transparent"
+        android:dividerHeight="10dp"
+        tools:listitem="@layout/share_or_chat_listitem"/>
+
+</LinearLayout>

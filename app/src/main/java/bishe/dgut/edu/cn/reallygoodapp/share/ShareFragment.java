@@ -107,7 +107,7 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
         public View getView(int position, View convertView, ViewGroup parent) {
 
             if (convertView == null) {
-                convertView = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_share_listitem, null);
+                convertView = LayoutInflater.from(getActivity()).inflate(R.layout.share_or_chat_listitem, null);
             }
 
             TextView textView = (TextView) convertView.findViewById(R.id.share_listitem_text);

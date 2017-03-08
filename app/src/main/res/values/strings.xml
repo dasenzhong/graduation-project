@@ -8,4 +8,6 @@
     <string name="news_title_notice">通知</string>
     <string name="share_actionbar_title">社区</string>
     <string name="user_info_actionbar_title">个人信息</string>
+    <string name="user_chat_actionbar_title">我的吐槽</string>
+    <string name="user_chat_actionbar_button">发吐槽</string>
 </resources>

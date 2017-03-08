@@ -14,7 +14,8 @@
         android:id="@+id/share_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/fragment_share_listitem">
+        tools:listitem="@layout/share_or_chat_listitem"
+        tools:listheader="@layout/fragment_share_listhead">
 
     </ListView>
 

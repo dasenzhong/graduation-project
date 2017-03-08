@@ -25,7 +25,7 @@ public class UserCellOfInfoFragment extends Fragment {
     private ImageView avatar;
 
     public interface OnCellClickListener{
-        void onCellClickListener();
+        void onCellClick();
     }
 
     private OnCellClickListener onCellClickListener;
@@ -54,7 +54,7 @@ public class UserCellOfInfoFragment extends Fragment {
 
     private void goActivity() {
         if (onCellClickListener != null) {
-            onCellClickListener.onCellClickListener();
+            onCellClickListener.onCellClick();
         }
     }
 
