@@ -25,6 +25,9 @@
         <activity
             android:name=".user.UserResumeActivity"
             android:theme="@style/UserActivityTheme" />
+        <activity
+            android:name=".user.UserAgentActivity"
+            android:theme="@style/UserActivityTheme" />
     </application>
 
 </manifest>

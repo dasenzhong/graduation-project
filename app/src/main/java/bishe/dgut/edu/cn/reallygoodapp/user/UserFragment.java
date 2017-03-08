@@ -99,6 +99,14 @@ public class UserFragment extends Fragment{
                     startActivity(new Intent(getActivity(), UserResumeActivity.class));
                 }
             });
+
+            //我的代理点击事件
+            agentCell.setOnCellClickListener(new UserCellOfItemFragment.OnCellClickListener() {
+                @Override
+                public void onCellClick() {
+                    startActivity(new Intent(getActivity(), UserAgentActivity.class));
+                }
+            });
         }
         return userview;
     }
