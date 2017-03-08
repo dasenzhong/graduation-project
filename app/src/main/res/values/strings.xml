@@ -13,4 +13,5 @@
     <string name="user_resume_actionbar_title">我的简历</string>
     <string name="user_resume_actionbar_button">添加</string>
     <string name="user_agent_actionbar_title">我的代理</string>
+    <string name="user_ability_actionbar_title">我的能力</string>
 </resources>

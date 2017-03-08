@@ -107,6 +107,14 @@ public class UserFragment extends Fragment{
                     startActivity(new Intent(getActivity(), UserAgentActivity.class));
                 }
             });
+
+            //我的能力点击事件
+            abilityCell.setOnCellClickListener(new UserCellOfItemFragment.OnCellClickListener() {
+                @Override
+                public void onCellClick() {
+                    startActivity(new Intent(getActivity(), UserAbilityActivity.class));
+                }
+            });
         }
         return userview;
     }
