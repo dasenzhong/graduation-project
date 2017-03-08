@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/gray_25"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--actionbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarheight"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:id="@+id/usercollect_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/actionbar_imageheight_small"
+                android:layout_height="@dimen/actionbar_imageheight_small"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/user_actionbar_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbar_textviewtextsize" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/user_collect_actionbar_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_titletextsize" />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

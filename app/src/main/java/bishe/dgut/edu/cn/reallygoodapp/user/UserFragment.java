@@ -115,6 +115,14 @@ public class UserFragment extends Fragment{
                     startActivity(new Intent(getActivity(), UserAbilityActivity.class));
                 }
             });
+
+            //我的收藏点击事件
+            collectCell.setOnCellClickListener(new UserCellOfItemFragment.OnCellClickListener() {
+                @Override
+                public void onCellClick() {
+                    startActivity(new Intent(getActivity(), UserCollectActivity.class));
+                }
+            });
         }
         return userview;
     }

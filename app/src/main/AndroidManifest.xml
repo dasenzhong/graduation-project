@@ -28,6 +28,12 @@
         <activity
             android:name=".user.UserAgentActivity"
             android:theme="@style/UserActivityTheme" />
+        <activity
+            android:name=".user.UserAbilityActivity"
+            android:theme="@style/UserActivityTheme" />
+        <activity
+            android:name=".user.UserCollectActivity"
+            android:theme="@style/UserActivityTheme" />
     </application>
 
 </manifest>
