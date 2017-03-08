@@ -123,6 +123,14 @@ public class UserFragment extends Fragment{
                     startActivity(new Intent(getActivity(), UserCollectActivity.class));
                 }
             });
+
+            //设置点击事件
+            settingCell.setOnCellClickListener(new UserCellOfItemFragment.OnCellClickListener() {
+                @Override
+                public void onCellClick() {
+                    startActivity(new Intent(getActivity(), UserSettingActivity.class));
+                }
+            });
         }
         return userview;
     }

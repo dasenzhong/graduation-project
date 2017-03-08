@@ -5,19 +5,20 @@
 
     <!--个人信息的cell布局-->
     <RelativeLayout
+        android:id="@+id/usersetting_cell_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp">
 
         <TextView
-            android:id="@+id/userinfo_cell_text"
+            android:id="@+id/usersetting_cell_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:text="@string/pleaseInput"
             android:textColor="@color/black"
-            android:textSize="@dimen/userinfo_cell_text" />
+            android:textSize="@dimen/usersetting_cell_text" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -28,26 +29,27 @@
 
             <ImageView
                 android:layout_gravity="center_vertical"
-                android:id="@+id/userinfo_cell_avatar"
-                android:layout_width="@dimen/userinfo_cell_avatar"
-                android:layout_height="@dimen/userinfo_cell_avatar"
+                android:id="@+id/usersetting_cell_image"
+                android:layout_width="@dimen/usersetting_cell_image"
+                android:layout_height="@dimen/usersetting_cell_image"
                 android:background="@drawable/failure_gray"
-                android:visibility="gone" />
+                android:visibility="gone"/>
 
             <TextView
                 android:layout_gravity="center_vertical"
-                android:id="@+id/userinfo_cell_inputtext"
+                android:id="@+id/usersetting_cell_inputtext"
+                android:textSize="@dimen/usersetting_cell_inputtext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/userinfo_cell_inputtext"
                 android:text="@string/pleaseInput"
-                android:textColor="@color/gray_70" />
+                android:textColor="@color/gray_70"
+                android:visibility="gone"/>
 
             <ImageView
                 android:layout_gravity="center_vertical"
-                android:id="@+id/userinfo_cell_forward"
-                android:layout_width="@dimen/userinfo_cell_forward"
-                android:layout_height="@dimen/userinfo_cell_forward"
+                android:id="@+id/usersetting_cell_forward"
+                android:layout_width="@dimen/usersetting_cell_forward"
+                android:layout_height="@dimen/usersetting_cell_forward"
                 android:src="@drawable/forward_40gray" />
 
         </LinearLayout>

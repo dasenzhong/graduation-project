@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/gray_25"
     android:layout_height="match_parent"
+    android:background="@color/gray_25"
     android:orientation="vertical">
 
     <!--actionbar-->
@@ -13,7 +13,7 @@
         android:background="@color/black">
 
         <LinearLayout
-            android:id="@+id/useragent_back"
+            android:id="@+id/usersetting_back"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="5dp"
@@ -39,19 +39,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/user_agent_actionbar_title"
+            android:text="@string/user_setting_actionbar_title"
             android:textColor="@color/white"
             android:textSize="@dimen/actionbar_titletextsize" />
 
     </RelativeLayout>
 
-    <ListView
-        android:id="@+id/useragent_list"
-        android:paddingTop="15dp"
-        android:clipToPadding="false"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/activity_user_agent_listitem">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/white">
 
-    </ListView>
+        <LinearLayout
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <fragment
+                android:id="@+id/usersetting_about"
+                class="bishe.dgut.edu.cn.reallygoodapp.cell.UserSettingCellFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_user_setting_cell_item" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/exit"
+            android:textColor="@color/black"
+            android:textSize="@dimen/exit" />
+
+    </RelativeLayout>
 </LinearLayout>

@@ -1,12 +1,17 @@
 <resources>
+    <!--通用-->
     <string name="app_name">ReallygoodApp</string>
     <string name="pleaseInput">请输入内容</string>
+
+    <!--actionbar-->
     <string name="user_actionbar_title">我</string>
-    <string name="user_name">昵称</string>
-    <string name="user_log">个性签名</string>
+    <string name="share_actionbar_title">社区</string>
     <string name="news_title_news">消息</string>
     <string name="news_title_notice">通知</string>
-    <string name="share_actionbar_title">社区</string>
+
+    <!--我-->
+    <string name="user_name">昵称</string>
+    <string name="user_log">个性签名</string>
     <string name="user_info_actionbar_title">个人信息</string>
     <string name="user_chat_actionbar_title">我的吐槽</string>
     <string name="user_chat_actionbar_button">发吐槽</string>
@@ -15,4 +20,14 @@
     <string name="user_agent_actionbar_title">我的代理</string>
     <string name="user_ability_actionbar_title">我的能力</string>
     <string name="user_collect_actionbar_title">我的收藏</string>
+    <string name="user_setting_actionbar_title">设置</string>
+
+    <!--设置activity-->
+    <string name="exit">退出登录</string>
+    <string name="user_setting_about_school">东莞理工学院</string>
+    <string name="user_setting_about_department">计算机与网络安全系</string>
+    <string name="user_setting_about_class">2013软件工程1班</string>
+    <string name="user_setting_about_person">钟德新</string>
+    <string name="user_setting_about_time">此为毕业设计，制于2017年2月到毕业前夕</string>
+    <string name="user_setting_about_actionbar_title">关于</string>
 </resources>

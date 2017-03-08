@@ -21,7 +21,7 @@
     <dimen name="actionbar_textviewtextsize">16sp</dimen>
 
 
-    <!--userCell设置大小-->
+    <!--useritemCell设置大小-->
     <dimen name="user_cell_image">28dp</dimen>
     <dimen name="user_cell_forward">20dp</dimen>
     <dimen name="user_cell_text">14sp</dimen>
@@ -36,7 +36,21 @@
     <dimen name="userinfo_cell_forward">20dp</dimen>
     <dimen name="userinfo_cell_avatar">60dp</dimen>
 
+    <!--userSettingCell设置大小-->
+    <dimen name="usersetting_cell_text">16sp</dimen>
+    <dimen name="usersetting_cell_inputtext">14sp</dimen>
+    <dimen name="usersetting_cell_forward">20dp</dimen>
+    <dimen name="usersetting_cell_image">15dp</dimen>
+
+    <!--userSetting的关于-->
+    <dimen name="usersetting_about_text">18sp</dimen>
+
+    <!--退出按钮-->
+    <dimen name="exit">16sp</dimen>
+
     <!--回到顶部按钮-->
     <dimen name="totop">30dp</dimen>
+
+
 
 </resources>
