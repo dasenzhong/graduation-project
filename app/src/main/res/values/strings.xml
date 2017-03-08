@@ -10,4 +10,6 @@
     <string name="user_info_actionbar_title">个人信息</string>
     <string name="user_chat_actionbar_title">我的吐槽</string>
     <string name="user_chat_actionbar_button">发吐槽</string>
+    <string name="user_resume_actionbar_title">我的简历</string>
+    <string name="user_resume_actionbar_button">添加</string>
 </resources>

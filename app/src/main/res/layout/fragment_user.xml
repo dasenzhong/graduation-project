@@ -72,22 +72,9 @@
                     android:layout_marginStart="10dp"
                     android:orientation="vertical">
 
-                    <!--吐过的槽-->
+                    <!--分享-->
                     <fragment
                         android:id="@+id/user_chat"
-                        class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfItemFragment"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        tools:layout="@layout/fragment_user_cell_item" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/gray_25" />
-
-                    <!--发表过的经验-->
-                    <fragment
-                        android:id="@+id/user_experience"
                         class="bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfItemFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

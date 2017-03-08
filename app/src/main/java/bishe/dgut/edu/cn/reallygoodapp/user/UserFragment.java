@@ -36,8 +36,8 @@ public class UserFragment extends Fragment{
             UserCellOfInfoFragment infoCell = (UserCellOfInfoFragment) getChildFragmentManager().findFragmentById(R.id.user_info);
             //我的吐槽
             UserCellOfItemFragment chatCell = (UserCellOfItemFragment) getChildFragmentManager().findFragmentById(R.id.user_chat);
-            //我的文章
-            UserCellOfItemFragment experienceCell = (UserCellOfItemFragment) getChildFragmentManager().findFragmentById(R.id.user_experience);
+//            //我的文章
+//            UserCellOfItemFragment experienceCell = (UserCellOfItemFragment) getChildFragmentManager().findFragmentById(R.id.user_experience);
             //简历
             UserCellOfItemFragment resumeCell = (UserCellOfItemFragment) getChildFragmentManager().findFragmentById(R.id.user_resume);
             //代理
@@ -49,11 +49,11 @@ public class UserFragment extends Fragment{
             //设置
             UserCellOfItemFragment settingCell = (UserCellOfItemFragment) getChildFragmentManager().findFragmentById(R.id.user_set);
 //            setCellAttribute();
-            chatCell.setTextName("我的吐槽");
+            chatCell.setTextName("我的分享");
             chatCell.setImage(BitmapFactory.decodeResource(getResources(),R.drawable.user_cell_chat));
 
-            experienceCell.setTextName("我的文章");
-            experienceCell.setImage(BitmapFactory.decodeResource(getResources(),R.drawable.user_cell_experience));
+//            experienceCell.setTextName("我的文章");
+//            experienceCell.setImage(BitmapFactory.decodeResource(getResources(),R.drawable.user_cell_experience));
 
             resumeCell.setTextName("简历");
             resumeCell.setImage(BitmapFactory.decodeResource(getResources(),R.drawable.user_cell_resume));
@@ -89,6 +89,14 @@ public class UserFragment extends Fragment{
                 @Override
                 public void onCellClick() {
                     startActivity(new Intent(getActivity(),UserChatActivity.class));
+                }
+            });
+
+            //我的简历点击事件
+            resumeCell.setOnCellClickListener(new UserCellOfItemFragment.OnCellClickListener() {
+                @Override
+                public void onCellClick() {
+                    startActivity(new Intent(getActivity(), UserResumeActivity.class));
                 }
             });
         }
