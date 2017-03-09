@@ -27,28 +27,57 @@
 
             <LinearLayout
                 android:padding="1dp"
-                android:background="@color/white"
+                android:background="@drawable/news_actionbar_titlebackground"
                 android:layout_centerInParent="true"
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:padding="2dp"
-                    android:textColor="@color/black_blue"
-                    android:textSize="@dimen/actionbar_textviewtextsize"
-                    android:text="@string/news_title_news"
+                <FrameLayout
+                    android:id="@+id/news_title_newsbackground"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginStart="1dp"
+                    android:background="@drawable/news_actionbar_title_backgroundcolor"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:padding="2dp"
-                    android:background="@color/black_blue"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/actionbar_textviewtextsize"
-                    android:text="@string/news_title_notice"
+                    <TextView
+                        android:paddingTop="2dp"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        android:paddingBottom="2dp"
+                        android:id="@+id/news_title_newstext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/news_title_news"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/actionbar_titletextsize"/>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/news_title_noticebackground"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginEnd="1dp"
+                    android:background="@drawable/news_actionbar_title_backgroundcolor"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:paddingTop="2dp"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        android:paddingBottom="2dp"
+                        android:id="@+id/news_title_noticetext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/news_title_notice"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/actionbar_titletextsize"/>
+
+                </FrameLayout>
 
             </LinearLayout>
 

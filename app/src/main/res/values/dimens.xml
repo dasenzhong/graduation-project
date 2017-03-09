@@ -1,13 +1,4 @@
 <resources>
-    <!--标题字体大小-->
-    <dimen name="titlesize">20sp</dimen>
-    <!--文章字体大小-->
-    <dimen name="articletextsize">16sp</dimen>
-    <!--输入框字体大小-->
-    <dimen name="inputtextsize">14sp</dimen>
-    <!--信息字体大小-->
-    <dimen name="infosize">10sp</dimen>
-
     <!--actionbar高度-->
     <dimen name="actionbarheight">40dp</dimen>
     <!--actionbar内容器高度-->
@@ -19,8 +10,9 @@
     <!--actionbatTextView字体大小-->
     <dimen name="actionbar_titletextsize">18sp</dimen>
     <dimen name="actionbar_textviewtextsize">16sp</dimen>
+    <dimen name="actionbar_textinputsize">14sp</dimen>
 
-
+    <!--////////////////////////////////////////我的fragment设置/////////////////////////////////-->
     <!--useritemCell设置大小-->
     <dimen name="user_cell_image">28dp</dimen>
     <dimen name="user_cell_forward">20dp</dimen>
@@ -47,6 +39,7 @@
 
     <!--退出按钮-->
     <dimen name="exit">16sp</dimen>
+    <!--////////////////////////////////////////////////////////////////////////////////////////-->
 
     <!--回到顶部按钮-->
     <dimen name="totop">30dp</dimen>

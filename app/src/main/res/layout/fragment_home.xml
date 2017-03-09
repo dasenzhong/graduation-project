@@ -47,7 +47,7 @@
                 android:maxWidth="50dp"
                 android:text="东莞"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/articletextsize" />
+                android:textSize="@dimen/actionbar_textviewtextsize" />
 
             <ImageView
                 android:layout_width="@dimen/actionbar_imageheight"
@@ -84,7 +84,7 @@
                     android:minHeight="0dp"
                     android:minWidth="0dp"
                     android:textColorHint="@color/actionbar_black_alpha_50"
-                    android:textSize="@dimen/inputtextsize" />
+                    android:textSize="@dimen/actionbar_textinputsize" />
 
             </LinearLayout>
 
