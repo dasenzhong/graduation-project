@@ -30,4 +30,12 @@
     <string name="user_setting_about_person">钟德新</string>
     <string name="user_setting_about_time">此为毕业设计，制于2017年2月到毕业前夕</string>
     <string name="user_setting_about_actionbar_title">关于</string>
+
+    <!--share的抽屉式导航栏菜单-->
+    <string name="share_nvmenu_all">全部</string>
+    <string name="share_nvmenu_externalschool">外校</string>
+    <string name="share_nvmenu_school">本校</string>
+    <string name="share_nvmenu_friend">朋友</string>
+    <string name="share_nvmenu_schoolname">东莞理工</string>
+    <string name="share_nvmenu_group1_title">只看</string>
 </resources>

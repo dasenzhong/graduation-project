@@ -27,6 +27,7 @@
     <color name="black_blue">#0075a9</color>
     <color name="green">#00ff00</color>
     <color name="green_GMYK">#009944</color>
+    <color name="green_pale">#32b16c</color>
 
     <color name="transparent">#00000000</color>
 </resources>

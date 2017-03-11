@@ -4,7 +4,12 @@ import android.app.Fragment;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -24,33 +29,67 @@ import bishe.dgut.edu.cn.reallygoodapp.api.GetAppSize;
  * Created by Administrator on 2017/2/25.
  */
 
-public class ShareFragment extends Fragment implements AbsListView.OnScrollListener{
+public class ShareFragment extends Fragment implements AbsListView.OnScrollListener, NavigationView.OnNavigationItemSelectedListener {
 
     private View shareview;
     private View sharelistHead;
+    private DrawerLayout drawerLayout;
+
     private ImageView toTop;
 
     private LinearLayout actionbar;
     private int actionbarheight;
     private int alpha;
-    private Drawable actionbarDrawable;
+    private Drawable actionbarDrawable;         //actionbar变透明背景drawable
 
-    private List<String> stringList;
+    private MenuItem preMenuItem;
+
+    private List<String> stringList, allList, externalList, schoolList, friendList;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         //测试例子
-        stringList = new ArrayList<>();
-        for (int i = 0 ; i < 20 ; i++) {
-            stringList.add("你收到了一条来自别人的推送");
+        allList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            allList.add("你收到了一条来自全部人的推送");
         }
 
+        externalList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            externalList.add("你收到了一条来自外校的推送");
+        }
 
+        schoolList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            schoolList.add("你收到了一条来自本校的推送");
+        }
+
+        friendList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            friendList.add("你收到了一条来自朋友的推送");
+        }
+        stringList = allList;
+
+        //view创建
         if (shareview == null) {
             shareview = inflater.inflate(R.layout.fragment_share, null);
             sharelistHead = inflater.inflate(R.layout.fragment_share_listhead, null);
+
+            //侧边栏
+            drawerLayout = (DrawerLayout) shareview.findViewById(R.id.share_drawer);
+            NavigationView nvMenu = (NavigationView) shareview.findViewById(R.id.share_nvmenu);
+            nvMenu.setItemIconTintList(ContextCompat.getColorStateList(getActivity(), R.color.share_nvmenu_itemiconcolor));
+            nvMenu.setItemTextColor(ContextCompat.getColorStateList(getActivity(), R.color.share_nvmenu_itemtextcolor));
+            preMenuItem = nvMenu.getMenu().getItem(0).getSubMenu().getItem(0);      //默认选择第一项
+            preMenuItem.setChecked(true);
+            nvMenu.setNavigationItemSelectedListener(this);
+
+//            Menu menu = nvMenu.getMenu().getItem(0).getSubMenu();
+//            for (int i = 0 ;i < menu.size(); i++) {
+//                Log.d("item:", menu.getItem(i).getTitle().toString());
+//            }
 
             //沉浸式状态栏
             View view = shareview.findViewById(R.id.share_status);
@@ -80,6 +119,15 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
                 public void onClick(View v) {
                     shareList.smoothScrollToPosition(0);
                     v.setVisibility(View.GONE);
+                }
+            });
+
+            //菜单导航栏按钮
+            ImageView showNvMenu = (ImageView) shareview.findViewById(R.id.share_show_nvmenu);
+            showNvMenu.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    drawerLayout.openDrawer(GravityCompat.START);
                 }
             });
         }
@@ -151,11 +199,42 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
         if (firstVisibleItem > 5) {
             toTop.setVisibility(View.VISIBLE);
         } else {
-            if (toTop !=null && toTop.getVisibility() == View.VISIBLE ) {
+            if (toTop != null && toTop.getVisibility() == View.VISIBLE) {
                 toTop.setVisibility(View.GONE);
             }
         }
 
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        if (preMenuItem != null) {
+            preMenuItem.setChecked(false);
+        }
+        item.setChecked(true);
+        preMenuItem = item;
+        updateListOfMenuItem(item.getTitle().toString().trim());
+        shareListAdapter.notifyDataSetChanged();
+        drawerLayout.closeDrawer(GravityCompat.START, true);
+        return true;
+    }
+
+    private void updateListOfMenuItem(String itemText) {
+        switch (itemText) {
+            case "全部":
+                stringList = allList;
+                break;
+            case "外校":
+                stringList = externalList;
+                break;
+            case "本校":
+                stringList = schoolList;
+                break;
+            case "朋友":
+                stringList = friendList;
+                break;
+            default:
+        }
     }
 }

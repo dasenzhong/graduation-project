@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/green_pale"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+    
+    <ImageView
+        android:id="@+id/share_nvmenu_head_avatar"
+        android:layout_centerInParent="true"
+        android:src="@drawable/failure_gray"
+        android:scaleType="fitXY"
+        android:layout_width="@dimen/share_nvmenu_avatar"
+        android:layout_height="@dimen/share_nvmenu_avatar" />
+
+    <TextView
+        android:id="@+id/share_nvmenu_head_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/share_nvmenu_head_avatar"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/share_nvmenu_nametextsize"
+        android:textColor="@color/white"
+        android:text="@string/user_name"/>
+    
+    <TextView
+        android:id="@+id/share_nvmenu_head_school"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/share_nvmenu_schoolname"
+        android:layout_below="@id/share_nvmenu_head_name"
+        android:textSize="@dimen/share_nvmenu_schooltextsize"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

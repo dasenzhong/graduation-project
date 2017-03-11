@@ -1,63 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?><!--社区页-->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/share_drawer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/gray_25">
+    android:layout_height="match_parent">
 
-    <ListView
-        android:paddingTop="@dimen/actionbarheight"
-        android:clipToPadding="false"
-        android:clipChildren="false"
-        android:layout_marginStart="2dp"
-        android:layout_marginEnd="2dp"
-        android:id="@+id/share_list"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/share_or_chat_listitem"
-        tools:listheader="@layout/fragment_share_listhead">
+        android:background="@color/gray_25">
 
-    </ListView>
-
-    <!--actionbar-->
-    <LinearLayout
-        android:id="@+id/share_actionbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/black_blue"
-        android:orientation="vertical">
-
-        <View
-            android:id="@+id/share_status"
+        <ListView
+            android:id="@+id/share_list"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/transparent" />
+            android:layout_height="match_parent"
+            android:layout_marginEnd="2dp"
+            android:layout_marginStart="2dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/actionbarheight"
+            tools:listheader="@layout/fragment_share_listhead"
+            tools:listitem="@layout/share_or_chat_listitem">
 
-        <RelativeLayout
+        </ListView>
+
+
+        <!--actionbar-->
+        <LinearLayout
+            android:id="@+id/share_actionbar"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/actionbarheight">
+            android:layout_height="wrap_content"
+            android:background="@color/black_blue"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:gravity="center"
-                android:text="@string/share_actionbar_title"
-                android:textColor="@color/white"
-                android:textSize="@dimen/actionbar_titletextsize" />
+            <View
+                android:id="@+id/share_status"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/transparent" />
 
-        </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/actionbarheight">
 
-    </LinearLayout>
+                <ImageView
+                    android:id="@+id/share_show_nvmenu"
+                    android:src="@drawable/menu"
+                    android:scaleType="fitCenter"
+                    android:layout_centerVertical="true"
+                    android:layout_width="@dimen/actionbar_imageheight"
+                    android:layout_height="@dimen/actionbar_imageheight"
+                    android:layout_marginStart="10dp"/>
 
-    <ImageView
-        android:visibility="gone"
-        android:id="@+id/share_totop"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:src="@mipmap/ic_launcher"
-        android:layout_width="@dimen/totop"
-        android:layout_height="@dimen/totop" />
-</RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/share_actionbar_title"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/actionbar_titletextsize" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/share_totop"
+            android:layout_width="@dimen/totop"
+            android:layout_height="@dimen/totop"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="50dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/back_to_top"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/share_nvmenu"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        app:menu="@menu/fragment_share_navigationview_menu"
+        app:headerLayout="@layout/fragment_share_navigationview_headview"
+        android:layout_gravity="start" />
+
+</android.support.v4.widget.DrawerLayout>

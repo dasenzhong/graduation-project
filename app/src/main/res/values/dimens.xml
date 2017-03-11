@@ -12,6 +12,15 @@
     <dimen name="actionbar_textviewtextsize">16sp</dimen>
     <dimen name="actionbar_textinputsize">14sp</dimen>
 
+    <!--////////////////////////////////////////社区fragment设置/////////////////////////////////-->
+    <!--抽屉式导航栏头像-->
+    <dimen name="share_nvmenu_avatar">60dp</dimen>
+    <dimen name="share_nvmenu_nametextsize">16sp</dimen>
+    <dimen name="share_nvmenu_schooltextsize">12sp</dimen>
+
+    <!--////////////////////////////////////////////////////////////////////////////////////////-->
+
+
     <!--////////////////////////////////////////我的fragment设置/////////////////////////////////-->
     <!--useritemCell设置大小-->
     <dimen name="user_cell_image">28dp</dimen>
