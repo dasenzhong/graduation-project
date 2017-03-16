@@ -1,6 +1,8 @@
 package bishe.dgut.edu.cn.reallygoodapp.home;
 
 import android.app.Fragment;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -19,6 +21,7 @@ import java.util.List;
 
 import bishe.dgut.edu.cn.reallygoodapp.R;
 import bishe.dgut.edu.cn.reallygoodapp.api.GetAppSize;
+import bishe.dgut.edu.cn.reallygoodapp.module.imageviewpager.ViewPagerForShowingImageFragment;
 
 /**
  * Created by Administrator on 2017/2/25.
@@ -47,6 +50,14 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
             stringList.add("测试，待服务器连接\n" + "这是放最新讯息的地方");
         }
 
+        //轮播测试例子
+        List<Bitmap> bitmapsList = new ArrayList<>();
+        bitmapsList.add(BitmapFactory.decodeResource(getResources(),R.drawable.testone));
+        bitmapsList.add(BitmapFactory.decodeResource(getResources(),R.drawable.testtwo));
+        bitmapsList.add(BitmapFactory.decodeResource(getResources(),R.drawable.testthree));
+        bitmapsList.add(BitmapFactory.decodeResource(getResources(),R.drawable.testfour));
+        bitmapsList.add(BitmapFactory.decodeResource(getResources(),R.drawable.testfive));
+
         if (homeview == null) {
             homeview = inflater.inflate(R.layout.fragment_home, null);
             LinearLayout actionbar = (LinearLayout) homeview.findViewById(R.id.home_actionbar);
@@ -55,6 +66,13 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
 
             //listhead的广告轮播位置
             listHead_advertisement = inflater.inflate(R.layout.fragment_home_listhead_advertisement, null);
+            ViewPagerForShowingImageFragment advertisement = (ViewPagerForShowingImageFragment) getChildFragmentManager().findFragmentById(R.id.home_listhead_advertisement);
+//            advertisement.setDotUnSelectColor(ContextCompat.getColor(getActivity(),R.color.black));           //设置未选时的颜色
+//            advertisement.setShowDot(false);                              //是否显示指示器，默认为显示
+            advertisement.setAuto(true, 5000, 1500);                        //第一个参数为是否开启轮播服务，第二个参数为轮播时间间隔，第三个参数为动画滑动速度
+            advertisement.setBitmapList(bitmapsList);
+            advertisement.init();
+
 
             //listhead的导航栏配置
             View listHead_navigation = inflater.inflate(R.layout.fragment_home_listhead_navigation, null);

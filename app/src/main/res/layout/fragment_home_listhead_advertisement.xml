@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--广告轮播-->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="180dp">
 
-        <TextView
-            android:layout_gravity="center"
-            android:text="广告轮播，待实现"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <fragment
+            android:id="@+id/home_listhead_advertisement"
+            tools:layout="@layout/module_fragment_viewpagerforshowingimage"
+            class="bishe.dgut.edu.cn.reallygoodapp.module.imageviewpager.ViewPagerForShowingImageFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
 
     </FrameLayout>
 

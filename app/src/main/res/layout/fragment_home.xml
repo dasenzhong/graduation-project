@@ -7,6 +7,28 @@
 
     <!--首页正文-->
 
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/home_totop"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/back_to_top"
+        android:layout_width="@dimen/totop"
+        android:layout_height="@dimen/totop" />
+
+    <ListView
+        android:id="@+id/home_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listheader="@layout/fragment_home_listhead_navigation"
+        tools:listitem="@layout/fragment_home_listitem"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+    </ListView>
+
     <!--actionbar-->
     <LinearLayout
         android:id="@+id/home_actionbar"
@@ -89,26 +111,5 @@
         </LinearLayout>
     </LinearLayout>
 
-    <ImageView
-        android:visibility="gone"
-        android:id="@+id/home_totop"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:src="@drawable/back_to_top"
-        android:layout_width="@dimen/totop"
-        android:layout_height="@dimen/totop" />
-
-    <ListView
-        android:id="@+id/home_listview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listheader="@layout/fragment_home_listhead_navigation"
-        tools:listitem="@layout/fragment_home_listitem"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-
-    </ListView>
 
 </RelativeLayout>

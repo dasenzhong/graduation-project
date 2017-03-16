@@ -10,6 +10,7 @@
     <!--actionbatTextView字体大小-->
     <dimen name="actionbar_titletextsize">18sp</dimen>
     <dimen name="actionbar_textviewtextsize">16sp</dimen>
+    <dimen name="actionbar_textviewtextsize_small">12sp</dimen>
     <dimen name="actionbar_textinputsize">14sp</dimen>
 
     <!--////////////////////////////////////////社区fragment设置/////////////////////////////////-->
