@@ -48,6 +48,14 @@
         <activity
             android:name=".user.setting.AboutActivity"
             android:theme="@style/UserActivityTheme" />
+        <!--兼职-->
+        <activity android:name=".home.HomePartTimeJobActivity"/>
+        <!--招聘会-->
+        <activity android:name=".home.HomeRecruitActivity"/>
+        <!--经验分享-->
+        <activity android:name=".home.HomeExperienceActivity"/>
+        <!--社团-->
+        <activity android:name=".home.HomeOrganizationActivity"/>
     </application>
 
 </manifest>

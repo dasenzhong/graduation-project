@@ -1,6 +1,7 @@
 package bishe.dgut.edu.cn.reallygoodapp.home;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -90,6 +91,43 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
 
             //listhead的导航栏配置
             View listHead_navigation = inflater.inflate(R.layout.fragment_home_listhead_navigation, null);
+
+            //兼职
+            LinearLayout parttimejobLayout = (LinearLayout) listHead_navigation.findViewById(R.id.home_listhead_navigation_parttimejoblayout);
+            parttimejobLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getActivity(),HomePartTimeJobActivity.class));
+                }
+            });
+
+            //招聘会
+            LinearLayout recruitLayout = (LinearLayout) listHead_navigation.findViewById(R.id.home_listhead_navigation_recruitlayout);
+            recruitLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getActivity(),HomeRecruitActivity.class));
+                }
+            });
+
+            //经验
+            LinearLayout exprienceLayout = (LinearLayout) listHead_navigation.findViewById(R.id.home_listhead_navigation_expriencelayout);
+            exprienceLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getActivity(),HomeExperienceActivity.class));
+                }
+            });
+
+            //社团
+            LinearLayout organizationLayout = (LinearLayout) listHead_navigation.findViewById(R.id.home_listhead_navigation_organizationlayout);
+            organizationLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getActivity(),HomeOrganizationActivity.class));
+                }
+            });
+
             //热门兼职
             ListView hotJobList = (ListView) listHead_navigation.findViewById(R.id.home_listhead_hot_joblist);
             hotJobList.setAdapter(hotJobListAdapter);
