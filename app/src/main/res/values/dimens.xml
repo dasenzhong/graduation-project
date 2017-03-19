@@ -13,6 +13,13 @@
     <dimen name="actionbar_textviewtextsize_small">12sp</dimen>
     <dimen name="actionbar_textinputsize">14sp</dimen>
 
+    <!--////////////////////////////////////////首页fragment设置/////////////////////////////////-->
+    <dimen name="home_navigation_imagesize">50dp</dimen>
+    <dimen name="home_navigation_textsize">12sp</dimen>
+    <dimen name="home_hot_textsize">16sp</dimen>
+
+    <!--////////////////////////////////////////////////////////////////////////////////////////-->
+
     <!--////////////////////////////////////////社区fragment设置/////////////////////////////////-->
     <!--抽屉式导航栏头像-->
     <dimen name="share_nvmenu_avatar">60dp</dimen>

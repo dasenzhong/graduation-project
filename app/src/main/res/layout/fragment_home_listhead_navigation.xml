@@ -1,171 +1,213 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--导航栏-->
+<?xml version="1.0" encoding="utf-8"?><!--导航栏-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clickable="false"
     android:orientation="vertical">
 
+    <!--导航栏-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
         android:weightSum="4">
 
-        <!--1-->
-        <RelativeLayout
-            android:layout_weight="1"
+        <!--兼职-->
+        <LinearLayout
+            android:id="@+id/home_listhead_navigation_parttimejoblayout"
             android:layout_width="0dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/home_navigation_imagesize"
+                android:layout_height="@dimen/home_navigation_imagesize"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:src="@drawable/home_navigation_parttimejob" />
 
             <TextView
-                android:layout_centerInParent="true"
-                android:text="兼职"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </RelativeLayout>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/home_navigation_text_parttimejob"
+                android:textColor="@color/gray_70"
+                android:textSize="@dimen/home_navigation_textsize" />
+        </LinearLayout>
 
-        <!--2-->
-        <RelativeLayout
-            android:layout_weight="1"
+        <!--校园招聘-->
+        <LinearLayout
+            android:id="@+id/home_listhead_navigation_recruitlayout"
             android:layout_width="0dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/home_navigation_imagesize"
+                android:layout_height="@dimen/home_navigation_imagesize"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:src="@drawable/home_navigation_recruit" />
 
             <TextView
-                android:layout_centerInParent="true"
-                android:text="校园招聘"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </RelativeLayout>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/home_navigation_schoolrecruit"
+                android:textColor="@color/gray_70"
+                android:textSize="@dimen/home_navigation_textsize" />
+        </LinearLayout>
 
-        <!--3-->
-        <RelativeLayout
-            android:layout_weight="1"
+        <!--经验攻略-->
+        <LinearLayout
+            android:id="@+id/home_listhead_navigation_expriencelayout"
             android:layout_width="0dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/home_navigation_imagesize"
+                android:layout_height="@dimen/home_navigation_imagesize"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:src="@drawable/home_navigation_exprience" />
 
             <TextView
-                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="经验攻略"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </RelativeLayout>
+                android:textColor="@color/gray_70"
+                android:textSize="@dimen/home_navigation_textsize" />
+        </LinearLayout>
 
-        <!--4-->
-        <RelativeLayout
-            android:layout_weight="1"
+        <!--校园社团-->
+        <LinearLayout
+            android:id="@+id/home_listhead_navigation_organizationlayout"
             android:layout_width="0dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/home_navigation_imagesize"
+                android:layout_height="@dimen/home_navigation_imagesize"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:src="@drawable/home_navigation_organization" />
 
             <TextView
-                android:layout_centerInParent="true"
-                android:text="待添加"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </RelativeLayout>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/home_navigation_organization"
+                android:textColor="@color/gray_70"
+                android:textSize="@dimen/home_navigation_textsize" />
+        </LinearLayout>
 
     </LinearLayout>
 
     <!--热门推送-->
     <!--点击率高的兼职-->
-    <TextView
-        android:gravity="center"
-        android:text="热门兼职"
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
     <LinearLayout
-        android:orientation="vertical"
-        android:weightSum="5"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <!--兼职1-->
-        <TextView
-            android:text="兼职1"
-            android:gravity="center"
-            android:layout_weight="1"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray_25">
 
-        <!--兼职2-->
-        <TextView
-            android:text="兼职2"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
 
-        <!--兼职3-->
-        <TextView
-            android:text="兼职3"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/linear_red_gmyk" />
 
-        <!--兼职4-->
-        <TextView
-            android:text="兼职4"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_hot_parttimejob"
+                    android:textColor="@color/red_GMYK"
+                    android:textSize="@dimen/home_hot_textsize" />
 
-        <!--兼职5-->
-        <TextView
-            android:text="兼职5"
-            android:gravity="center"
-            android:layout_weight="1"
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/linear_red_gmyk" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <ListView
+            android:id="@+id/home_listhead_hot_joblist"
+            tools:listitem="@layout/fragment_home_listhead_navigation_hot_joblist_item"
             android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            android:layout_height="wrap_content">
+
+        </ListView>
+
+        <!--高人气公司-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray_25">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/linear_green_gmyk" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_hot_company"
+                        android:textColor="@color/green_GMYK"
+                        android:textSize="@dimen/home_hot_textsize" />
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/linear_green_gmyk" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <ListView
+                android:id="@+id/home_listhead_hot_companylist"
+                tools:listitem="@layout/fragment_home_listhead_navigation_hot_companylist_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </ListView>
+
+        </LinearLayout>
 
     </LinearLayout>
-
-    <!--高人气公司-->
-    <TextView
-        android:gravity="center"
-        android:text="人气公司"
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
-
-    <LinearLayout
-        android:weightSum="4"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="160dp">
-
-        <!--公司1-->
-        <TextView
-            android:text="公司1"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
-
-        <!--公司2-->
-        <TextView
-            android:text="公司2"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:id="@+id/textView" />
-
-        <!--公司3-->
-        <TextView
-            android:text="公司3"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
-
-        <!--公司4-->
-        <TextView
-            android:text="公司4"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
-
-    </LinearLayout>
-
 </LinearLayout>

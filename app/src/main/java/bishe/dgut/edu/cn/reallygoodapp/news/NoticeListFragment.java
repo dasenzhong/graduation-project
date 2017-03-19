@@ -66,7 +66,7 @@ public class NoticeListFragment extends Fragment {
         public View getView(int position, View convertView, ViewGroup parent) {
 
             if (convertView == null) {
-                convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_news_fragment_noticelistitem, null);
+                convertView = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_news_fragment_noticelistitem, null);
             }
 
             TextView textView = (TextView) convertView.findViewById(R.id.news_noticelist_text);

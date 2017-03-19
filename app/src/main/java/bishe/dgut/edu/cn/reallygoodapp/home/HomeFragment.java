@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -39,6 +41,8 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
 
     //测试例子
     private List<String> stringList;
+    private List<String> hotJobStringList;
+    private List<String> hotCompanyStringList;
 
     @Nullable
     @Override
@@ -48,6 +52,16 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
         stringList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             stringList.add("测试，待服务器连接\n" + "这是放最新讯息的地方");
+        }
+
+        hotJobStringList = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            hotJobStringList.add("热门兼职");
+        }
+
+        hotCompanyStringList = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            hotCompanyStringList.add("人气公司");
         }
 
         //轮播测试例子
@@ -67,7 +81,7 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
             //listhead的广告轮播位置
             listHead_advertisement = inflater.inflate(R.layout.fragment_home_listhead_advertisement, null);
             ViewPagerForShowingImageFragment advertisement = (ViewPagerForShowingImageFragment) getChildFragmentManager().findFragmentById(R.id.home_listhead_advertisement);
-//            advertisement.setDotUnSelectColor(ContextCompat.getColor(getActivity(),R.color.black));           //设置未选时的颜色
+            advertisement.setDotUnSelectColor(ContextCompat.getColor(getActivity(),R.color.orange));           //设置未选时的颜色
 //            advertisement.setShowDot(false);                              //是否显示指示器，默认为显示
             advertisement.setAuto(true, 5000, 1500);                        //第一个参数为是否开启轮播服务，第二个参数为轮播时间间隔，第三个参数为动画滑动速度
             advertisement.setBitmapList(bitmapsList);
@@ -76,6 +90,15 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
 
             //listhead的导航栏配置
             View listHead_navigation = inflater.inflate(R.layout.fragment_home_listhead_navigation, null);
+            //热门兼职
+            ListView hotJobList = (ListView) listHead_navigation.findViewById(R.id.home_listhead_hot_joblist);
+            hotJobList.setAdapter(hotJobListAdapter);
+            getListViewHeight(hotJobList);                  //listview嵌套listview，要重新计算listview的高度,item子项父布局必须为linearlayout
+
+            //人气公司
+            ListView hotCompanyList = (ListView) listHead_navigation.findViewById(R.id.home_listhead_hot_companylist);
+            hotCompanyList.setAdapter(hotCompanyListAdapter);
+            getListViewHeight(hotCompanyList);               //listview嵌套listview，要重新计算listview的高度
 
             //listview的配置
             final ListView listView = (ListView) homeview.findViewById(R.id.home_listview);
@@ -135,6 +158,66 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
         }
     };
 
+    BaseAdapter hotJobListAdapter = new BaseAdapter() {
+        @Override
+        public int getCount() {
+            return hotJobStringList.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return hotJobStringList.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            if (convertView == null) {
+                convertView = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_home_listhead_navigation_hot_joblist_item, null);
+            }
+
+            TextView textView = (TextView) convertView.findViewById(R.id.home_listhead_hot_joblist_text);
+            textView.setText("" + getItem(position) + position);
+
+            return convertView;
+        }
+    };
+
+    BaseAdapter hotCompanyListAdapter = new BaseAdapter() {
+        @Override
+        public int getCount() {
+            return hotCompanyStringList.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return hotCompanyStringList.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            if (convertView == null) {
+                convertView = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_home_listhead_navigation_hot_companylist_item, null);
+            }
+
+            TextView textView = (TextView) convertView.findViewById(R.id.home_listhead_hot_companylist_text);
+            textView.setText("" + getItem(position) + position);
+
+            return convertView;
+        }
+    };
+
     @Override
     public void onScrollStateChanged(AbsListView view, int scrollState) {
 
@@ -161,5 +244,23 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
             }
         }
 
+    }
+
+    private void getListViewHeight(ListView listView) {
+        ListAdapter listAdapter = listView.getAdapter();        //获取测量listview的适配器
+
+        if (listAdapter == null) {
+            return;
+        }
+        int listViewHeight = 0;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View view = listAdapter.getView(i, null, listView);
+            view.measure(0, 0);
+            listViewHeight += view.getMeasuredHeight();
+        }
+
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = listViewHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
     }
 }
