@@ -41,8 +41,9 @@
 
     <!--首页-->
     <string name="home_navigation_text_parttimejob">兼职</string>
-    <string name="home_navigation_schoolrecruit">校园招聘</string>
-    <string name="home_navigation_organization">校园社团</string>
+    <string name="home_navigation_text_schoolrecruit">校园招聘</string>
+    <string name="home_navigation_text_experiwnce">经验攻略</string>
+    <string name="home_navigation_text_organization">校园社团</string>
     <string name="home_hot_parttimejob">热门兼职</string>
     <string name="home_hot_company">人气公司</string>
 

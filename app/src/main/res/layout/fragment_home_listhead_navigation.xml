@@ -56,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/home_navigation_schoolrecruit"
+                android:text="@string/home_navigation_text_schoolrecruit"
                 android:textColor="@color/gray_70"
                 android:textSize="@dimen/home_navigation_textsize" />
         </LinearLayout>
@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="经验攻略"
+                android:text="@string/home_navigation_text_experiwnce"
                 android:textColor="@color/gray_70"
                 android:textSize="@dimen/home_navigation_textsize" />
         </LinearLayout>
@@ -104,7 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/home_navigation_organization"
+                android:text="@string/home_navigation_text_organization"
                 android:textColor="@color/gray_70"
                 android:textSize="@dimen/home_navigation_textsize" />
         </LinearLayout>
