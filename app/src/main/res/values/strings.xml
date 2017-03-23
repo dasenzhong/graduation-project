@@ -47,4 +47,11 @@
     <string name="home_hot_parttimejob">热门兼职</string>
     <string name="home_hot_company">人气公司</string>
 
+    <!--兼职activity-->
+    <string name="parttimejob_navigation_collect">收藏</string>
+    <string name="parttimejob_navigation_chooseall">全选</string>
+    <string name="parttimejob_navigation_apply">申请</string>
+    <string name="parttimejob_actionbar_findwork">找兼职</string>
+    <string name="parttimejob_actionbar_doagent">做代理</string>
+
 </resources>

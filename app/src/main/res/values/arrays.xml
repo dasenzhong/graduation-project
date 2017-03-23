@@ -1,2 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <!--省份-->
+    <string-array name="provincelist">
+        <item>广东省</item>
+        <item>浙江省</item>
+        <item>江苏省</item>
+        <item>四川省</item>
+    </string-array>
+
+    <!--////////////////////////////////城市列表////////////////////////////////////////-->
+    <!--广东省-->
+    <string-array name="citylist_guangdong">
+        <item>不限</item>
+        <item>广州</item>
+        <item>惠州</item>
+        <item>汕头</item>
+        <item>珠海</item>
+        <item>佛山</item>
+        <item>深圳</item>
+        <item>中山</item>
+        <item>东莞</item>
+        <item>韶关</item>
+        <item>江门</item>
+        <item>湛江</item>
+        <item>肇庆</item>
+        <item>清远</item>
+        <item>潮州</item>
+        <item>河源</item>
+        <item>揭阳</item>
+        <item>茂名</item>
+        <item>汕尾</item>
+        <item>梅州</item>
+        <item>开平</item>
+        <item>阳江</item>
+        <item>云浮</item>
+    </string-array>
+
+    <!--////////////////////////////////城区列表/////////////////////////////////////////-->
+    <!--////////////////////广东省////////////////////////-->
+    <!--东莞-->
+    <string-array name="townlist_dongguan">
+        <item>不限</item>
+        <item>莞城区</item>
+        <item>南城区</item>
+        <item>东城区</item>
+        <item>万江区</item>
+        <item>石碣镇</item>
+        <item>石龙镇</item>
+        <item>茶山镇</item>
+        <item>石排镇</item>
+        <item>企石镇</item>
+        <item>横沥镇</item>
+        <item>桥头镇</item>
+        <item>谢岗镇</item>
+        <item>东坑镇</item>
+        <item>常平镇</item>
+        <item>寮步镇</item>
+        <item>大朗镇</item>
+        <item>麻涌镇</item>
+        <item>中堂镇</item>
+        <item>高埗镇</item>
+        <item>樟木头镇</item>
+        <item>大岭山镇</item>
+        <item>望牛墩镇</item>
+        <item>黄江镇</item>
+        <item>洪梅镇</item>
+        <item>清溪镇</item>
+        <item>沙田镇</item>
+        <item>道滘镇</item>
+        <item>塘厦镇</item>
+        <item>虎门镇</item>
+        <item>厚街镇</item>
+        <item>凤岗镇</item>
+        <item>长安镇</item>
+        <item>松山湖镇</item>
+    </string-array>
+
+    <!--广州-->
+    <string-array name="townlist_guangzhou">
+        <item>不限</item>
+        <item>越秀区</item>
+        <item>荔湾区</item>
+        <item>海珠区</item>
+        <item>天河区</item>
+        <item>白云区</item>
+        <item>黄浦区</item>
+        <item>番禺区</item>
+        <item>花都区</item>
+        <item>南沙区</item>
+        <item>萝岗区</item>
+        <item>增城</item>
+        <item>从化</item>
+    </string-array>
+
+    <!--深圳-->
+    <string-array name="townlist_shenzhen">
+        <item>不限</item>
+        <item>福田区</item>
+        <item>罗湖区</item>
+        <item>南山区</item>
+        <item>盐田区</item>
+        <item>宝安区</item>
+        <item>龙岗区</item>
+        <item>光明新区</item>
+        <item>坪山新区</item>
+        <item>大鹏新区</item>
+        <item>龙华新区</item>
+    </string-array>
+
+    <!--珠海-->
+    <string-array name="townlist_zhuhai">
+        <item>不限</item>
+        <item>香洲区</item>
+        <item>斗门区</item>
+        <item>金湾区</item>
+        <item>横琴新区</item>
+        <item>高栏港经济区</item>
+        <item>珠海高新区</item>
+        <item>珠海保税区</item>
+        <item>万山海洋开发试验区</item>
+    </string-array>
+
+    <!--佛山-->
+    <string-array name="townlist_foshan">
+        <item>不限</item>
+        <item>禅城区</item>
+        <item>顺德区</item>
+        <item>南海区</item>
+        <item>三水区</item>
+        <item>高明区</item>
+    </string-array>
+
+    <!--/////////////////////////////////////////////其他/////////////////////////////////-->
+    <string-array name="parttimejob_unable">
+        <item>暂不支持该区</item>
+    </string-array>
+
+    <string-array name="parttimejob_all">
+        <item>不限</item>
+    </string-array>
+</resources>

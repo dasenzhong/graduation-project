@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--actionbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarheight"
+        android:background="@color/black_blue">
+
+
+        <ImageView
+            android:id="@+id/parttimejob_back"
+            android:layout_width="@dimen/actionbar_imageheight"
+            android:layout_height="@dimen/actionbar_imageheight"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/back_white" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/parttimejob_actionbar_titlebackground"
+            android:orientation="horizontal"
+            android:padding="1dp">
+
+            <FrameLayout
+                android:id="@+id/parttimejob_actionbar_title_findworklayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/parttimejob_actionbar_textbackground">
+
+                <TextView
+                    android:id="@+id/parttimejob_actionbar_title_findworktext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:paddingEnd="2dp"
+                    android:paddingStart="4dp"
+                    android:paddingTop="4dp"
+                    android:text="@string/parttimejob_actionbar_findwork"
+                    android:textColor="@color/parttimejob_actionbar_textcolor"
+                    android:textSize="@dimen/actionbar_textviewtextsize_small" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/parttimejob_actionbar_title_doagentlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/parttimejob_actionbar_textbackground">
+
+                <TextView
+                    android:id="@+id/parttimejob_actionbar_title_doagenttext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:paddingEnd="4dp"
+                    android:paddingStart="2dp"
+                    android:paddingTop="4dp"
+                    android:text="@string/parttimejob_actionbar_doagent"
+                    android:textColor="@color/parttimejob_actionbar_textcolor"
+                    android:textSize="@dimen/actionbar_textviewtextsize_small" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/parttimejob_switch"
+        android:background="@color/gray_10"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/parttimejob_switch_layout_province"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/parttimejob_switch_text_province"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="广东"
+                    android:textColor="@color/gray_75"
+                    android:textSize="@dimen/parttimejob_switch_textsize" />
+
+                <ImageView
+                    android:layout_width="@dimen/parttimejob_switch_image"
+                    android:layout_height="@dimen/parttimejob_switch_image"
+                    android:src="@drawable/triangle_gray75" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="@dimen/parttimejob_switch_decoration"
+            android:layout_gravity="center_vertical"
+            android:background="@color/gray_50" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/parttimejob_switch_layout_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/parttimejob_switch_text_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="东莞"
+                    android:textColor="@color/gray_75"
+                    android:textSize="@dimen/parttimejob_switch_textsize" />
+
+                <ImageView
+                    android:layout_width="@dimen/parttimejob_switch_image"
+                    android:layout_height="@dimen/parttimejob_switch_image"
+                    android:src="@drawable/triangle_gray75" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="@dimen/parttimejob_switch_decoration"
+            android:layout_gravity="center_vertical"
+            android:background="@color/gray_50" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/parttimejob_switch_layout_town"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/parttimejob_switch_text_town"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="莞城"
+                    android:textColor="@color/gray_75"
+                    android:textSize="@dimen/parttimejob_switch_textsize" />
+
+                <ImageView
+                    android:layout_width="@dimen/parttimejob_switch_image"
+                    android:layout_height="@dimen/parttimejob_switch_image"
+                    android:src="@drawable/triangle_gray75" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="@dimen/parttimejob_switch_decoration"
+            android:layout_gravity="center_vertical"
+            android:background="@color/gray_50" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/parttimejob_switch_text_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="简洁"
+                android:textColor="@color/gray_75"
+                android:textSize="@dimen/parttimejob_switch_textsize" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="@dimen/parttimejob_switch_decoration"
+            android:layout_gravity="center_vertical"
+            android:background="@color/gray_50" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/parttimejob_switch_text_choose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="筛选"
+                android:textColor="@color/gray_75"
+                android:textSize="@dimen/parttimejob_switch_textsize" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/parttimejob_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/parttimejob_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_25">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/parttimejob_navigation"
+        android:background="@color/black_blue"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/parttimejob_navigation_image"
+                    android:layout_height="@dimen/parttimejob_navigation_image"
+                    android:src="@drawable/parttimejob_navigation_like" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/parttimejob_navigation_collect"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/parttimejob_navigation_textsize" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/parttimejob_navigation_image"
+                    android:layout_height="@dimen/parttimejob_navigation_image"
+                    android:src="@drawable/parttimejob_navigation_all" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/parttimejob_navigation_chooseall"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/parttimejob_navigation_textsize" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/parttimejob_navigation_image"
+                    android:layout_height="@dimen/parttimejob_navigation_image"
+                    android:src="@drawable/parttimejob_navigation_apply" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/parttimejob_navigation_apply"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/parttimejob_navigation_textsize" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

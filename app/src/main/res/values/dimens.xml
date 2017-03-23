@@ -20,6 +20,21 @@
 
     <!--////////////////////////////////////////////////////////////////////////////////////////-->
 
+    <!--////////////////////////////////////////兼职activity设置/////////////////////////////////-->
+    <dimen name="parttimejob_switch">30dp</dimen>
+    <dimen name="parttimejob_switch_decoration">20dp</dimen>
+    <dimen name="parttimejob_switch_textsize">14sp</dimen>
+    <dimen name="parttimejob_switch_image">20dp</dimen>
+
+    <dimen name="parttimejob_navigation">50dp</dimen>
+    <dimen name="parttimejob_navigation_image">30dp</dimen>
+    <dimen name="parttimejob_navigation_textsize">10sp</dimen>
+
+    <!--//////////////////////////////////////switch  fragment设置///////////////////////////////-->
+    <dimen name="parttimejob_switchfragment_itemtextsize">14sp</dimen>
+    <dimen name="parttimejob_switchfragment_okimage">50dp</dimen>
+    <!--////////////////////////////////////////////////////////////////////////////////////////-->
+
     <!--////////////////////////////////////////社区fragment设置/////////////////////////////////-->
     <!--抽屉式导航栏头像-->
     <dimen name="share_nvmenu_avatar">60dp</dimen>

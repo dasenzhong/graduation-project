@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/parttimejob_switchfragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_alpha_50"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ListView
+                android:id="@+id/parttimejob_switchfragment_province"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/parttimejob_switchfragment_listdivider"
+                tools:listitem="@layout/fragment_parttimejob_switch_place_listitem_province">
+
+            </ListView>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ListView
+                android:id="@+id/parttimejob_switchfragment_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/parttimejob_switchfragment_listdivider"
+                tools:listitem="@layout/fragment_parttimejob_switch_place_listitem_city">
+
+            </ListView>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ListView
+                android:id="@+id/parttimejob_switchfragment_town"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/parttimejob_switchfragment_listdivider"
+                tools:listitem="@layout/fragment_parttimejob_switch_place_listitem_town">
+
+            </ListView>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <ImageView
+                android:layout_width="@dimen/parttimejob_switchfragment_okimage"
+                android:layout_height="@dimen/parttimejob_switchfragment_okimage"
+                android:layout_gravity="center"
+                android:src="@drawable/parttimejob_switchfragment_ok" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</FrameLayout>
