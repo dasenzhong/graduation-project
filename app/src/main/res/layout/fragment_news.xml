@@ -51,7 +51,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/news_title_news"
-                        android:textColor="@color/white"
+                        android:textColor="@color/news_actionbar_titletextcolor"
                         android:textSize="@dimen/actionbar_textviewtextsize_small"/>
 
                 </FrameLayout>
@@ -74,7 +74,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/news_title_notice"
-                        android:textColor="@color/white"
+                        android:textColor="@color/news_actionbar_titletextcolor"
                         android:textSize="@dimen/actionbar_textviewtextsize_small"/>
 
                 </FrameLayout>

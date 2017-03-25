@@ -41,7 +41,7 @@ public class MainActivity extends Activity implements BottomNavigationBar.OnTabS
 
         if (savedInstanceState != null) {
             FragmentManager fm = getFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
+//            FragmentTransaction ft = fm.beginTransaction();
 
             selectPostion = savedInstanceState.getInt("selectPostion");
             homeFragment = (HomeFragment) fm.findFragmentByTag(barName[0]);

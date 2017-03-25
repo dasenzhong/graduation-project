@@ -75,6 +75,18 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/parttimejob_employ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/parttimejob_actionbar_button_employperson"
+            android:text="@string/parttimejob_actionbar_employperson"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_textviewtextsize" />
+
     </RelativeLayout>
 
     <LinearLayout
@@ -193,15 +205,22 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <TextView
-                android:id="@+id/parttimejob_switch_text_detail"
+            <FrameLayout
+                android:id="@+id/parttimejob_switch_layout_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="简洁"
-                android:textColor="@color/gray_75"
-                android:textSize="@dimen/parttimejob_switch_textsize" />
+                android:layout_centerInParent="true">
 
+
+                <TextView
+                    android:id="@+id/parttimejob_switch_text_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="简洁"
+                    android:textColor="@color/gray_75"
+                    android:textSize="@dimen/parttimejob_switch_textsize" />
+
+            </FrameLayout>
         </RelativeLayout>
 
         <View

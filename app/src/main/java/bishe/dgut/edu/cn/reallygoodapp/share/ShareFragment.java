@@ -43,6 +43,7 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
     private Drawable actionbarDrawable;         //actionbar变透明背景drawable
 
     private MenuItem preMenuItem;
+    private int itemPosition;
 
     private List<String> stringList, allList, externalList, schoolList, friendList;
 
@@ -52,7 +53,7 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
 
         //测试例子
         allList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             allList.add("你收到了一条来自全部人的推送");
         }
 
@@ -70,7 +71,6 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
         for (int i = 0; i < 10; i++) {
             friendList.add("你收到了一条来自朋友的推送");
         }
-        stringList = allList;
 
         //view创建
         if (shareview == null) {
@@ -82,14 +82,16 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
             NavigationView nvMenu = (NavigationView) shareview.findViewById(R.id.share_nvmenu);
             nvMenu.setItemIconTintList(ContextCompat.getColorStateList(getActivity(), R.color.share_nvmenu_itemiconcolor));
             nvMenu.setItemTextColor(ContextCompat.getColorStateList(getActivity(), R.color.share_nvmenu_itemtextcolor));
-            preMenuItem = nvMenu.getMenu().getItem(0).getSubMenu().getItem(0);      //默认选择第一项
-            preMenuItem.setChecked(true);
             nvMenu.setNavigationItemSelectedListener(this);
 
-//            Menu menu = nvMenu.getMenu().getItem(0).getSubMenu();
-//            for (int i = 0 ;i < menu.size(); i++) {
-//                Log.d("item:", menu.getItem(i).getTitle().toString());
-//            }
+            if (savedInstanceState != null) {               //被意外结束时
+                alpha = savedInstanceState.getInt("alpha", 0);
+                updateListOfMenuItem(savedInstanceState.getString("item"));
+            } else {                                        //初始化
+                preMenuItem = nvMenu.getMenu().getItem(0).getSubMenu().getItem(0);      //默认选择第一项
+                preMenuItem.setChecked(true);
+                stringList = allList;
+            }
 
             //沉浸式状态栏
             View view = shareview.findViewById(R.id.share_status);
@@ -189,11 +191,10 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
                 }
                 actionbarDrawable.setAlpha(alpha);
             }
-
-//            Log.d("2--------------", "" + firstVisibleItem);
-//            Log.d("height--------------", "" + actionbarheight);
-//            Log.d("TOP--------------", "" + sharelistHead.getTop());
-//            Log.d("alpha--------------", "" + alpha);
+        } else {
+            if (actionbar.getVisibility() == View.VISIBLE) {
+                actionbar.setVisibility(View.GONE);
+            }
         }
 
         if (firstVisibleItem > 5) {
@@ -236,5 +237,12 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
                 break;
             default:
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt("alpha", alpha);
+        outState.putString("item", preMenuItem.getTitle().toString().trim());
+        super.onSaveInstanceState(outState);
     }
 }

@@ -1,4 +1,4 @@
-package bishe.dgut.edu.cn.reallygoodapp.home;
+package bishe.dgut.edu.cn.reallygoodapp.home.organization;
 
 import android.app.Activity;
 import android.os.Bundle;

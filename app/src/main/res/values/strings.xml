@@ -53,5 +53,6 @@
     <string name="parttimejob_navigation_apply">申请</string>
     <string name="parttimejob_actionbar_findwork">找兼职</string>
     <string name="parttimejob_actionbar_doagent">做代理</string>
+    <string name="parttimejob_actionbar_employperson">我要招人</string>
 
 </resources>

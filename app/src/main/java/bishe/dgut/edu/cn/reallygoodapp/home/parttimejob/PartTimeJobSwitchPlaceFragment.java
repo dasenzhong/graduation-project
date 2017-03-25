@@ -1,4 +1,4 @@
-package bishe.dgut.edu.cn.reallygoodapp.home;
+package bishe.dgut.edu.cn.reallygoodapp.home.parttimejob;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -33,10 +33,6 @@ public class PartTimeJobSwitchPlaceFragment extends Fragment {
     private List<String> cityList;          //城市列表
     private List<String> townList;          //城区列表
 
-//    private View preProvinceSelectView;     //记录前一次选择的省份的listitem
-//    private View preCitySelectView;         //记录前一次选择的城市的listitem
-//    private View preTownSelectView;         //记录前一次选择的城区的listitem
-
     private String provinceName = "";            //记录前一次选择的省份
     private String cityName = "";                //记录前一次选择的城市
     private String townName = "";                //记录前一次选择的城区
@@ -49,7 +45,7 @@ public class PartTimeJobSwitchPlaceFragment extends Fragment {
     private int selectColor;
     private int unSelectColor;
 
-    interface OnCloseSwitchFragmentListener {
+    public interface OnCloseSwitchFragmentListener {
         void onClose();
     }
 
@@ -68,44 +64,55 @@ public class PartTimeJobSwitchPlaceFragment extends Fragment {
             selectColor = ContextCompat.getColor(getActivity(), R.color.gray_30);       //选择颜色
             unSelectColor = ContextCompat.getColor(getActivity(), R.color.gray_10);     //为选择颜色
 
+            if (savedInstanceState != null) {                   //意外结束时
+                provincePosition = savedInstanceState.getInt("provincePosition", 0);
+                cityPosition = savedInstanceState.getInt("cityPosition", 0);
+                townPosition = savedInstanceState.getInt("townPosition", 0);
+            } else {                                            //初始化
+                provincePosition = 0;
+                cityPosition = 0;
+                townPosition = 0;
+            }
+
+
             provinceList = Arrays.asList(getResources().getStringArray(R.array.provincelist));  //初始化省份列表，默认广东省
-            provinceName = provinceList.get(0);                 //默认第一项
-            provincePosition = 0;
+            provinceName = provinceList.get(provincePosition);                 //默认第一项
 
             //省份列表的点击事件
             provinceListView.setAdapter(provinceListViewAdapter);
             provinceListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    provincePosition = position;
-                    provinceListViewAdapter.notifyDataSetChanged();
-                    if (!view.isSelected()) {
-                        view.setSelected(true);
+                    if (provincePosition != position) {
+                        provincePosition = position;
+                        provinceListViewAdapter.notifyDataSetChanged();
+//                        view.setSelected(true);
+                        cityPosition = 0;                           //刷新城市列表的选项位置
+                        townPosition = 0;                           //刷新城区列表的选项位置
                         initCityList(provinceList.get(position));
                         cityListViewAdapter.notifyDataSetChanged();
                         townListViewAdapter.notifyDataSetChanged();
                         if (isService) {
                             provinceName = provinceList.get(position);
                         }
-//                        Toast.makeText(getActivity(), "省份:" + provinceName + "\n城市:" + cityName + "\n城区:" + townName, Toast.LENGTH_SHORT).show();
                     }
                 }
             });
 
             initCityList(provinceName);
-            cityName = cityList.get(0);                         //默认第一项
-            cityPosition = 0;
+            cityName = cityList.get(cityPosition);                         //默认第一项
 
             //城市列表点击事件
             cityListView.setAdapter(cityListViewAdapter);
             cityListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    if (!view.isSelected() && isService) {
+                    if (cityPosition != position && isService) {
                         cityPosition = position;
                         cityListViewAdapter.notifyDataSetChanged();
-                        view.setSelected(true);
+//                        view.setSelected(true);
                         cityName = cityList.get(position);
+                        townPosition = 0;                                   //刷新城区列表的选项位置
                         initTownList(cityName);
                         townListViewAdapter.notifyDataSetChanged();
 //                        Toast.makeText(getActivity(), "省份:" + provinceName + "\n城市:" + cityName + "\n城区:" + townName, Toast.LENGTH_SHORT).show();
@@ -114,18 +121,17 @@ public class PartTimeJobSwitchPlaceFragment extends Fragment {
             });
 
             initTownList(cityName);
-            townName = townList.get(0);
-            townPosition = 0;
+            townName = townList.get(townPosition);
 
             //城区列表点击事件
             townListView.setAdapter(townListViewAdapter);
             townListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    if (!view.isSelected() && isService) {
+                    if (townPosition != position && isService) {
                         townPosition = position;
                         townListViewAdapter.notifyDataSetChanged();
-                        view.setSelected(true);
+//                        view.setSelected(true);
                         townName = townList.get(position);
 //                        Toast.makeText(getActivity(), "省份:" + provinceName + "\n城市:" + cityName + "\n城区:" + townName, Toast.LENGTH_SHORT).show();
                     }
@@ -153,8 +159,7 @@ public class PartTimeJobSwitchPlaceFragment extends Fragment {
      */
     private void initCityList(String provinceName) {
         isService = true;                   //重置该区可以服务
-        cityPosition = 0;
-        townPosition = 0;
+
         switch (provinceName) {
             case "广东省":
                 cityList = Arrays.asList(getResources().getStringArray(R.array.citylist_guangdong));
@@ -176,7 +181,6 @@ public class PartTimeJobSwitchPlaceFragment extends Fragment {
      * @param cityName 城市名
      */
     private void initTownList(String cityName) {
-        townPosition = 0;
         switch (provinceName) {
             case "广东省":
 //                cityList = Arrays.asList(getResources().getStringArray(R.array.citylist_guangdong));
@@ -364,4 +368,12 @@ public class PartTimeJobSwitchPlaceFragment extends Fragment {
             return convertView;
         }
     };
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt("provincePosition", provincePosition);
+        outState.putInt("cityPosition", cityPosition);
+        outState.putInt("townPosition", townPosition);
+        super.onSaveInstanceState(outState);
+    }
 }

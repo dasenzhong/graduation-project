@@ -1,6 +1,7 @@
 package bishe.dgut.edu.cn.reallygoodapp.home;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -15,28 +16,40 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import bishe.dgut.edu.cn.reallygoodapp.R;
+import bishe.dgut.edu.cn.reallygoodapp.home.parttimejob.EmployPersonActivity;
+import bishe.dgut.edu.cn.reallygoodapp.home.parttimejob.PartTimeJobSwitchPlaceFragment;
 
 /**
  * Created by Administrator on 2017/3/20.
  */
 
-public class HomePartTimeJobActivity extends Activity {
+public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwitchPlaceFragment.OnCloseSwitchFragmentListener{
 
     private List<String> stringList;
     private PartTimeJobSwitchPlaceFragment switchPlaceFragment;
 
     private boolean isFindWork = true;              //记录title选择的类型，找兼职/做代理
+    private boolean isdetail = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parttimejob);
+
+        if (savedInstanceState != null) {               //意外结束时
+            switchPlaceFragment = (PartTimeJobSwitchPlaceFragment) getFragmentManager().findFragmentByTag("switchplace");
+            switchPlaceFragment.setOnCloseSwitchFragmentListener(this);
+            if (savedInstanceState.getBoolean("isSwitchFragmentShow", false)) {
+                getFragmentManager().beginTransaction().show(switchPlaceFragment).commit();
+            } else {
+                getFragmentManager().beginTransaction().hide(switchPlaceFragment).commit();
+            }
+        }
 
         //测试
         stringList = new ArrayList<>();
@@ -47,7 +60,8 @@ public class HomePartTimeJobActivity extends Activity {
         //兼职列表
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.parttimejob_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        recyclerView.setAdapter(new PartTimeJobAdapter());
+        final PartTimeJobAdapter partTimeJobAdapter = new PartTimeJobAdapter();
+        recyclerView.setAdapter(partTimeJobAdapter);
         recyclerView.addItemDecoration(new PartTimeJobItemDecoration(15));
 
         //actionbar
@@ -66,7 +80,7 @@ public class HomePartTimeJobActivity extends Activity {
                     doAgentLayout.setSelected(false);
                     doAgentTitle.setSelected(false);
                     isFindWork = true;
-                    Toast.makeText(v.getContext(), "找工作", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(v.getContext(), "找工作", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -79,7 +93,7 @@ public class HomePartTimeJobActivity extends Activity {
                     findWorkLayout.setSelected(false);
                     findWorkTitle.setSelected(false);
                     isFindWork = false;
-                    Toast.makeText(v.getContext(), "做代理", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(v.getContext(), "做代理", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -109,6 +123,24 @@ public class HomePartTimeJobActivity extends Activity {
             }
         });
 
+        //简洁/详细
+        final TextView detailText = (TextView) findViewById(R.id.parttimejob_switch_text_detail);
+        FrameLayout detailLayout = (FrameLayout) findViewById(R.id.parttimejob_switch_layout_detail);
+        detailLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isdetail) {
+                    isdetail = false;
+                    detailText.setText("简洁");
+                } else {
+                    isdetail = true;
+                    detailText.setText("详细");
+                }
+                partTimeJobAdapter.notifyDataSetChanged();
+            }
+        });
+
+
         //返回键
         ImageView back = (ImageView) findViewById(R.id.parttimejob_back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -117,25 +149,35 @@ public class HomePartTimeJobActivity extends Activity {
                 finish();
             }
         });
+
+        //雇用按钮
+        TextView employText = (TextView) findViewById(R.id.parttimejob_employ);
+        employText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePartTimeJobActivity.this, EmployPersonActivity.class));
+            }
+        });
     }
 
     private void choosePlace() {
         if (switchPlaceFragment == null) {
             switchPlaceFragment = new PartTimeJobSwitchPlaceFragment();
-            switchPlaceFragment.setOnCloseSwitchFragmentListener(new PartTimeJobSwitchPlaceFragment.OnCloseSwitchFragmentListener() {
-                @Override
-                public void onClose() {
-                    if (switchPlaceFragment.isAdded()) {
-                        getFragmentManager().beginTransaction().hide(switchPlaceFragment).commit();
-                    }
-                }
-            });
+            switchPlaceFragment.setOnCloseSwitchFragmentListener(this);
         }
+
 
         if (switchPlaceFragment.isAdded()) {
             getFragmentManager().beginTransaction().show(switchPlaceFragment).commit();
         } else {
             getFragmentManager().beginTransaction().add(R.id.parttimejob_container, switchPlaceFragment, "switchplace").commit();       //筛选fragment添加tag
+        }
+    }
+
+    @Override
+    public void onClose() {
+        if (switchPlaceFragment.isAdded()) {
+            getFragmentManager().beginTransaction().hide(switchPlaceFragment).commit();
         }
     }
 
@@ -156,6 +198,12 @@ public class HomePartTimeJobActivity extends Activity {
         @Override
         public void onBindViewHolder(PartTimeJobViewHolder holder, int position) {
             holder.textView.setText("" + stringList.get(position) + position);
+            if (isdetail) {
+                holder.jobName.setVisibility(View.VISIBLE);
+                holder.jobName.setText("" + stringList.get(position) + position);
+            } else {
+                holder.jobName.setVisibility(View.GONE);
+            }
         }
 
         @Override
@@ -171,10 +219,12 @@ public class HomePartTimeJobActivity extends Activity {
     private static class PartTimeJobViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textView;
+        private TextView jobName;
 
         public PartTimeJobViewHolder(View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.home_parttimejob_recyclerview_item_text);
+            jobName = (TextView) itemView.findViewById(R.id.home_parttimejob_recyclerview_item_name);
         }
     }
 
@@ -251,4 +301,9 @@ public class HomePartTimeJobActivity extends Activity {
         }
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean("isSwitchFragmentShow", switchPlaceFragment.isVisible());
+        super.onSaveInstanceState(outState);
+    }
 }

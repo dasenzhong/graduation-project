@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +22,13 @@ public class NewsFragment extends Fragment {
     private View newsview;
     private NewsListFragment newsListFragment;
     private NoticeListFragment noticeListFragment;
+    private boolean isNewsFragmentShow;
+
+    private FrameLayout newsbackground;
+    private TextView newstext;
+    private FrameLayout noticebackground;
+    private TextView noticetext;
+
 
     @Nullable
     @Override
@@ -31,17 +37,26 @@ public class NewsFragment extends Fragment {
         if (newsview == null) {
             newsview = inflater.inflate(R.layout.fragment_news, null);
 
-            final FrameLayout newsbackground = (FrameLayout) newsview.findViewById(R.id.news_title_newsbackground);
-            final TextView newstext = (TextView) newsview.findViewById(R.id.news_title_newstext);
-            final FrameLayout noticebackground = (FrameLayout) newsview.findViewById(R.id.news_title_noticebackground);
-            final TextView noticetext = (TextView) newsview.findViewById(R.id.news_title_noticetext);
+            newsbackground = (FrameLayout) newsview.findViewById(R.id.news_title_newsbackground);
+            newstext = (TextView) newsview.findViewById(R.id.news_title_newstext);
+            noticebackground = (FrameLayout) newsview.findViewById(R.id.news_title_noticebackground);
+            noticetext = (TextView) newsview.findViewById(R.id.news_title_noticetext);
 
             //初始化选择状态
-            showNewsList(true);
-            newsbackground.setSelected(true);
-            newstext.setTextColor(ContextCompat.getColor(getActivity(), R.color.black_blue));
-            noticebackground.setSelected(false);
-            noticetext.setTextColor(ContextCompat.getColor(getActivity(),R.color.white));
+            if (savedInstanceState != null) {               //意外关闭时
+                isNewsFragmentShow = savedInstanceState.getBoolean("whichshow", true);
+                if (isNewsFragmentShow) {
+                    showNewsList(isNewsFragmentShow);
+                    showNoticeList(!isNewsFragmentShow);
+                } else {
+                    showNoticeList(!isNewsFragmentShow);
+                    showNewsList(isNewsFragmentShow);
+                }
+            } else {                                    //正常初始化
+                showNewsList(true);
+                noticebackground.setSelected(false);
+                noticetext.setSelected(false);
+            }
 
             //沉浸式状态栏
             View view = newsview.findViewById(R.id.news_status);
@@ -54,10 +69,6 @@ public class NewsFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     if (!v.isSelected()) {
-                        v.setSelected(true);
-                        newstext.setTextColor(ContextCompat.getColor(v.getContext(),R.color.black_blue));
-                        noticebackground.setSelected(false);
-                        noticetext.setTextColor(ContextCompat.getColor(v.getContext(), R.color.white));
                         showNewsList(true);
                         showNoticeList(false);
                     }
@@ -68,10 +79,6 @@ public class NewsFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     if (!v.isSelected()) {
-                        v.setSelected(true);
-                        noticetext.setTextColor(ContextCompat.getColor(v.getContext(), R.color.black_blue));
-                        newsbackground.setSelected(false);
-                        newstext.setTextColor(ContextCompat.getColor(v.getContext(),R.color.white));
                         showNoticeList(true);
                         showNewsList(false);
                     }
@@ -84,6 +91,10 @@ public class NewsFragment extends Fragment {
     }
 
     private void showNewsList(boolean isshow) {
+        isNewsFragmentShow = isshow;
+        newstext.setSelected(isshow);
+        newsbackground.setSelected(isshow);
+
         if (newsListFragment == null) {
             newsListFragment = (NewsListFragment) getFragmentManager().findFragmentByTag("news_title_news");
             if (newsListFragment == null) {
@@ -109,6 +120,10 @@ public class NewsFragment extends Fragment {
     }
 
     private void showNoticeList(boolean isshow) {
+        isNewsFragmentShow = !isshow;
+        noticetext.setSelected(isshow);
+        noticebackground.setSelected(isshow);
+
         if (noticeListFragment == null) {
             noticeListFragment = (NoticeListFragment) getFragmentManager().findFragmentByTag("news_title_notice");
             if (noticeListFragment == null) {
@@ -131,5 +146,11 @@ public class NewsFragment extends Fragment {
             }
         }
         ft.commit();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean("whichshow", isNewsFragmentShow);
+        super.onSaveInstanceState(outState);
     }
 }

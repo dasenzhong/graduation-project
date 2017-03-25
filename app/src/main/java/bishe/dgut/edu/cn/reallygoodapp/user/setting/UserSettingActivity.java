@@ -1,4 +1,4 @@
-package bishe.dgut.edu.cn.reallygoodapp.user;
+package bishe.dgut.edu.cn.reallygoodapp.user.setting;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,7 +8,6 @@ import android.widget.LinearLayout;
 
 import bishe.dgut.edu.cn.reallygoodapp.R;
 import bishe.dgut.edu.cn.reallygoodapp.cell.UserSettingCellFragment;
-import bishe.dgut.edu.cn.reallygoodapp.user.setting.AboutActivity;
 
 /**
  * Created by Administrator on 2017/3/8.

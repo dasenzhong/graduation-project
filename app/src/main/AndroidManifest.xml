@@ -42,20 +42,23 @@
             android:theme="@style/UserActivityTheme" />
         <!--我的设置-->
         <activity
-            android:name=".user.UserSettingActivity"
+            android:name=".user.setting.UserSettingActivity"
             android:theme="@style/UserActivityTheme" />
         <!--关于-->
         <activity
             android:name=".user.setting.AboutActivity"
             android:theme="@style/UserActivityTheme" />
         <!--兼职-->
-        <activity android:name=".home.HomePartTimeJobActivity"/>
+        <activity android:name=".home.HomePartTimeJobActivity"
+            android:theme="@style/PartTimeJobActivityTheme"/>
         <!--招聘会-->
-        <activity android:name=".home.HomeRecruitActivity"/>
+        <activity android:name=".home.recruit.HomeRecruitActivity"/>
         <!--经验分享-->
-        <activity android:name=".home.HomeExperienceActivity"/>
+        <activity android:name=".home.experience.HomeExperienceActivity"/>
         <!--社团-->
-        <activity android:name=".home.HomeOrganizationActivity"/>
+        <activity android:name=".home.organization.HomeOrganizationActivity"/>
+        <!--招人-->
+        <activity android:name=".home.parttimejob.EmployPersonActivity" />
     </application>
 
 </manifest>
