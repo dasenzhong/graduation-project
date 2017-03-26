@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_25">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--兼职名-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/employperson_infofragment_layoutheight"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/employperson_infofragment_jobname"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/employperson_infofragment_textsize" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@color/transparent"
+                    android:gravity="center_vertical"
+                    android:hint="@string/employperson_infofargment_jobname_hint"
+                    android:imeOptions="actionNone"
+                    android:inputType="text"
+                    android:maxLength="15"
+                    android:maxLines="1"
+                    android:textColorHint="@color/gray_50"
+                    android:textSize="@dimen/employperson_infofragment_textsize" />
+
+            </LinearLayout>
+
+            <!--招聘人数-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/employperson_infofragment_layoutheight"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/employperson_infofragment_number"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/employperson_infofragment_textsize" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@color/transparent"
+                    android:hint="@string/employperson_infofragment_number_hint"
+                    android:imeOptions="actionNone"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:maxLines="1"
+                    android:textColorHint="@color/gray_50"
+                    android:textSize="@dimen/employperson_infofragment_textsize" />
+
+            </LinearLayout>
+
+            <!--学历要求-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/employperson_infofragment_layoutheight"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/employperson_infofragment_education"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/employperson_infofragment_textsize" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@color/transparent"
+                    android:hint="@string/employperson_infofragment_education_hint"
+                    android:imeOptions="actionNone"
+                    android:inputType="text"
+                    android:maxLength="5"
+                    android:maxLines="1"
+                    android:textColorHint="@color/gray_50"
+                    android:textSize="@dimen/employperson_infofragment_textsize" />
+
+            </LinearLayout>
+
+            <!--工资-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/employperson_infofragment_layoutheight"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/employperson_infofragment_payment"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/employperson_infofragment_textsize" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@color/transparent"
+                    android:hint="@string/employperson_infofragment_payment_hint"
+                    android:imeOptions="actionNone"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:maxLines="1"
+                    android:textColorHint="@color/gray_50"
+                    android:textSize="@dimen/employperson_infofragment_textsize" />
+
+            </LinearLayout>
+
+            <!--学历-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/employperson_infofragment_layoutheight"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/employperson_infofragment_education"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/employperson_infofragment_textsize" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@color/transparent"
+                    android:hint="@string/employperson_infofragment_education_hint"
+                    android:imeOptions="actionNone"
+                    android:inputType="text"
+                    android:maxLength="5"
+                    android:maxLines="1"
+                    android:textColorHint="@color/gray_50"
+                    android:textSize="@dimen/employperson_infofragment_textsize" />
+
+            </LinearLayout>
+
+            <!--工作地址-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/employperson_infofragment_layoutheight"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/employperson_infofragment_address"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/employperson_infofragment_textsize" />
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@color/transparent"
+                        android:hint="@string/employperson_infofragment_address_hint"
+                        android:imeOptions="actionNone"
+                        android:inputType="text"
+                        android:maxLength="5"
+                        android:maxLines="1"
+                        android:textColorHint="@color/gray_50"
+                        android:textSize="@dimen/employperson_infofragment_textsize" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/employperson_infofragment_layoutheight_big"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/gray_25">
+
+                    </FrameLayout>
+
+                    <EditText
+                        android:id="@+id/editText"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@color/transparent"
+                        android:gravity="start"
+                        android:hint="@string/employperson_infofragment_address_hint_detail"
+                        android:imeOptions="actionNone"
+                        android:inputType="text"
+                        android:maxLength="50"
+                        android:maxLines="4"
+                        android:textColorHint="@color/gray_50"
+                        android:textSize="@dimen/employperson_infofragment_textsize" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/employperson_infofragment_layoutheight"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="@string/employperson_infofragment_request"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/employperson_infofragment_textsize" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:gravity="start"
+                    android:hint="@string/employfragment_infofragment_request_hint"
+                    android:imeOptions="actionNone"
+                    android:inputType="text"
+                    android:textColorHint="@color/gray_50"
+                    android:textSize="@dimen/employperson_infofragment_textsize" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:layout_width="@dimen/totop"
+        android:layout_height="@dimen/totop"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/back_to_top" />
+
+</RelativeLayout>

@@ -49,8 +49,8 @@
             android:name=".user.setting.AboutActivity"
             android:theme="@style/UserActivityTheme" />
         <!--兼职-->
-        <activity android:name=".home.HomePartTimeJobActivity"
-            android:theme="@style/PartTimeJobActivityTheme"/>
+        <activity android:name=".home.parttimejob.HomePartTimeJobActivity"
+            android:theme="@style/PartTimeJobTheme"/>
         <!--招聘会-->
         <activity android:name=".home.recruit.HomeRecruitActivity"/>
         <!--经验分享-->
@@ -58,7 +58,8 @@
         <!--社团-->
         <activity android:name=".home.organization.HomeOrganizationActivity"/>
         <!--招人-->
-        <activity android:name=".home.parttimejob.EmployPersonActivity" />
+        <activity android:name=".home.parttimejob.EmployPersonActivity"
+            android:theme="@style/PartTimeJobTheme"/>
     </application>
 
 </manifest>

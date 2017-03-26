@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ff9900</color>
-    <color name="colorPrimaryDark">#ff6f00</color>
-    <color name="colorAccent">#0099ff</color>
+    <color name="colorPrimary">#00a0e9</color>
+    <color name="colorPrimaryDark">#0075a9</color>
+    <color name="colorAccent">#000000</color>
 
     <color name="mainbar_home">#ff6f00</color>
     <color name="mainbar_share">#59493f</color>
@@ -31,6 +31,7 @@
     <color name="gray_15">#e5e5e5</color>
     <color name="gray_10">#eeeeee</color>
     <color name="orange">#ff6f00</color>
+    <color name="orange_red_light">#f19149</color>
     <color name="blue">#00a0e9</color>
     <color name="black_blue">#0075a9</color>
     <color name="green">#00ff00</color>

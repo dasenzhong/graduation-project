@@ -216,7 +216,7 @@
                     android:id="@+id/parttimejob_switch_text_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="简洁"
+                    android:text="@string/parttimejob_switch_detail"
                     android:textColor="@color/gray_75"
                     android:textSize="@dimen/parttimejob_switch_textsize" />
 
@@ -239,7 +239,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="筛选"
+                android:text="@string/parttimejob_switch_switch"
                 android:textColor="@color/gray_75"
                 android:textSize="@dimen/parttimejob_switch_textsize" />
 

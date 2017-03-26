@@ -22,8 +22,8 @@
         <item name="android:colorAccent">@color/black</item>
     </style>
 
-    <!--PartTimeJobActivity-->
-    <style name="PartTimeJobActivityTheme" parent="AppTheme">
+    <!--PartTimeJob-->
+    <style name="PartTimeJobTheme" parent="AppTheme">
         <item name="android:colorPrimary">@color/black_blue</item>
         <item name="android:colorPrimaryDark">@color/black_blue</item>
         <item name="android:colorAccent">@color/black</item>

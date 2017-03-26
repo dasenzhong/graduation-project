@@ -54,5 +54,28 @@
     <string name="parttimejob_actionbar_findwork">找兼职</string>
     <string name="parttimejob_actionbar_doagent">做代理</string>
     <string name="parttimejob_actionbar_employperson">我要招人</string>
+    <string name="parttimejob_switch_detail_simple">简洁</string>
+    <string name="parttimejob_switch_switch">筛选</string>
+    <string name="parttimejob_switch_detail_complex">详细</string>
+
+    <!--发布兼职employpersonactivity-->
+    <string name="employperson_actionbar_titile">发布兼职</string>
+    <string name="amployperson_step_info">兼职信息</string>
+    <string name="employperson_step_chooseagent">选择代理人</string>
+    <string name="employperson_step_send">发布</string>
+    <string name="employperson_step_next">下一步</string>
+    <string name="employperson_infofragment_jobname">兼职：</string>
+    <string name="employperson_infofargment_jobname_hint">你要发布的兼职</string>
+    <string name="employperson_infofragment_number">人数：</string>
+    <string name="employperson_infofragment_number_hint">人数</string>
+    <string name="employperson_infofragment_education">学历：</string>
+    <string name="employperson_infofragment_education_hint">要求的文化水平</string>
+    <string name="employperson_infofragment_payment">薪酬：</string>
+    <string name="employperson_infofragment_payment_hint">发放工资多少</string>
+    <string name="employperson_infofragment_address">工作地址：</string>
+    <string name="employperson_infofragment_address_hint">省/市(县)/镇</string>
+    <string name="employperson_infofragment_address_hint_detail">详细地址</string>
+    <string name="employfragment_infofragment_request_hint">工作具体要求</string>
+    <string name="employperson_infofragment_request">工作描述</string>
 
 </resources>

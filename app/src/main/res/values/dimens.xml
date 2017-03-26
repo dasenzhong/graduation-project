@@ -30,9 +30,20 @@
     <dimen name="parttimejob_navigation_image">30dp</dimen>
     <dimen name="parttimejob_navigation_textsize">10sp</dimen>
 
-    <!--//////////////////////////////////////switch  fragment设置///////////////////////////////-->
+                        <!--///////////////////switch  fragment设置//////////////////-->
     <dimen name="parttimejob_switchfragment_itemtextsize">14sp</dimen>
     <dimen name="parttimejob_switchfragment_okimage">50dp</dimen>
+
+                        <!--//////////////////EmployPerson   activity设置////////////-->
+    <dimen name="employperson_steplayoutheight">30dp</dimen>
+    <dimen name="employperson_steplayouttextsize">14sp</dimen>
+    <dimen name="employperson_steplayoutbuttontexisize">16sp</dimen>
+
+                        <!--/////////////EmployPerson info fragment 设置/////////////-->
+    <dimen name="employperson_infofragment_layoutheight">30dp</dimen>
+    <dimen name="employperson_infofragment_layoutheight_big">60dp</dimen>
+    <dimen name="employperson_infofragment_textsize">16sp</dimen>
+
     <!--////////////////////////////////////////////////////////////////////////////////////////-->
 
     <!--////////////////////////////////////////社区fragment设置/////////////////////////////////-->

@@ -1,4 +1,4 @@
-package bishe.dgut.edu.cn.reallygoodapp.home;
+package bishe.dgut.edu.cn.reallygoodapp.home.parttimejob;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -21,8 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bishe.dgut.edu.cn.reallygoodapp.R;
-import bishe.dgut.edu.cn.reallygoodapp.home.parttimejob.EmployPersonActivity;
-import bishe.dgut.edu.cn.reallygoodapp.home.parttimejob.PartTimeJobSwitchPlaceFragment;
 
 /**
  * Created by Administrator on 2017/3/20.
@@ -131,10 +129,10 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
             public void onClick(View v) {
                 if (isdetail) {
                     isdetail = false;
-                    detailText.setText("简洁");
+                    detailText.setText(R.string.parttimejob_switch_detail_simple);
                 } else {
                     isdetail = true;
-                    detailText.setText("详细");
+                    detailText.setText(R.string.parttimejob_switch_detail_complex);
                 }
                 partTimeJobAdapter.notifyDataSetChanged();
             }

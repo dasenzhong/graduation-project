@@ -26,6 +26,7 @@ import bishe.dgut.edu.cn.reallygoodapp.R;
 import bishe.dgut.edu.cn.reallygoodapp.api.GetAppSize;
 import bishe.dgut.edu.cn.reallygoodapp.home.experience.HomeExperienceActivity;
 import bishe.dgut.edu.cn.reallygoodapp.home.organization.HomeOrganizationActivity;
+import bishe.dgut.edu.cn.reallygoodapp.home.parttimejob.HomePartTimeJobActivity;
 import bishe.dgut.edu.cn.reallygoodapp.home.recruit.HomeRecruitActivity;
 import bishe.dgut.edu.cn.reallygoodapp.module.imageviewpager.ViewPagerForShowingImageFragment;
 
