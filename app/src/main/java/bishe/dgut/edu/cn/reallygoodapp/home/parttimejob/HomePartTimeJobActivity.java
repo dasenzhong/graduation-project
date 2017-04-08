@@ -26,7 +26,7 @@ import bishe.dgut.edu.cn.reallygoodapp.R;
  * Created by Administrator on 2017/3/20.
  */
 
-public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwitchPlaceFragment.OnCloseSwitchFragmentListener{
+public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwitchPlaceFragment.OnCloseSwitchFragmentListener {
 
     private List<String> stringList;
     private PartTimeJobSwitchPlaceFragment switchPlaceFragment;
@@ -41,11 +41,13 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
 
         if (savedInstanceState != null) {               //意外结束时
             switchPlaceFragment = (PartTimeJobSwitchPlaceFragment) getFragmentManager().findFragmentByTag("switchplace");
-            switchPlaceFragment.setOnCloseSwitchFragmentListener(this);
-            if (savedInstanceState.getBoolean("isSwitchFragmentShow", false)) {
-                getFragmentManager().beginTransaction().show(switchPlaceFragment).commit();
-            } else {
-                getFragmentManager().beginTransaction().hide(switchPlaceFragment).commit();
+            if (switchPlaceFragment != null) {
+                switchPlaceFragment.setOnCloseSwitchFragmentListener(this);
+                if (savedInstanceState.getBoolean("isSwitchFragmentShow", false)) {
+                    getFragmentManager().beginTransaction().show(switchPlaceFragment).commit();
+                } else {
+                    getFragmentManager().beginTransaction().hide(switchPlaceFragment).commit();
+                }
             }
         }
 
@@ -301,7 +303,7 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putBoolean("isSwitchFragmentShow", switchPlaceFragment.isVisible());
+        outState.putBoolean("isSwitchFragmentShow", switchPlaceFragment != null && switchPlaceFragment.isVisible());
         super.onSaveInstanceState(outState);
     }
 }

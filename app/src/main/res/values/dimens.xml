@@ -44,6 +44,17 @@
     <dimen name="employperson_infofragment_layoutheight_big">60dp</dimen>
     <dimen name="employperson_infofragment_textsize">16sp</dimen>
 
+                        <!--///////////EmployPerson address fragment 设置////////////-->
+    <dimen name="employperson_addressfragment_layoutheight">30dp</dimen>
+    <dimen name="employperson_addressfragment_layoutheight_big">60dp</dimen>
+    <dimen name="employperson_addressfragment_textsize">16sp</dimen>
+    <dimen name="employperson_addressfragment_textsize_notice">14sp</dimen>
+
+                        <!--///////////EmployPerson choose fragment 设置////////////-->
+    <dimen name="employperson_choosefragment_buttonlayoutheight">35dp</dimen>
+    <dimen name="employperson_choosefragment_listviewwidth">100dp</dimen>
+    <dimen name="employperson_choosefragment_listitem_textsize">16sp</dimen>
+
     <!--////////////////////////////////////////////////////////////////////////////////////////-->
 
     <!--////////////////////////////////////////社区fragment设置/////////////////////////////////-->

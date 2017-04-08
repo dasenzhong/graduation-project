@@ -61,7 +61,7 @@
     <!--发布兼职employpersonactivity-->
     <string name="employperson_actionbar_titile">发布兼职</string>
     <string name="amployperson_step_info">兼职信息</string>
-    <string name="employperson_step_chooseagent">选择代理人</string>
+    <string name="employperson_step_address">地址详情</string>
     <string name="employperson_step_send">发布</string>
     <string name="employperson_step_next">下一步</string>
     <string name="employperson_infofragment_jobname">兼职：</string>
@@ -72,10 +72,17 @@
     <string name="employperson_infofragment_education_hint">要求的文化水平</string>
     <string name="employperson_infofragment_payment">薪酬：</string>
     <string name="employperson_infofragment_payment_hint">发放工资多少</string>
-    <string name="employperson_infofragment_address">工作地址：</string>
-    <string name="employperson_infofragment_address_hint">省/市(县)/镇</string>
-    <string name="employperson_infofragment_address_hint_detail">详细地址</string>
-    <string name="employfragment_infofragment_request_hint">工作具体要求</string>
     <string name="employperson_infofragment_request">工作描述</string>
+    <string name="employperson_infofragment_type">类别：</string>
+    <string name="employperson_infofragment_type_hint">该兼职的类别</string>
+    <string name="employperson_addressfragment_address">工作地址：</string>
+    <string name="employperson_addressfragment_address_hint">省/市(县)/镇</string>
+    <string name="employperson_addressfragment_address_hint_detail">详细地址</string>
+    <string name="employperson_addressfragment_request_hint">工作具体要求</string>
+    <string name="employperson_addressfragment_recruitaddress_hint">招聘地区</string>
+    <string name="employperson_addressfragment_recruitaddress">招聘地区：</string>
+    <string name="employperson_addressfragment_noticestudent">通知成为好友的在校生</string>
+    <string name="employperson_choosefragment_cancel">取消</string>
+    <string name="employperson_choosefragment_ok">确定</string>
 
 </resources>

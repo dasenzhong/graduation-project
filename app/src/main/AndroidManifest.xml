@@ -59,6 +59,7 @@
         <activity android:name=".home.organization.HomeOrganizationActivity"/>
         <!--招人-->
         <activity android:name=".home.parttimejob.EmployPersonActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
             android:theme="@style/PartTimeJobTheme"/>
     </application>
 

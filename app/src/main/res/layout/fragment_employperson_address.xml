@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_25">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/employperson_addressfragment_layoutheight"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/employperson_addressfragment_recruitaddress"
+                android:textColor="@color/black"
+                android:textSize="@dimen/employperson_addressfragment_textsize" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@color/transparent"
+                android:hint="@string/employperson_addressfragment_recruitaddress_hint"
+                android:imeOptions="actionNone"
+                android:inputType="text"
+                android:maxLength="5"
+                android:maxLines="1"
+                android:textColorHint="@color/gray_50"
+                android:textSize="@dimen/employperson_addressfragment_textsize" />
+
+        </LinearLayout>
+
+        <!--工作地址-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/employperson_addressfragment_layoutheight"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/employperson_addressfragment_address"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/employperson_addressfragment_textsize" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@color/transparent"
+                    android:hint="@string/employperson_addressfragment_address_hint"
+                    android:imeOptions="actionNone"
+                    android:inputType="text"
+                    android:maxLength="5"
+                    android:maxLines="1"
+                    android:textColorHint="@color/gray_50"
+                    android:textSize="@dimen/employperson_addressfragment_textsize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/employperson_addressfragment_layoutheight_big"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/gray_25">
+
+                </FrameLayout>
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@color/transparent"
+                    android:gravity="start"
+                    android:hint="@string/employperson_addressfragment_address_hint_detail"
+                    android:imeOptions="actionNone"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:maxLines="4"
+                    android:textColorHint="@color/gray_50"
+                    android:textSize="@dimen/employperson_addressfragment_textsize" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:checked="true"
+                android:textSize="@dimen/employperson_addressfragment_textsize_notice"
+                android:text="@string/employperson_addressfragment_noticestudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

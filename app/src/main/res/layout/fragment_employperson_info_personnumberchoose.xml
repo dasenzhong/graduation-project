@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/employperson_personnumberfragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/gray_15"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/employperson_choosefragment_buttonlayoutheight"
+            android:background="@color/white">
+
+            <Button
+                android:id="@+id/employperson_personnumberfragment_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:padding="0dp"
+                android:text="@string/employperson_choosefragment_cancel" />
+
+            <Button
+                android:id="@+id/employperson_personnumberfragment_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:padding="0dp"
+                android:text="@string/employperson_choosefragment_ok" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:id="@+id/employperson_personnumberfragment_list"
+                android:layout_width="@dimen/employperson_choosefragment_listviewwidth"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                tools:listitem="@layout/fragment_employperson_info_choosefragment_listitem">
+
+            </ListView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

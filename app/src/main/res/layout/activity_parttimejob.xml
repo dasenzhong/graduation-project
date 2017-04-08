@@ -216,7 +216,7 @@
                     android:id="@+id/parttimejob_switch_text_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/parttimejob_switch_detail"
+                    android:text="@string/parttimejob_switch_detail_simple"
                     android:textColor="@color/gray_75"
                     android:textSize="@dimen/parttimejob_switch_textsize" />
 
