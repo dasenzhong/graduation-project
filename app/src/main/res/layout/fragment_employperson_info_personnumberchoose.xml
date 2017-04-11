@@ -53,7 +53,7 @@
                 android:layout_width="@dimen/employperson_choosefragment_listviewwidth"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
-                tools:listitem="@layout/fragment_employperson_info_choosefragment_listitem">
+                tools:listitem="@layout/fragment_employperson_info_chooselist_listitem">
 
             </ListView>
 

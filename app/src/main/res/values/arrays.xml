@@ -139,4 +139,593 @@
     <string-array name="parttimejob_all">
         <item>不限</item>
     </string-array>
+
+
+    <!--/////////////////////////////////////////兼职类型////////////////////////////////////////-->
+    <!--行业-->
+    <string-array name="jobtype_industry">
+        <item>计算机/互联网/通信/电子</item>
+        <item>销售/客服/技术支持</item>
+        <item>会计/金融/银行/保险</item>
+        <item>生产/营运/采购/物流</item>
+        <item>生物/制药/医疗/护理</item>
+        <item>广告/市场/媒体/艺术</item>
+        <item>建筑/房地产</item>
+        <item>人事/行政/高级管理</item>
+        <item>咨询/法律/教育/科研</item>
+        <item>服务业</item>
+        <item>公务员/翻译</item>
+        <item>环保/农渔牧林业</item>
+        <item>兼职/实习培训生/在校生/储备干部</item>
+        <item>宠物/志愿者</item>
+        <item>其他</item>
+    </string-array>
+    
+    <!--/////////////////////////////行业类型//////////////////////////-->
+    <!--/////计算机/互联网/通信/电子/////-->
+    <string-array name="jobtype_industry_computer">
+        <item>计算机硬件</item>
+        <item>计算机软件</item>
+        <item>互联网/电子商务/网游</item>
+        <item>网店淘宝</item>
+        <item>IT-管理</item>
+        <item>IT-产品管理/技术支持</item>
+        <item>通信技术开发及应用</item>
+        <item>电子/电器/半导体/仪器仪表</item>
+    </string-array>
+    
+    <!--/////销售/客服/技术支持/////-->
+    <string-array name="jobtype_industry_sale">
+        <item>销售管理</item>
+        <item>销售人员</item>
+        <item>销售行政及商务</item>
+        <item>客服及支持</item>
+    </string-array>
+    
+    <!--/////会计/金融/银行/保险/////-->
+    <string-array name="jobtype_industry_finance">
+        <item>财务/审计/税务</item>
+        <item>金融/证券/期货/投资</item>
+        <item>银行</item>
+        <item>保险</item>
+    </string-array>
+    
+    <!--/////生产/营运/采购/物流/////-->
+    <string-array name="jobtype_industry_production">
+        <item>生产/营运</item>
+        <item>质量安全</item>
+        <item>工程/机械/能源</item>
+        <item>汽车制造</item>
+        <item>汽车销售与服务</item>
+        <item>技工普工</item>
+        <item>机械机床</item>
+        <item>服务/纺织/皮革</item>
+        <item>印刷包装</item>
+        <item>采购</item>
+        <item>贸易</item>
+        <item>物流/仓储</item>
+    </string-array>
+    
+    <!--/////生物/制药/医疗/护理/////-->
+    <string-array name="jobtype_industry_treatment">
+        <item>生物/制药/医疗器械</item>
+        <item>化工</item>
+        <item>医院/医疗/护理</item>
+    </string-array>
+    
+    <!--//////广告/市场/媒体/艺术/////-->
+    <string-array name="jobtype_industry_advertisement">
+        <item>广告</item>
+        <item>公关/媒介</item>
+        <item>市场/营销</item>
+        <item>影视/媒体</item>
+        <item>编辑出版</item>
+        <item>艺术/设计</item>
+    </string-array>
+    
+    <!--/////建筑/房地产/////-->
+    <string-array name="jobtype_industry_build">
+        <item>建筑工程与装潢</item>
+        <item>房地产开发</item>
+        <item>物业管理</item>
+        <item>房地产销售与中介</item>
+    </string-array>
+    
+    <!--/////人事/行政/高级管理/////-->
+    <string-array name="jobtype_industry_administration">
+        <item>人力资源</item>
+        <item>高级管理</item>
+        <item>行政/后勤</item>
+    </string-array>
+    
+    <!--/////咨询/法律/教育/科研/////-->
+    <string-array name="jobtype_industry_law">
+        <item>咨询/顾问</item>
+        <item>律师/法务/合规</item>
+        <item>教师</item>
+        <item>培训</item>
+        <item>科研</item>
+    </string-array>
+    
+    <!--/////服务业/////-->
+    <string-array name="jobtype_industry_service">
+        <item>餐饮服务</item>
+        <item>酒店旅游</item>
+        <item>美容保健</item>
+        <item>运动健身</item>
+        <item>休闲娱乐</item>
+        <item>百货零售</item>
+        <item>交通运输服务</item>
+        <item>家政保洁</item>
+    </string-array>
+    
+    <!--/////公务员/翻译/////-->
+    <string-array name="jobtype_industry_translate">
+        <item>公务员</item>
+        <item>翻译</item>
+    </string-array>
+    
+    <!--/////环保/农渔牧林业/////-->
+    <string-array name="jobtype_industry_environment">
+        <item>环保</item>
+        <item>农/林/牧/渔</item>
+    </string-array>
+
+    <!--/////兼职/实习培训生/在校生/储备干部/////-->
+    <string-array name="jobtype_industry_parttimejob">
+        <item>兼职</item>
+        <item>储备干部/培训生/实习生</item>
+        <item>在校生</item>
+    </string-array>
+
+    <!--/////宠物/志愿者/////-->
+    <string-array name="jobtype_industry_animal">
+        <item>驯兽师/助理驯兽师</item>
+        <item>志愿者/社会工作者</item>
+    </string-array>
+
+    <!--/////其他/////-->
+    <string-array name="jobtype_industry_other">
+        <item>其他</item>
+    </string-array>
+
+    <!--////////////////////////////职能/////////////////////-->
+    <!--/////计算机/互联网/通信/电子/////-->
+    <!--计算机软件-->
+    <string-array name="jobtype_industry_computer_yingjian">
+        <item>计算机硬件</item>
+        <item>高级硬件工程师</item>
+        <item>硬件工程师</item>
+    </string-array>
+
+    <!--计算机软件-->
+    <string-array name="jobtype_industry_computer_ruanjian">
+        <item>计算机软件</item>
+        <item>高级软件工程师</item>
+        <item>软件工程师</item>
+        <item>软件UI设计师/工程师</item>
+        <item>算法工程师</item>
+        <item>仿真应用工程师</item>
+        <item>ERP实施顾问</item>
+        <item>ERP技术开发</item>
+        <item>需求工程师</item>
+        <item>系统集成工程师</item>
+        <item>系统分析员</item>
+        <item>系统工程师</item>
+        <item>系统架构设计师</item>
+        <item>数据库工程师/管理员</item>
+        <item>计算机辅助设计工程师</item>
+    </string-array>
+
+    <!--互联网/电子商务/网游-->
+    <string-array name="jobtype_industry_computer_hulianwang">
+        <item>互联网/电子商务/网游</item>
+        <item>互联网软件开发工程师</item>
+        <item>语音/视频开发工程师</item>
+        <item>多媒体/游戏开发工程师</item>
+        <item>手机应用开发工程师</item>
+        <item>网站营运经理/主管</item>
+        <item>网站营运专员</item>
+        <item>产品总监</item>
+        <item>产品经理/主管</item>
+        <item>产品专员</item>
+        <item>SEO搜索引擎优化</item>
+        <item>网站推广总监</item>
+        <item>网站推广经理/主管</item>
+        <item>网住推广专员</item>
+        <item>电子商务总监</item>
+        <item>电子商务经理/主管</item>
+        <item>电子商务专员</item>
+        <item>网络工程师</item>
+        <item>UI设计师/顾问</item>
+        <item>用户体验设计师</item>
+        <item>Wed前端开发</item>
+        <item>网站架构设计师</item>
+        <item>网站维护工程师</item>
+        <item>系统管理员/网络管理员</item>
+        <item>网站策划</item>
+        <item>网站编辑</item>
+        <item>网页设计/制作/美工</item>
+        <item>脚本开发工程师</item>
+        <item>游戏策划师</item>
+        <item>游戏界面设计师</item>
+        <item>Flash设计/开发</item>
+        <item>特效设计师</item>
+        <item>视觉设计师</item>
+        <item>音效设计师</item>
+        <item>网络信息安全工程师</item>
+    </string-array>
+
+    <!--网店淘宝-->
+    <string-array name="jobtype_industry_computer_taobao">
+        <item>网店淘宝</item>
+        <item>网店/淘宝店长</item>
+        <item>网店/淘宝运营</item>
+        <item>网店店铺管理员们</item>
+        <item>网店/淘宝客服</item>
+        <item>店铺推广</item>
+        <item>网店美工</item>
+        <item>网店模特</item>
+    </string-array>
+
+    <!--IT-管理-->
+    <string-array name="jobtype_industry_computer_itguanli">
+        <item>IT-管理</item>
+        <item>首席技术执行官CTO/首席信息官CIO</item>
+        <item>技术总监/经理</item>
+        <item>信息技术经理/主管</item>
+        <item>信息技术专员</item>
+        <item>项目总监</item>
+        <item>项目经理</item>
+        <item>项目主管</item>
+        <item>项目执行/协调人员</item>
+    </string-array>
+
+    <!--IT-品管-->
+    <string-array name="jobtype_industry_computer_itpinguan">
+        <item>IT-产品管理/支持</item>
+        <item>技术支持/维护经理</item>
+        <item>技术支持/维护工程师</item>
+        <item>网络管理</item>
+        <item>网络维修</item>
+        <item>计量工程师</item>
+        <item>标准化工程师</item>
+        <item>品质经理</item>
+        <item>系统测试</item>
+        <item>软件测试</item>
+        <item>硬件测试</item>
+        <item>测试员</item>
+        <item>文档工程师</item>
+        <item>配置管理工程师</item>
+        <item>技术文员/助理</item>
+        <item>手机维修</item>
+        <item>电脑维修</item>
+    </string-array>
+
+    <!--通信技术开发及应用-->
+    <string-array name="jobtype_industry_computer_tongxinjishu">
+        <item>通信技术开发及应用</item>
+        <item>通信技术工程师</item>
+        <item>有线传输工程师</item>
+        <item>无线通信工程师</item>
+        <item>电信交换工程师</item>
+        <item>数据通信工程师</item>
+        <item>移动通信工程师</item>
+        <item>电信网络工程师</item>
+        <item>通信电源工程师</item>
+        <item>增值产品开发工程师</item>
+        <item>手机软件开发工程师</item>
+    </string-array>
+
+    <!--电子/电器-->
+    <string-array name="jobtype_industry_computer_dianzibandaoti">
+        <item>电子/电器/半导体/仪器仪表</item>
+        <item>集成电路IC设计/应用工程师</item>
+        <item>IC验证工程师</item>
+        <item>电子工程师/技术员</item>
+        <item>电子技术研发工程师</item>
+        <item>射频工程师</item>
+        <item>电子/电器维修工程师/技师</item>
+        <item>变压器与磁电工程师</item>
+        <item>版图设计工程师</item>
+        <item>电气工程师/技术员</item>
+        <item>电路工程师/技术员</item>
+        <item>电声/音响工程师/技术员</item>
+        <item>激光/光电子技术</item>
+        <item>半导体</item>
+        <item>自动控制工程师/技术员</item>
+        <item>电子软件开发</item>
+        <item>嵌入式软件开发</item>
+        <item>嵌入式硬件开发</item>
+        <item>电池/电源开发</item>
+        <item>FAE现场应用工程师</item>
+        <item>工艺工程师</item>
+        <item>家用电器/数码产品研发</item>
+        <item>仪器/仪表/计量分析师</item>
+        <item>测量工程师?</item>
+        <item>安防系统工程师</item>
+    </string-array>
+
+    <!--///////////////销售/客服/////////////////-->
+    <!--销售管理-->
+    <string-array name="jobtype_industry_sale_guanli">
+        <item>销售管理</item>
+        <item>销售总监</item>
+        <item>销售经理</item>
+        <item>销售主管</item>
+        <item>业务拓展主管/经理</item>
+        <item>渠道/分销总监</item>
+        <item>渠道/分销经理</item>
+        <item>渠道/分销主管</item>
+        <item>大客户管理</item>
+        <item>客户经理/主管</item>
+        <item>区域销售总监</item>
+        <item>区域销售经理</item>
+        <item>团购经理/主管</item>
+    </string-array>
+
+    <!--销售人员-->
+    <string-array name="jobtype_industry_sale_renyuan">
+        <item>销售人员</item>
+        <item>大客户销售</item>
+        <item>销售代表</item>
+        <item>渠道/分销专员</item>
+        <item>客户代表</item>
+        <item>销售工程师</item>
+        <item>电话销售</item>
+        <item>网络/在线销售</item>
+        <item>团购业务员</item>
+        <item>经销商</item>
+        <item>会籍顾问</item>
+        <item>销售助理</item>
+    </string-array>
+
+    <!--销售行政-->
+    <string-array name="jobtype_industry_sale_xingzheng">
+        <item>销售行政及商务</item>
+        <item>销售行政经理/主管</item>
+        <item>销售行政专员/助理</item>
+        <item>业务分析经理/主管</item>
+        <item>业务分析专员/助理</item>
+        <item>商务经理</item>
+        <item>商务主管/专员</item>
+        <item>商务助理</item>
+        <item>销售行政助理</item>
+    </string-array>
+
+    <!--客服及支持-->
+    <string-array name="jobtype_industry_sale_kefu">
+        <item>客服及支持</item>
+        <item>客服经理</item>
+        <item>客服主管</item>
+        <item>客服专员/助理</item>
+        <item>客户关系经理/主管</item>
+        <item>售前/售后技术支持经理</item>
+        <item>售前/售后技术支持主管</item>
+        <item>售前/售后技术支持工程师</item>
+        <item>咨询热线/呼叫中心服务人员</item>
+        <item>网络/在线客服</item>
+        <item>投诉专员</item>
+        <item>VIP专员</item>
+    </string-array>
+
+    <!--/////会计/金融/银行/保险/////-->
+    <string-array name="jobtype_industry_finance_caiwu">
+        <item>财务/审计/税务</item>
+        <item>首席财务官CFO</item>
+        <item>财务总监</item>
+        <item>财务经理</item>
+        <item>财务顾问</item>
+        <item>财务主管/总账主管</item>
+        <item>会计经理/会计主管</item>
+        <item>会计</item>
+        <item>出纳员</item>
+        <item>财务助理/文员</item>
+        <item>固定资产会计</item>
+        <item>财务分析经理/主管</item>
+        <item>财务分析员</item>
+        <item>成本经理/主管</item>
+        <item>成本管理员</item>
+        <item>资金经理/主管</item>
+        <item>资金专员</item>
+        <item>审计经理/主管</item>
+        <item>审计专员/助理</item>
+        <item>税务经理/主管</item>
+        <item>税务专员/助理</item>
+        <item>统计员</item>
+    </string-array>
+
+    <!--金融.证券/期货/投资-->
+    <string-array name="jobtype_industry_finance_jinrong">
+        <item>金融/证券/期货/投资</item>
+        <item>证券/期货/外汇经纪人</item>
+        <item>证券分析师</item>
+        <item>股票/期货操盘手</item>
+        <item>金融/经济研究员</item>
+        <item>金融产品经理</item>
+        <item>金融产品销售</item>
+        <item>投资/基金项目经理</item>
+        <item>投资/理财顾问</item>
+        <item>投资银行业务</item>
+        <item>投资银行财务分析</item>
+        <item>融资经理/主管</item>
+        <item>融资专员</item>
+        <item>风险管理/控制</item>
+        <item>拍卖/担保/典当业务</item>
+    </string-array>
+
+    <!--银行-->
+    <string-array name="jobtype_industry_finance_yinhang">
+        <item>银行</item>
+        <item>行长/副行长</item>
+        <item>银行客户总监</item>
+        <item>个人业务部门经理/主管</item>
+        <item>个人业务客户经理</item>
+        <item>公司业务部门经理/主管</item>
+        <item>公司业务客户经理</item>
+        <item>综合业务经理/主管</item>
+        <item>综合业务专员</item>
+        <item>资产评估/分析</item>
+        <item>风险控制</item>
+        <item>信贷管理</item>
+        <item>信审核查</item>
+        <item>进出口/信用证结算</item>
+        <item>外汇交易</item>
+        <item>清算人员</item>
+        <item>高级客户经理/客户经理</item>
+        <item>客户主管/专员</item>
+        <item>营业部大堂经理</item>
+        <item>信用卡销售</item>
+        <item>呼叫中心客服</item>
+        <item>银行柜员</item>
+    </string-array>
+
+    <!--保险-->
+    <string-array name="jobtype_industry_finance_baoxian">
+        <item>保险</item>
+        <item>保险精算师</item>
+        <item>保险产品开发/项目策划</item>
+        <item>保险业务经理/主管</item>
+        <item>保险经纪人/保险代理</item>
+        <item>理财顾问/财务规划师</item>
+        <item>储备经理人</item>
+        <item>保险电销</item>
+        <item>保险核保</item>
+        <item>保险理赔</item>
+        <item>保险客户服务/续期管理</item>
+        <item>保险培训师</item>
+        <item>保险内勤</item>
+        <item>契约管理</item>
+    </string-array>
+
+    <!--/////生产/营运/采购/物流/////-->
+    <!--生产/营运-->
+    <string-array name="jobtype_industry_production_shengchan">
+        <item>生产/营运</item>
+        <item>工厂经理/厂长</item>
+        <item>总工程师/副总工程好似</item>
+        <item>项目总监</item>
+        <item>项目经理/主管</item>
+        <item>项目工程师</item>
+        <item>营运经理/主管</item>
+        <item>生产总监</item>
+        <item>生产经理/车间主任</item>
+        <item>生产主管</item>
+        <item>生产领班/组长</item>
+        <item>生产计划/物料管理</item>
+        <item>生产文员</item>
+        <item>设备主管</item>
+        <item>化验员</item>
+    </string-array>
+
+    <!--/////公务员/翻译/////-->
+    <!--公务员-->
+    <string-array name="jobtype_industry_translate_gongwuyuan">
+        <item>公务员</item>
+    </string-array>
+
+    <!--翻译-->
+    <string-array name="jobtype_industry_translate_fanyi">
+        <item>翻译</item>
+        <item>英语翻译</item>
+        <item>日语翻译</item>
+        <item>德语翻译</item>
+        <item>法语翻译</item>
+        <item>俄语翻译</item>
+        <item>意大利语翻译</item>
+        <item>西班牙语翻译</item>
+        <item>阿拉伯语翻译</item>
+        <item>韩语/朝鲜语翻译</item>
+        <item>泰语翻译</item>
+        <item>中国方言翻译</item>
+        <item>其他语种翻译</item>
+    </string-array>
+
+    <!--/////环保/农渔牧林业/////-->
+    <!--环保-->
+    <string-array name="jobtype_industry_environment_huanbao">
+        <item>环保</item>
+        <item>环保工程师</item>
+        <item>环境影响评价工程师</item>
+        <item>生态治理.规划</item>
+        <item>环保检测</item>
+        <item>水质检测员</item>
+        <item>水处理工程师</item>
+        <item>固废工程师</item>
+        <item>废气处理工程师</item>
+    </string-array>
+
+    <!--农/林/牧/渔-->
+    <string-array name="jobtype_industry_environment_nonglinmuyu">
+        <item>农/林/牧/渔</item>
+        <item>养殖部主管</item>
+        <item>场长</item>
+        <item>农艺师</item>
+        <item>畜牧师</item>
+        <item>饲养员</item>
+        <item>动物营养/饲料研发</item>
+    </string-array>
+
+    <!--/////兼职/实习培训生/在校生/储备干部/////-->
+    <!--兼职-->
+    <string-array name="jobtype_industry_parttimejob_jianzhi">
+        <item>兼职</item>
+    </string-array>
+
+    <!--储备干部/培训生/实习生-->
+    <string-array name="jobtype_industry_parttimejob_shixisheng">
+        <item>储备干部/培训生/实习生</item>
+        <item>储备干部</item>
+        <item>培训生</item>
+        <item>实习生</item>
+    </string-array>
+
+    <!--在校生-->
+    <string-array name="jobtype_industry_parttimejob_zaixiaosheng">
+        <item>在校生</item>
+        <item>研究生</item>
+        <item>大学/大专应届毕业生</item>
+        <item>中专/职校生</item>
+    </string-array>
+
+    <!--/////宠物/志愿者/////-->
+    <!--驯兽师/助理驯兽师-->
+    <string-array name="jobtype_industry_animal_xunshoushi">
+        <item>驯兽师/助理驯兽师</item>
+    </string-array>
+
+    <!--志愿者/社会工作者-->
+    <string-array name="jobtype_industry_animal_zhiyuanzhe">
+        <item>志愿者/社会工作者</item>
+    </string-array>
+
+    <!--/////其他/////-->
+    <string-array name="jobtype_industry_other_qita">
+        <item>其他</item>
+    </string-array>
+
+    <!--////////////////////////////////////招聘人数///////////////////////////////////////////-->
+    <string-array name="personnumberlist">
+        <item>1人</item>
+        <item>2人</item>
+        <item>3人</item>
+        <item>4人</item>
+        <item>5人</item>
+        <item>6～10人</item>
+        <item>10人以上</item>
+        <item>若干人</item>
+    </string-array>
+
+    <!--///////////////////////////////////////学历//////////////////////////////////////////////-->
+    <string-array name="educationlist">
+        <item>不限</item>
+        <item>小学</item>
+        <item>初中</item>
+        <item>中专</item>
+        <item>高中</item>
+        <item>专科</item>
+        <item>本科</item>
+        <item>硕士</item>
+        <item>博士</item>
+    </string-array>
 </resources>

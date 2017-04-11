@@ -61,6 +61,10 @@
         <activity android:name=".home.parttimejob.EmployPersonActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
             android:theme="@style/PartTimeJobTheme"/>
+        <!--招人-选择职能-->
+        <activity
+            android:name=".home.parttimejob.EmployPersonJobInfoJobTypeActivity"
+            android:theme="@style/PartTimeJobTheme" />
     </application>
 
 </manifest>

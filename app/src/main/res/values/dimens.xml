@@ -55,6 +55,14 @@
     <dimen name="employperson_choosefragment_listviewwidth">100dp</dimen>
     <dimen name="employperson_choosefragment_listitem_textsize">16sp</dimen>
 
+                        <!--///////////EmployPerson jobtype activity 设置////////////-->
+    <dimen name="employperson_jobtypeactivity_list_titleheight">25dp</dimen>
+    <dimen name="employperson_jobtypeactivity_list_itemheight">35dp</dimen>
+    <dimen name="employperson_jobtypeactivity_list_titletextsize">16sp</dimen>
+    <dimen name="employperson_jobtypeactivity_list_itemtextsize">18sp</dimen>
+    <dimen name="employperson_jobtypeactivity_list_itemchoosensize">14sp</dimen>
+    <dimen name="employperson_jobtypeactivity_list_itemimageheight">25dp</dimen>
+
     <!--////////////////////////////////////////////////////////////////////////////////////////-->
 
     <!--////////////////////////////////////////社区fragment设置/////////////////////////////////-->

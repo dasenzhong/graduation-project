@@ -2,6 +2,7 @@ package bishe.dgut.edu.cn.reallygoodapp.home.parttimejob;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -24,7 +25,6 @@ public class EmployPersonActivity extends Activity {
     private EmployPresonJobInfoFragment jobInfoFragment;                                //兼职信息填写模块
     private EmployPersonJobAddressFragment jobAddressFragment;                          //兼职地址填写模块
 
-    private EmployPersonJobInfoJobTypeFragment jobTypeChooseFragment;                   //兼职类型选择模块
     private EmployPersonJobInfoPersonNumberFragment personNumberChooseFragment;         //兼职招聘人数选择模块
     private EmployPersonJobInfoEducationFragment educationChooseFragment;               //兼职学历要求选择模块
 
@@ -40,9 +40,11 @@ public class EmployPersonActivity extends Activity {
             jobInfoFragment = (EmployPresonJobInfoFragment) getFragmentManager().findFragmentByTag("info");
             jobAddressFragment = (EmployPersonJobAddressFragment) getFragmentManager().findFragmentByTag("address");
 
-            jobTypeChooseFragment = (EmployPersonJobInfoJobTypeFragment) getFragmentManager().findFragmentByTag("jobtype");
             personNumberChooseFragment = (EmployPersonJobInfoPersonNumberFragment) getFragmentManager().findFragmentByTag("personnumber");
             educationChooseFragment = (EmployPersonJobInfoEducationFragment) getFragmentManager().findFragmentByTag("education");
+
+            canAddressLayoutClick = savedInstanceState.getBoolean("canAddressLayoutClick");
+            canInfoLayoutClick = savedInstanceState.getBoolean("canInfoLayoutClick");
         }
 
         showJobInfoFragment();
@@ -103,18 +105,6 @@ public class EmployPersonActivity extends Activity {
             }
         });
 
-        //兼职类型选择模块
-        if (jobTypeChooseFragment == null) {
-            jobTypeChooseFragment = new EmployPersonJobInfoJobTypeFragment();
-        }
-        jobTypeChooseFragment.setOnLayoutClickListener(new EmployPersonJobInfoJobTypeFragment.OnLayoutClickListener() {
-            @Override
-            public void onLayoutClick() {
-                if (jobTypeChooseFragment.isAdded() && jobTypeChooseFragment != null) {
-                    getFragmentManager().beginTransaction().remove(jobTypeChooseFragment).commit();
-                }
-            }
-        });
 
         //兼职招聘人数选择模块
         if (personNumberChooseFragment == null) {
@@ -128,6 +118,12 @@ public class EmployPersonActivity extends Activity {
                 }
             }
         });
+        personNumberChooseFragment.setOkClickListener(new EmployPersonJobInfoPersonNumberFragment.OnOkClickListener() {
+            @Override
+            public void onOkClick(String personNumberText) {
+                jobInfoFragment.setPersonNumberViewText(personNumberText);
+            }
+        });
 
         //兼职学历要求选择模块
         if (educationChooseFragment == null) {
@@ -139,6 +135,12 @@ public class EmployPersonActivity extends Activity {
                 if (educationChooseFragment.isAdded() && educationChooseFragment != null) {
                     getFragmentManager().beginTransaction().remove(educationChooseFragment).commit();
                 }
+            }
+        });
+        educationChooseFragment.setOnOkClickListener(new EmployPersonJobInfoEducationFragment.OnOkClickListener() {
+            @Override
+            public void onOkClick(String educationText) {
+                jobInfoFragment.setEducationViewText(educationText);
             }
         });
     }
@@ -174,7 +176,7 @@ public class EmployPersonActivity extends Activity {
             public void onShowChooseFragment(View view) {
                 switch (view.getId()) {
                     case R.id.employperson_info_jobtype:                //弹出类型模块
-                        showChooseFragment(jobTypeChooseFragment, "jobtype");
+                        startActivityForResult(new Intent(EmployPersonActivity.this, EmployPersonJobInfoJobTypeActivity.class), getResources().getInteger(R.integer.JOBTYPE_REQUESTCODE));
                         break;
                     case R.id.employperson_info_personnumber:           //弹出人数模块
                         showChooseFragment(personNumberChooseFragment, "personnumber");
@@ -216,11 +218,25 @@ public class EmployPersonActivity extends Activity {
      * @param fragment 要显示的fragment
      * @param tag      标记
      */
-    private void showChooseFragment(Fragment fragment,String tag) {
+    private void showChooseFragment(Fragment fragment, String tag) {
         if (fragment.isAdded()) {
             getFragmentManager().beginTransaction().show(fragment).commit();
         } else {
             getFragmentManager().beginTransaction().add(R.id.employperson_container_choose, fragment, tag).commit();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == getResources().getInteger(R.integer.JOBTYPE_REQUESTCODE)) {
+            if (resultCode == getResources().getInteger(R.integer.JOBTYPE_RESULTCODE)) {
+                String text = data.getStringExtra("choosetext");
+                if (text.isEmpty()) {
+                    jobInfoFragment.setJobTypeViewText("");
+                } else {
+                    jobInfoFragment.setJobTypeViewText(text);
+                }
+            }
         }
     }
 
@@ -230,5 +246,12 @@ public class EmployPersonActivity extends Activity {
         if (inputMethodManager.isActive()) {
             inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT, InputMethodManager.HIDE_NOT_ALWAYS);
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean("canAddressLayoutClick",canAddressLayoutClick);
+        outState.putBoolean("canInfoLayoutClick", canInfoLayoutClick);
+        super.onSaveInstanceState(outState);
     }
 }

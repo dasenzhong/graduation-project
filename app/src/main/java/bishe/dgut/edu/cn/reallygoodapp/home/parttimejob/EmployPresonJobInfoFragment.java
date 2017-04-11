@@ -21,6 +21,13 @@ public class EmployPresonJobInfoFragment extends Fragment {
 
     private View view;
 
+    private EditText jobNameView;
+    private EditText momeyView;
+    private EditText describe;
+    private TextView personNumberView;
+    private TextView educationView;
+    private TextView jobTypeView;
+
     interface OnShowChooseFragmentListener {
         void onShowChooseFragment(View view);
     }
@@ -35,16 +42,16 @@ public class EmployPresonJobInfoFragment extends Fragment {
             view = inflater.inflate(R.layout.fragment_employperson_info, container, false);
 
             //兼职名
-            EditText jobNameView = (EditText) view.findViewById(R.id.employperson_info_jobname);
+            jobNameView = (EditText) view.findViewById(R.id.employperson_info_jobname);
 
             //兼职薪酬
-            EditText momeyView = (EditText) view.findViewById(R.id.employperson_info_momey);
+            momeyView = (EditText) view.findViewById(R.id.employperson_info_momey);
 
             //兼职描述
-            EditText describe = (EditText) view.findViewById(R.id.employperson_info_describe);
+            describe = (EditText) view.findViewById(R.id.employperson_info_describe);
 
             //兼职类型
-            TextView jobTypeView = (TextView) view.findViewById(R.id.employperson_info_jobtype);
+            jobTypeView = (TextView) view.findViewById(R.id.employperson_info_jobtype);
             jobTypeView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -53,7 +60,7 @@ public class EmployPresonJobInfoFragment extends Fragment {
             });
 
             //兼职招聘人数
-            TextView personNumberView = (TextView) view.findViewById(R.id.employperson_info_personnumber);
+            personNumberView = (TextView) view.findViewById(R.id.employperson_info_personnumber);
             personNumberView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -62,13 +69,22 @@ public class EmployPresonJobInfoFragment extends Fragment {
             });
 
             //兼职要求学历
-            TextView educationView = (TextView) view.findViewById(R.id.employperson_info_education);
+            educationView = (TextView) view.findViewById(R.id.employperson_info_education);
             educationView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     showChooseFragment(v);
                 }
             });
+
+            if (savedInstanceState != null) {
+                jobNameView.setText(savedInstanceState.getString("jobNameView"));
+                jobTypeView.setText(savedInstanceState.getString("jobTypeView"));
+                educationView.setText(savedInstanceState.getString("educationView"));
+                personNumberView.setText(savedInstanceState.getString("personNumberView"));
+                describe.setText(savedInstanceState.getString("describe"));
+                momeyView.setText(savedInstanceState.getString("momeyView"));
+            }
 
         }
 
@@ -77,6 +93,18 @@ public class EmployPresonJobInfoFragment extends Fragment {
 
     public void setOnShowChooseFragmentListener(OnShowChooseFragmentListener onShowChooseFragmentListener) {
         this.onShowChooseFragmentListener = onShowChooseFragmentListener;
+    }
+
+    public void setJobTypeViewText(String text) {
+        jobTypeView.setText(text);
+    }
+
+    public void setPersonNumberViewText(String text) {
+        personNumberView.setText(text);
+    }
+
+    public void setEducationViewText(String text) {
+        educationView.setText(text);
     }
 
     /**
@@ -92,4 +120,14 @@ public class EmployPresonJobInfoFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putString("jobNameView", jobNameView.getText().toString());
+        outState.putString("momeyView", momeyView.getText().toString());
+        outState.putString("describe", describe.getText().toString());
+        outState.putString("personNumberView", personNumberView.getText().toString());
+        outState.putString("educationView", educationView.getText().toString());
+        outState.putString("jobTypeView", jobTypeView.getText().toString());
+        super.onSaveInstanceState(outState);
+    }
 }

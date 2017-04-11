@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/employperson_jobtypeactivity_list_itemheight"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/employperson_jobtypeactvity_list_item_industryname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:text="行业名"
+            android:textColor="@color/gray_80"
+            android:textSize="@dimen/employperson_jobtypeactivity_list_itemtextsize" />
+
+        <ImageView
+            android:id="@+id/employperson_jobtypeactvity_list_item_forward"
+            android:layout_width="@dimen/employperson_jobtypeactivity_list_itemimageheight"
+            android:layout_height="@dimen/employperson_jobtypeactivity_list_itemimageheight"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/forward_40gray" />
+
+        <TextView
+            android:id="@+id/employperson_jobtypeactvity_list_item_chosentext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@id/employperson_jobtypeactvity_list_item_forward"
+            android:text="已选择"
+            android:textColor="@color/gray_50"
+            android:textSize="@dimen/employperson_jobtypeactivity_list_itemchoosensize"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</FrameLayout>

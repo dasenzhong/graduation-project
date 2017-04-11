@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/employperson_jobtypeactivity_list_titleheight">
+
+        <TextView
+            android:id="@+id/employperson_jobtypeactvity_list_title_industryname"
+            android:text="行业名"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:textSize="@dimen/employperson_jobtypeactivity_list_titletextsize"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</FrameLayout>
