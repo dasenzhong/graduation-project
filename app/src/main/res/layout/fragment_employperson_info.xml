@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <ScrollView
+        android:id="@+id/employperson_info_scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
@@ -41,7 +42,7 @@
                     android:background="@color/transparent"
                     android:gravity="center_vertical"
                     android:hint="@string/employperson_infofargment_jobname_hint"
-                    android:imeOptions="actionNone"
+                    android:imeOptions="actionDone"
                     android:inputType="text"
                     android:maxLength="15"
                     android:maxLines="1"
@@ -117,6 +118,7 @@
 
             <!--学历要求-->
             <LinearLayout
+                android:id="@+id/employperson_info_educationlayout"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/employperson_infofragment_layoutheight"
                 android:layout_marginTop="10dp"
@@ -149,6 +151,7 @@
 
             <!--工资-->
             <LinearLayout
+                android:id="@+id/employperson_info_moneylayout"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/employperson_infofragment_layoutheight"
                 android:layout_marginTop="10dp"
@@ -166,19 +169,30 @@
                     android:textSize="@dimen/employperson_infofragment_textsize" />
 
                 <EditText
-                    android:id="@+id/employperson_info_momey"
+                    android:id="@+id/employperson_info_money"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:background="@color/transparent"
                     android:hint="@string/employperson_infofragment_payment_hint"
-                    android:imeOptions="actionNone"
+                    android:imeOptions="actionDone"
                     android:inputType="number"
                     android:maxLength="5"
                     android:maxLines="1"
                     android:textColor="@color/black"
                     android:textColorHint="@color/gray_50"
                     android:textSize="@dimen/employperson_infofragment_textsize" />
+
+                <Spinner
+                    android:id="@+id/employperson_info_moneyunit"
+                    android:spinnerMode="dropdown"
+                    android:padding="0dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:entries="@array/moneyunit">
+
+                </Spinner>
 
             </LinearLayout>
 
@@ -206,8 +220,7 @@
                     android:background="@color/transparent"
                     android:gravity="start"
                     android:hint="@string/employperson_addressfragment_request_hint"
-                    android:imeOptions="actionNone"
-                    android:inputType="text"
+                    android:inputType="textMultiLine"
                     android:textColor="@color/black"
                     android:textColorHint="@color/gray_50"
                     android:textSize="@dimen/employperson_infofragment_textsize" />
@@ -218,12 +231,14 @@
     </ScrollView>
 
     <ImageView
+        android:id="@+id/employperson_info_totop"
         android:layout_width="@dimen/totop"
         android:layout_height="@dimen/totop"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="50dp"
         android:layout_marginEnd="20dp"
+        android:visibility="gone"
         android:src="@drawable/back_to_top" />
 
 </RelativeLayout>

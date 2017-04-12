@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/employperson_address_mainlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray_25">
@@ -26,16 +27,15 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/employperson_addressfragment_textsize" />
 
-            <EditText
+            <TextView
+                android:id="@+id/employperson_address_area"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:background="@color/transparent"
+                android:gravity="center_vertical"
                 android:hint="@string/employperson_addressfragment_recruitaddress_hint"
-                android:imeOptions="actionNone"
-                android:inputType="text"
-                android:maxLength="5"
-                android:maxLines="1"
+                android:textColor="@color/black"
                 android:textColorHint="@color/gray_50"
                 android:textSize="@dimen/employperson_addressfragment_textsize" />
 
@@ -64,16 +64,15 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/employperson_addressfragment_textsize" />
 
-                <EditText
+                <TextView
+                    android:id="@+id/employperson_address_workplace"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:background="@color/transparent"
+                    android:gravity="center_vertical"
                     android:hint="@string/employperson_addressfragment_address_hint"
-                    android:imeOptions="actionNone"
-                    android:inputType="text"
-                    android:maxLength="5"
-                    android:maxLines="1"
+                    android:textColor="@color/black"
                     android:textColorHint="@color/gray_50"
                     android:textSize="@dimen/employperson_addressfragment_textsize" />
 
@@ -95,17 +94,17 @@
                 </FrameLayout>
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/employperson_address_detailworkplace"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:background="@color/transparent"
                     android:gravity="start"
                     android:hint="@string/employperson_addressfragment_address_hint_detail"
-                    android:imeOptions="actionNone"
-                    android:inputType="text"
+                    android:inputType="textMultiLine"
                     android:maxLength="50"
                     android:maxLines="4"
+                    android:textColor="@color/black"
                     android:textColorHint="@color/gray_50"
                     android:textSize="@dimen/employperson_addressfragment_textsize" />
 
@@ -113,18 +112,19 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
 
             <CheckBox
-                android:checked="true"
-                android:textSize="@dimen/employperson_addressfragment_textsize_notice"
-                android:text="@string/employperson_addressfragment_noticestudent"
+                android:id="@+id/employperson_address_noticebox"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/employperson_addressfragment_noticestudent"
+                android:textSize="@dimen/employperson_addressfragment_textsize_notice" />
 
         </LinearLayout>
 

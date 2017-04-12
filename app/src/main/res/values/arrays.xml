@@ -728,4 +728,13 @@
         <item>硕士</item>
         <item>博士</item>
     </string-array>
+
+    <!--/////////////////////////////////////////薪酬单位////////////////////////////////////////-->
+    <string-array name="moneyunit">
+        <item>/小时</item>
+        <item>/天</item>
+        <item>/周</item>
+        <item>/月</item>
+        <item>/次</item>
+    </string-array>
 </resources>

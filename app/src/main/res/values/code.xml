@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--选择工作类型///////请求码和结果码-->
-    <integer name="JOBTYPE_REQUESTCODE">0x1030</integer>
-    <integer name="JOBTYPE_RESULTCODE">0x1031</integer>
+    <integer name="JOBTYPE_REQUESTCODE">0x1031</integer>
+    <integer name="JOBTYPE_RESULTCODE">0x1030</integer>
+
+    <!--选择工作地点/////chooseplace-->
+    <integer name="CHOOSEPLACE_REQUESTCODE_AREA">0x0011</integer>
+    <integer name="CHOOSEPLACE_REQUESTCODE_WORKPLACE">0x0012</integer>
+    <integer name="CHOOSEPLACE_RESULTCODE">0x0010</integer>
 </resources>

@@ -76,6 +76,7 @@
     <string name="employperson_infofragment_type">类别：</string>
     <string name="employperson_infofragment_type_hint">该兼职的类别</string>
     <string name="employperson_infofragment_jobtypeactivity_actionbar_title">选择类型</string>
+    <string name="employperson_infofragment_jobtypeactivity_actionbar_ok">确定</string>
     <string name="employperson_addressfragment_address">工作地址：</string>
     <string name="employperson_addressfragment_address_hint">省/市(县)/镇</string>
     <string name="employperson_addressfragment_address_hint_detail">详细地址</string>
@@ -85,6 +86,8 @@
     <string name="employperson_addressfragment_noticestudent">通知成为好友的在校生</string>
     <string name="employperson_choosefragment_cancel">取消</string>
     <string name="employperson_choosefragment_ok">确定</string>
-    <string name="employperson_jobtypeactivity_ok">确定</string>
+
+    <!--选择地区activity-->
+    <string name="chooseplaceactivity_actionbar_title">选择地区</string>
 
 </resources>

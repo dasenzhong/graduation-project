@@ -65,6 +65,10 @@
         <activity
             android:name=".home.parttimejob.EmployPersonJobInfoJobTypeActivity"
             android:theme="@style/PartTimeJobTheme" />
+        <!--选择地址activity-->
+        <activity
+            android:name=".module.chooseplace.ChoosePlaceActivity"
+            android:theme="@style/ChoosePlaceTheme" />
     </application>
 
 </manifest>

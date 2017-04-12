@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,8 +53,8 @@ public class EmployPersonJobInfoJobTypeDetailFragment extends Fragment {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     clickPosition = position;
-                    Log.d("clicktext----", detailStringList.get(position));
-                    Log.d("position----", "" + clickPosition);
+//                    Log.d("clicktext----", detailStringList.get(position));
+//                    Log.d("position----", "" + clickPosition);
                     detailListAdapter.notifyDataSetChanged();
                 }
             });
@@ -108,10 +107,10 @@ public class EmployPersonJobInfoJobTypeDetailFragment extends Fragment {
 
             if (position == clickPosition) {
                 convertView.setBackgroundColor(ContextCompat.getColor(parent.getContext(), R.color.gray_30));
-                Log.d("setblack---", "true");
+//                Log.d("setblack---", "true");
             } else {
                 convertView.setBackgroundColor(ContextCompat.getColor(parent.getContext(), R.color.white));
-                Log.d("setblack---", "false");
+//                Log.d("setblack---", "false");
             }
 
 
