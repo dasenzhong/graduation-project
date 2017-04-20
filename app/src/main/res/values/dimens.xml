@@ -16,7 +16,13 @@
     <!--////////////////////////////////////////首页fragment设置/////////////////////////////////-->
     <dimen name="home_navigation_imagesize">50dp</dimen>
     <dimen name="home_navigation_textsize">12sp</dimen>
-    <dimen name="home_hot_textsize">16sp</dimen>
+    <dimen name="home_hot_textsize">14sp</dimen>
+
+                                <!--/////////////////热门兼职//////////////////-->
+    <dimen name="home_listhead_hot_joblist_jobname_textsize">16sp</dimen>
+    <dimen name="home_listhead_hot_joblist_itemheight">35dp</dimen>
+    <dimen name="home_listhead_hot_joblist_money_textsize">14sp</dimen>
+    <dimen name="home_listhead_hot_joblist_imageheight">20dp</dimen>
 
     <!--////////////////////////////////////////////////////////////////////////////////////////-->
 
@@ -29,6 +35,20 @@
     <dimen name="parttimejob_navigation">50dp</dimen>
     <dimen name="parttimejob_navigation_image">30dp</dimen>
     <dimen name="parttimejob_navigation_textsize">10sp</dimen>
+
+    <dimen name="parttimejob_recyclerview_item_jobname">16sp</dimen>
+    <dimen name="parttimejob_recyclerview_item_company">14sp</dimen>
+    <dimen name="parttimejob_recyclerview_item_money">12sp</dimen>
+    <dimen name="parttimejob_recyclerview_item_workplace">12sp</dimen>
+    <dimen name="parttimejob_recyclerview_item_education">10sp</dimen>
+    <dimen name="parttimejob_recyclerview_item_companytype">10sp</dimen>
+    <dimen name="parttimejob_recyclerview_item_time">10sp</dimen>
+    <dimen name="parttimejob_recyclerview_item_describe">10sp</dimen>
+
+    <dimen name="parttimejob_recyclerview_item_clickwidth">40dp</dimen>
+    <dimen name="parttimejob_recyclerview_item_clickviewheight">30dp</dimen>
+    <dimen name="parttimejob_recyclerview_item_forwardwidth">30dp</dimen>
+    <dimen name="parttimejob_recyclerview_item_imageheight">25dp</dimen>
 
                         <!--///////////////////switch  fragment设置//////////////////-->
     <dimen name="parttimejob_switchfragment_itemtextsize">14sp</dimen>

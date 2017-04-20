@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import bishe.dgut.edu.cn.reallygoodapp.JobInfoActivity;
 import bishe.dgut.edu.cn.reallygoodapp.R;
 import bishe.dgut.edu.cn.reallygoodapp.api.GetAppSize;
 import bishe.dgut.edu.cn.reallygoodapp.home.experience.HomeExperienceActivity;
@@ -136,6 +138,12 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
             ListView hotJobList = (ListView) listHead_navigation.findViewById(R.id.home_listhead_hot_joblist);
             hotJobList.setAdapter(hotJobListAdapter);
             getListViewHeight(hotJobList);                  //listview嵌套listview，要重新计算listview的高度,item子项父布局必须为linearlayout
+            hotJobList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    startActivity(new Intent(getActivity(), JobInfoActivity.class));
+                }
+            });
 
             //人气公司
             ListView hotCompanyList = (ListView) listHead_navigation.findViewById(R.id.home_listhead_hot_companylist);
@@ -170,7 +178,7 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
     }
 
 
-    BaseAdapter listViewAdapter = new BaseAdapter() {
+    private BaseAdapter listViewAdapter = new BaseAdapter() {
         @Override
         public int getCount() {
             return stringList.size();
@@ -200,7 +208,10 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
         }
     };
 
-    BaseAdapter hotJobListAdapter = new BaseAdapter() {
+    /**
+     * 热门兼职列表
+     */
+    private BaseAdapter hotJobListAdapter = new BaseAdapter() {
         @Override
         public int getCount() {
             return hotJobStringList.size();
@@ -223,14 +234,14 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
                 convertView = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_home_listhead_navigation_hot_joblist_item, null);
             }
 
-            TextView textView = (TextView) convertView.findViewById(R.id.home_listhead_hot_joblist_text);
-            textView.setText("" + getItem(position) + position);
+            TextView jobName = (TextView) convertView.findViewById(R.id.home_listhead_hot_joblist_jobname);
+            TextView money = (TextView) convertView.findViewById(R.id.home_listhead_hot_joblist_money);
 
             return convertView;
         }
     };
 
-    BaseAdapter hotCompanyListAdapter = new BaseAdapter() {
+    private BaseAdapter hotCompanyListAdapter = new BaseAdapter() {
         @Override
         public int getCount() {
             return hotCompanyStringList.size();
@@ -260,11 +271,20 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
         }
     };
 
+
     @Override
     public void onScrollStateChanged(AbsListView view, int scrollState) {
 
     }
 
+
+    /**
+     * 滚动监听
+     * @param view  监听的父容器
+     * @param firstVisibleItem  第一个可见item项
+     * @param visibleItemCount  可见item的总数
+     * @param totalItemCount    全部item的数量
+     */
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 
@@ -288,6 +308,10 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
 
     }
 
+    /**
+     * 重新计量listview的高度
+     * @param listView  要测量的listview
+     */
     private void getListViewHeight(ListView listView) {
         ListAdapter listAdapter = listView.getAdapter();        //获取测量listview的适配器
 

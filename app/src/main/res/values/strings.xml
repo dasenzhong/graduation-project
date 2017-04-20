@@ -45,6 +45,8 @@
     <string name="home_navigation_text_experiwnce">经验攻略</string>
     <string name="home_navigation_text_organization">校园社团</string>
     <string name="home_hot_parttimejob">热门兼职</string>
+    <string name="home_hot_parttimejob_jobname">兼职名</string>
+    <string name="home_hot_parttimejob_money">薪酬</string>
     <string name="home_hot_company">人气公司</string>
 
     <!--兼职activity-->
@@ -57,6 +59,15 @@
     <string name="parttimejob_switch_detail_simple">简洁</string>
     <string name="parttimejob_switch_switch">筛选</string>
     <string name="parttimejob_switch_detail_complex">详细</string>
+
+    <string name="parttimejob_recyclerview_item_jobname">工作名</string>
+    <string name="parttimejob_recyclerview_item_company">公司名</string>
+    <string name="parttimejob_recyclerview_item_money">薪酬</string>
+    <string name="parttimejob_recyclerview_item_workplace">工作市镇</string>
+    <string name="parttimejob_recyclerview_item_education">学历</string>
+    <string name="parttimejob_recyclerview_item_companytype">公司类型</string>
+    <string name="parttimejob_recyclerview_item_time">发布时间</string>
+    <string name="parttimejob_recyclerview_item_describe">描述</string>
 
     <!--发布兼职employpersonactivity-->
     <string name="employperson_actionbar_titile">发布兼职</string>

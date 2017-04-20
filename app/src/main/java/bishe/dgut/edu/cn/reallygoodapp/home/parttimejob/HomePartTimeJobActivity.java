@@ -20,7 +20,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import bishe.dgut.edu.cn.reallygoodapp.JobInfoActivity;
 import bishe.dgut.edu.cn.reallygoodapp.R;
+import bishe.dgut.edu.cn.reallygoodapp.module.applyclickview.ApplyClickView;
 
 /**
  * Created by Administrator on 2017/3/20.
@@ -160,6 +162,9 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
         });
     }
 
+    /**
+     * 选择地址栏
+     */
     private void choosePlace() {
         if (switchPlaceFragment == null) {
             switchPlaceFragment = new PartTimeJobSwitchPlaceFragment();
@@ -189,23 +194,47 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
 
         @Override
         public PartTimeJobViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            PartTimeJobViewHolder partTimeJobViewHolder = new PartTimeJobViewHolder(
+            return new PartTimeJobViewHolder(
                     LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_parttimejob_listitem, parent, false)
             );
-            return partTimeJobViewHolder;
         }
 
         @Override
-        public void onBindViewHolder(PartTimeJobViewHolder holder, int position) {
-            holder.textView.setText("" + stringList.get(position) + position);
+        public void onBindViewHolder(PartTimeJobViewHolder holder, final int position) {
+
+            //点击item处理
+            holder.itemLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(HomePartTimeJobActivity.this, JobInfoActivity.class));
+                }
+            });
+
+            //点击选择框处理
+            holder.checkbox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ApplyClickView view = (ApplyClickView) v;
+                        view.toggle();
+//                    if (view.isChecked()) {
+//                        Log.d("选择：", "" + position);
+//                    } else {
+//                        Log.d("取消选择：", "" + position);
+//                    }
+                }
+            });
+
+            holder.jobName.setText("" + stringList.get(position) + position);
             if (isdetail) {
-                holder.jobName.setVisibility(View.VISIBLE);
-                holder.jobName.setText("" + stringList.get(position) + position);
+                holder.detailLayout.setVisibility(View.VISIBLE);
             } else {
-                holder.jobName.setVisibility(View.GONE);
+                holder.detailLayout.setVisibility(View.GONE);
             }
         }
 
+        /**
+         * @return 返回总数
+         */
         @Override
         public int getItemCount() {
             return stringList.size();
@@ -218,13 +247,35 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
      */
     private static class PartTimeJobViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView textView;
         private TextView jobName;
+        private TextView money;
+        private TextView company;
+        private TextView workPlace;
+        private TextView education;
+        private TextView companyType;
+        private TextView createTime;
+        private TextView describe;
 
-        public PartTimeJobViewHolder(View itemView) {
+        private LinearLayout itemLayout;
+        private LinearLayout detailLayout;
+
+        private ApplyClickView checkbox;
+
+        PartTimeJobViewHolder(View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.home_parttimejob_recyclerview_item_text);
-            jobName = (TextView) itemView.findViewById(R.id.home_parttimejob_recyclerview_item_name);
+            jobName = (TextView) itemView.findViewById(R.id.home_parttimejob_recyclerview_item_jobname);
+            money = (TextView) itemView.findViewById(R.id.home_parttimejob_recyclerview_item_money);
+            company = (TextView) itemView.findViewById(R.id.home_parttimejob_recyclerview_item_company);
+            workPlace = (TextView) itemView.findViewById(R.id.home_parttimejob_recyclerview_item_workplace);
+            education = (TextView) itemView.findViewById(R.id.home_parttimejob_recyclerview_item_education);
+            companyType = (TextView) itemView.findViewById(R.id.home_parttimejob_recyclerview_item_companytype);
+            createTime = (TextView) itemView.findViewById(R.id.home_parttimejob_recyclerview_item_time);
+            describe = (TextView) itemView.findViewById(R.id.home_parttimejob_recyclerview_item_describe);
+
+            itemLayout = (LinearLayout) itemView.findViewById(R.id.home_parttimejob_recyclerview_itemlayout);
+            detailLayout = (LinearLayout) itemView.findViewById(R.id.home_parttimejob_recyclerview_item_detaillayout);
+
+            checkbox = (ApplyClickView) itemView.findViewById(R.id.home_parttimejob_recyclerview_item_checkbox);
         }
     }
 
@@ -246,7 +297,7 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
          *
          * @param divider item间的间距
          */
-        public PartTimeJobItemDecoration(int divider) {
+        PartTimeJobItemDecoration(int divider) {
             this.divider = divider;
         }
 
@@ -294,10 +345,9 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
         @Override
         public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
 
-            if (parent.getChildAdapterPosition(view) == parent.getAdapter().getItemCount() - 1) {
-                return;
+            if (!(parent.getChildAdapterPosition(view) == parent.getAdapter().getItemCount() - 1)) {
+                outRect.set(0, 0, 0, divider);
             }
-            outRect.set(0, 0, 0, divider);
         }
     }
 
