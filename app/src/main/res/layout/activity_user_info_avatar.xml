@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/userinfo_avatar_mainlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--actionbar-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionbarheight"
+            android:background="@color/black">
+
+            <LinearLayout
+                android:id="@+id/userinfo_avatar_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/actionbar_imageheight_small"
+                    android:layout_height="@dimen/actionbar_imageheight_small"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/back_white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/user_info_actionbar_title"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/actionbar_textviewtextsize" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/user_info_avatar_actionbar_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbar_titletextsize" />
+
+            <ImageView
+                android:id="@+id/userinfo_avatar_more"
+                android:layout_width="@dimen/actionbar_imageheight"
+                android:layout_height="@dimen/actionbar_imageheight"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/userinfo_avatar_more" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+
+            <bishe.dgut.edu.cn.reallygoodapp.module.avatarview.ChangeAvatarView
+                android:id="@+id/userinfo_avatar_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:scaleType="fitCenter" />
+
+
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

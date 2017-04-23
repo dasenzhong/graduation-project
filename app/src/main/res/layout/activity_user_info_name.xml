@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_15"
+    android:orientation="vertical">
+
+    <!--actionbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarheight"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:id="@+id/userinfo_name_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/actionbar_imageheight_small"
+                android:layout_height="@dimen/actionbar_imageheight_small"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/user_info_actionbar_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbar_textviewtextsize" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/user_info_name_actionbar_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_titletextsize" />
+
+        <Button
+            android:id="@+id/userinfo_name_ok"
+            android:layout_width="@dimen/userinfo_name_okwidth"
+            android:layout_height="@dimen/userinfo_name_okheight"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:padding="0dp"
+            android:text="@string/user_info_name_actionbar_ok" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userinfo_name_inputheight"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/userinfo_name_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:hint="@string/user_info_name_input_hint"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxEms="15"
+            android:maxLines="1"
+            android:textColor="@color/black" />
+
+    </FrameLayout>
+
+</LinearLayout>

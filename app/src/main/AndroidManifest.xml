@@ -18,7 +18,7 @@
         </activity>
         <!--个人信息-->
         <activity
-            android:name=".user.UserInfoActivity"
+            android:name=".user.info.UserInfoActivity"
             android:theme="@style/UserActivityTheme" />
         <!--我的分享-->
         <activity
@@ -70,6 +70,18 @@
             android:name=".module.chooseplace.ChoosePlaceActivity"
             android:theme="@style/ChoosePlaceTheme" />
         <activity android:name=".JobInfoActivity" />
+        <!--用户头像修改-->
+        <activity
+            android:name=".user.info.AvatarActivity"
+            android:theme="@style/UserActivityTheme" />
+        <!--用户昵称修改-->
+        <activity
+            android:name=".user.info.NameActivity"
+            android:theme="@style/UserActivityTheme" />
+        <!--个性签名修改-->
+        <activity
+            android:name=".user.info.LogActivity"
+            android:theme="@style/UserActivityTheme" />
     </application>
 
 </manifest>

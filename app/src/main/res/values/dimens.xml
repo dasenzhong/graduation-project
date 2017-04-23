@@ -116,6 +116,20 @@
     <dimen name="usersetting_cell_forward">20dp</dimen>
     <dimen name="usersetting_cell_image">15dp</dimen>
 
+    <!--userInfo的头像设置-->
+    <dimen name="userinfo_avatar_more_layoutheight">35dp</dimen>
+    <dimen name="userinfo_avatar_more_textsize">18sp</dimen>
+
+    <!--userinfo的昵称设置-->
+    <dimen name="userinfo_name_okheight">32dp</dimen>
+    <dimen name="userinfo_name_okwidth">55dp</dimen>
+    <dimen name="userinfo_name_inputheight">40dp</dimen>
+
+    <!--userinfo的个性签名设置-->
+    <dimen name="userinfo_log_okheight">32dp</dimen>
+    <dimen name="userinfo_log_okwidth">55dp</dimen>
+    <dimen name="userinfo_log_inputheight">40dp</dimen>
+
     <!--userSetting的关于-->
     <dimen name="usersetting_about_text">18sp</dimen>
 
@@ -129,6 +143,31 @@
 
     <!--////////////////////////////////////////////////////////////////////////////////////////-->
 
+    <!--////////////////////////////////////////工作信息activity/////////////////////////////////-->
+    <dimen name="jobinfo_jobname">16sp</dimen>
+    <dimen name="jobinfo_money">16sp</dimen>
+    <dimen name="jobinfo_time">12sp</dimen>
+    <dimen name="jobinfo_workplace">12sp</dimen>
+    <dimen name="jobinfo_employperson">14sp</dimen>
+    <dimen name="jobinfo_education">14sp</dimen>
+    <dimen name="jobinfo_workplace_detail">14sp</dimen>
+    <dimen name="jobinfo_companyname">16sp</dimen>
+    <dimen name="jobinfo_companytype">14sp</dimen>
+    <dimen name="jobinfo_compangperson">14sp</dimen>
+    <dimen name="jobinfo_companyindustry">14sp</dimen>
+    <dimen name="jobinfo_describe">14sp</dimen>
+    <dimen name="jobinfo_describe_title">14sp</dimen>
+    <dimen name="jobinfo_imageheight">13dp</dimen>
+    <dimen name="jobinfo_bottomlayout">50dp</dimen>
+    <dimen name="jobinfo_imagebottom">30dp</dimen>
+    <dimen name="jobinfo_bottomtext">18sp</dimen>
+
+                        <!--//////////////jobinfo apply fragment//////////////-->
+    <dimen name="jobinfo_apply_layoutheight">35dp</dimen>
+    <dimen name="jobinfo_apply_layoutwidth">200dp</dimen>
+    <dimen name="jobinfo_apply_textsize">18sp</dimen>
+
+    <!--////////////////////////////////////////////////////////////////////////////////////////-->
 
     <!--回到顶部按钮-->
     <dimen name="totop">30dp</dimen>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/jobinfo_apply_mainlayout"
+    android:background="@color/black_alpha_50"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/jobinfo_apply_agentlayout"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/jobinfo_apply_jobbackground"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="@dimen/jobinfo_apply_layoutwidth"
+            android:layout_height="@dimen/jobinfo_apply_layoutheight">
+
+            <TextView
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:text="@string/jobinfo_apply_job"
+                android:textSize="@dimen/jobinfo_apply_textsize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/jobinfo_apply_joblayout"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/jobinfo_apply_agentbackground"
+            android:layout_width="@dimen/jobinfo_apply_layoutwidth"
+            android:layout_height="@dimen/jobinfo_apply_layoutheight">
+
+            <TextView
+                android:text="@string/jobinfo_apply_agent"
+                android:textSize="@dimen/jobinfo_apply_textsize"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

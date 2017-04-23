@@ -1,12 +1,373 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/jobinfo_mainlayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:text="工作信息"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionbarheight"
+            android:background="@color/black_blue">
+
+            <ImageView
+                android:id="@+id/jobinfo_back"
+                android:layout_width="@dimen/actionbar_imageheight"
+                android:layout_height="@dimen/actionbar_imageheight"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/jobinfo_actionbartitle"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbar_titletextsize" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/gray_20">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/jobinfo_jobname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxEms="13"
+                            android:text="@string/jobinfo_jobname"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/jobinfo_jobname" />
+
+                        <TextView
+                            android:id="@+id/jobinfo_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:maxLines="1"
+                            android:text="@string/jobinfo_time"
+                            android:textColor="@color/gray_60"
+                            android:textSize="@dimen/jobinfo_time" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:id="@+id/jobinfo_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:text="@string/jobinfo_money"
+                            android:textColor="@color/orange_red_light"
+                            android:textSize="@dimen/jobinfo_money" />
+
+                        <TextView
+                            android:id="@+id/jobinfo_workplace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:maxLines="1"
+                            android:text="@string/jobinfo_workplace"
+                            android:textColor="@color/gray_60"
+                            android:textSize="@dimen/jobinfo_workplace" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/jobinfo_imageheight"
+                            android:layout_height="@dimen/jobinfo_imageheight"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/jobinfo_employperson" />
+
+                        <TextView
+                            android:id="@+id/jobinfo_employperson"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/jobinfo_employperson"
+                            android:textColor="@color/gray_85"
+                            android:textSize="@dimen/jobinfo_employperson" />
+
+                        <ImageView
+                            android:layout_width="@dimen/jobinfo_imageheight"
+                            android:layout_height="@dimen/jobinfo_imageheight"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/jobinfo_education" />
+
+                        <TextView
+                            android:id="@+id/jobinfo_eduction"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/jobinfo_education"
+                            android:textColor="@color/gray_85"
+                            android:textSize="@dimen/jobinfo_education" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/gray_20" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="@dimen/jobinfo_imageheight"
+                                android:layout_height="@dimen/jobinfo_imageheight"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/jobinfo_workplace_detail" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/jobinfo_workplace_detail_title"
+                                android:textColor="@color/gray_85"
+                                android:textSize="@dimen/jobinfo_workplace_detail" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/jobinfo_workplace_detail"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:maxEms="15"
+                            android:text="@string/jobinfo_workplace_detail"
+                            android:textColor="@color/gray_90" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/jobinfo_companyname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/jobinfo_companyname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/jobinfo_companyname" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/jobinfo_imageheight"
+                            android:layout_height="@dimen/jobinfo_imageheight"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/jobinfo_companytype" />
+
+                        <TextView
+                            android:id="@+id/jobinfo_companytype"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/jobinfo_companytype"
+                            android:textColor="@color/gray_85"
+                            android:textSize="@dimen/jobinfo_companytype" />
+
+                        <ImageView
+                            android:layout_width="@dimen/jobinfo_imageheight"
+                            android:layout_height="@dimen/jobinfo_imageheight"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/jobinfo_companyperson" />
+
+                        <TextView
+                            android:id="@+id/jobinfo_companyperson"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/jobinfo_companyperson"
+                            android:textColor="@color/gray_85"
+                            android:textSize="@dimen/jobinfo_compangperson" />
+
+                        <ImageView
+                            android:layout_width="@dimen/jobinfo_imageheight"
+                            android:layout_height="@dimen/jobinfo_imageheight"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/jobinfo_companyindustry" />
+
+                        <TextView
+                            android:id="@+id/jobinfo_companyindustry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/jobinfo_companyindustry"
+                            android:textColor="@color/gray_85"
+                            android:textSize="@dimen/jobinfo_companyindustry" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/jobinfo_imageheight"
+                            android:layout_height="@dimen/jobinfo_imageheight"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/jobinfo_describe" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/jobinfo_describe_title"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/jobinfo_describe" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/jobinfo_describe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/jobinfo_describe"
+                        android:textColor="@color/gray_85"
+                        android:textSize="@dimen/jobinfo_describe" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/jobinfo_bottomlayout"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/jobinfo_collectlayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black_blue">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="@dimen/jobinfo_imagebottom"
+                        android:layout_height="@dimen/jobinfo_imagebottom"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/jobinfo_collect" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/jobinfo_collecy"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/jobinfo_bottomtext" />
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/jobinfo_applylayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@color/orange">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="@dimen/jobinfo_imagebottom"
+                        android:layout_height="@dimen/jobinfo_imagebottom"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/jobinfo_apply" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/jobinfo_apply"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/jobinfo_bottomtext" />
+
+                </LinearLayout>
+            </FrameLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

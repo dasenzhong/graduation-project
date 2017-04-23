@@ -1,6 +1,7 @@
-package bishe.dgut.edu.cn.reallygoodapp.user;
+package bishe.dgut.edu.cn.reallygoodapp.user.info;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -28,6 +29,32 @@ public class UserInfoActivity extends Activity {
         areaFragment = (UserInfoCellFragment) getFragmentManager().findFragmentById(R.id.userinfo_area);
         schoolFragment = (UserInfoCellFragment) getFragmentManager().findFragmentById(R.id.userinfo_school);
         logFragment = (UserInfoCellFragment) getFragmentManager().findFragmentById(R.id.userinfo_log);
+
+        //头像栏点击事件
+        avatarFragment.setOnLayoutClickListener(new UserInfoCellFragment.OnLayoutClickListener() {
+            @Override
+            public void onLayoutClick() {
+                startActivity(new Intent(UserInfoActivity.this, AvatarActivity.class));
+            }
+        });
+
+        //昵称栏点击事件
+        nameFragment.setOnLayoutClickListener(new UserInfoCellFragment.OnLayoutClickListener() {
+            @Override
+            public void onLayoutClick() {
+                startActivity(new Intent(UserInfoActivity.this, NameActivity.class));
+            }
+        });
+
+        //个性签名栏点击事件
+        logFragment.setOnLayoutClickListener(new UserInfoCellFragment.OnLayoutClickListener() {
+            @Override
+            public void onLayoutClick() {
+                startActivity(new Intent(UserInfoActivity.this, LogActivity.class));
+            }
+        });
+
+        //返回键
         LinearLayout back = (LinearLayout) findViewById(R.id.userinfo_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,22 +63,33 @@ public class UserInfoActivity extends Activity {
             }
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         setCellAttribute();
-
-
     }
 
     private void setCellAttribute() {
-        avatarFragment.setAvatarGone(false);
+        avatarFragment.setTextText("头像");
         avatarFragment.setInputTextGone(true);
+        avatarFragment.setAvatarGone(false);
+
+        accountFragment.setTextText("帐号");
         accountFragment.setForewardGone(true);
 
-        avatarFragment.setTextText("头像");
-        accountFragment.setTextText("帐号");
-        nameFragment.setTextText("名字");
+        nameFragment.setTextText("昵称");
+
         sexFragment.setTextText("性别");
+        sexFragment.setForewardGone(true);
+
         areaFragment.setTextText("地区");
+        areaFragment.setForewardGone(true);
+
         schoolFragment.setTextText("学校");
+        schoolFragment.setForewardGone(true);
+
         logFragment.setTextText("个性签名");
     }
 

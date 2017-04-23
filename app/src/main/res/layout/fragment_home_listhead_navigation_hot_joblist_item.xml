@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:text="@string/home_hot_parttimejob_money"
-            android:textColor="@color/orange"
+            android:textColor="@color/orange_red_light"
             android:textSize="@dimen/home_listhead_hot_joblist_money_textsize" />
 
     </RelativeLayout>

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import bishe.dgut.edu.cn.reallygoodapp.R;
@@ -23,6 +24,12 @@ public class UserInfoCellFragment extends Fragment {
     private TextView inputText, text;
     private ImageView avatar,foreward;
 
+    public interface OnLayoutClickListener {
+        void onLayoutClick();
+    }
+
+    private OnLayoutClickListener onLayoutClickListener;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,9 +41,23 @@ public class UserInfoCellFragment extends Fragment {
             text = (TextView) view.findViewById(R.id.userinfo_cell_text);
             avatar = (ImageView) view.findViewById(R.id.userinfo_cell_avatar);
             foreward = (ImageView) view.findViewById(R.id.userinfo_cell_forward);
+
+            RelativeLayout mainLayout = (RelativeLayout) view.findViewById(R.id.userinfo_cell_mainlayout);
+            mainLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (onLayoutClickListener != null) {
+                        onLayoutClickListener.onLayoutClick();
+                    }
+                }
+            });
         }
 
         return view;
+    }
+
+    public void setOnLayoutClickListener(OnLayoutClickListener onLayoutClickListener) {
+        this.onLayoutClickListener = onLayoutClickListener;
     }
 
     //设置cell标题
@@ -72,6 +93,7 @@ public class UserInfoCellFragment extends Fragment {
         }
     }
 
+    //设置前进图标的显隐
     public void setForewardGone(boolean b) {
         if (b) {
             foreward.setVisibility(View.GONE);

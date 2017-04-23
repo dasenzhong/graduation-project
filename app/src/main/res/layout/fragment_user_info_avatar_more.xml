@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/userinfo_avatar_more_mainlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_alpha_50">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:id="@+id/userinfo_avatar_more_shotlayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/userinfo_avatar_more_layoutheight"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/user_info_avatar_more_shot"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userinfo_avatar_more_textsize" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/userinfo_avatar_more_albumlayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/userinfo_avatar_more_layoutheight"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/user_info_avatar_more_album"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userinfo_avatar_more_textsize" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/userinfo_avatar_more_savelayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/userinfo_avatar_more_layoutheight"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/user_info_avatar_more_save"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userinfo_avatar_more_textsize" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/userinfo_avatar_more_cancellayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/userinfo_avatar_more_layoutheight"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/user_info_avatar_more_cancel"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userinfo_avatar_more_textsize" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

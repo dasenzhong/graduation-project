@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <!--个人信息的cell布局-->
     <RelativeLayout
+        android:id="@+id/userinfo_cell_mainlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp">
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/userinfo_cell_text"
@@ -20,34 +21,34 @@
             android:textSize="@dimen/userinfo_cell_text" />
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true">
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal">
 
 
             <ImageView
-                android:layout_gravity="center_vertical"
                 android:id="@+id/userinfo_cell_avatar"
                 android:layout_width="@dimen/userinfo_cell_avatar"
                 android:layout_height="@dimen/userinfo_cell_avatar"
+                android:layout_gravity="center_vertical"
                 android:background="@drawable/failure_gray"
                 android:visibility="gone" />
 
             <TextView
-                android:layout_gravity="center_vertical"
                 android:id="@+id/userinfo_cell_inputtext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/userinfo_cell_inputtext"
+                android:layout_gravity="center_vertical"
                 android:text="@string/pleaseInput"
-                android:textColor="@color/gray_70" />
+                android:textColor="@color/gray_70"
+                android:textSize="@dimen/userinfo_cell_inputtext" />
 
             <ImageView
-                android:layout_gravity="center_vertical"
                 android:id="@+id/userinfo_cell_forward"
                 android:layout_width="@dimen/userinfo_cell_forward"
                 android:layout_height="@dimen/userinfo_cell_forward"
+                android:layout_gravity="center_vertical"
                 android:src="@drawable/forward_40gray" />
 
         </LinearLayout>

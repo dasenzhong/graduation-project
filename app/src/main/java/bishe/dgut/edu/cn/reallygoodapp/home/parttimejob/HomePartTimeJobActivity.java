@@ -39,7 +39,7 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_parttimejob);
+        setContentView(R.layout.activity_home_parttimejob);
 
         if (savedInstanceState != null) {               //意外结束时
             switchPlaceFragment = (PartTimeJobSwitchPlaceFragment) getFragmentManager().findFragmentByTag("switchplace");

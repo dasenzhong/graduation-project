@@ -100,5 +100,42 @@
 
     <!--选择地区activity-->
     <string name="chooseplaceactivity_actionbar_title">选择地区</string>
+    
+    <!--工作信息activity-->
+    <string name="jobinfo_jobname">工作名称</string>
+    <string name="jobinfo_time">发布时间</string>
+    <string name="jobinfo_money">薪酬</string>
+    <string name="jobinfo_workplace">工作地点</string>
+    <string name="jobinfo_employperson">招募人数</string>
+    <string name="jobinfo_education">学历</string>
+    <string name="jobinfo_workplace_detail">详细工作地点</string>
+    <string name="jobinfo_workplace_detail_title">上班地址</string>
+    <string name="jobinfo_companyname">公司名称</string>
+    <string name="jobinfo_companytype">公司类型</string>
+    <string name="jobinfo_companyperson">公司人数</string>
+    <string name="jobinfo_companyindustry">公司行业</string>
+    <string name="jobinfo_describe">描述</string>
+    <string name="jobinfo_describe_title">职位描述</string>
+    <string name="jobinfo_actionbartitle">职位信息</string>
+    <string name="jobinfo_collecy">收藏</string>
+    <string name="jobinfo_apply">申请</string>
+    <string name="jobinfo_apply_job">工作职位</string>
+    <string name="jobinfo_apply_agent">成为代理人</string>
 
+    <!--个人头像-->
+    <string name="user_info_avatar_actionbar_title">个人头像</string>
+    <string name="user_info_avatar_more_shot">拍照</string>
+    <string name="user_info_avatar_more_album">从相册选择</string>
+    <string name="user_info_avatar_more_save">保存图片</string>
+    <string name="user_info_avatar_more_cancel">取消</string>
+
+    <!--个人昵称-->
+    <string name="user_info_name_actionbar_title">昵称</string>
+    <string name="user_info_name_actionbar_ok">完成</string>
+    <string name="user_info_name_input_hint">请输入昵称</string>
+
+    <!--个性签名-->
+    <string name="user_info_log_actionbar_title">个性签名</string>
+    <string name="user_info_log_actionbar_ok">完成</string>
+    <string name="user_info_log_input_hint">请输入个性签名</string>
 </resources>
