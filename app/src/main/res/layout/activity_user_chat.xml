@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray_25"
@@ -44,27 +43,72 @@
             android:textColor="@color/white"
             android:textSize="@dimen/actionbar_titletextsize" />
 
-        <TextView
-            android:id="@+id/userchat_sand"
-            android:layout_marginEnd="10dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:textSize="@dimen/actionbar_textviewtextsize"
-            android:textColor="@color/white"
-            android:text="@string/user_chat_actionbar_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
     </RelativeLayout>
 
-    <ListView
-        android:id="@+id/userchat_list"
-        android:paddingTop="15dp"
-        android:clipToPadding="false"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@color/transparent"
-        android:dividerHeight="10dp"
-        tools:listitem="@layout/share_or_chat_listitem"/>
+        android:layout_height="@dimen/userchat_titlelayoutheight"
+        android:background="@color/black">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/user_chat_titlelayoutbackground"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/userchat_chatlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/user_chat_titlelayoutchoosebackground">
+
+                <TextView
+                    android:id="@+id/userchat_chattext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/user_chat_titlelayout_chat"
+                    android:textColor="@color/user_chat_titlelayoutcolor"
+                    android:textSize="@dimen/userchat_titlelayouttextsize" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/userchat_articlelayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/user_chat_titlelayoutchoosebackground">
+
+                <TextView
+                    android:id="@+id/userchat_articletext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/user_chat_titlelayout_article"
+                    android:textColor="@color/user_chat_titlelayoutcolor"
+                    android:textSize="@dimen/userchat_titlelayouttextsize" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/userchat_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
 </LinearLayout>

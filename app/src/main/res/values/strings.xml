@@ -13,10 +13,8 @@
     <string name="user_name">昵称</string>
     <string name="user_log">个性签名</string>
     <string name="user_info_actionbar_title">个人信息</string>
-    <string name="user_chat_actionbar_title">我的吐槽</string>
-    <string name="user_chat_actionbar_button">发吐槽</string>
+    <string name="user_chat_actionbar_title">我的分享</string>
     <string name="user_resume_actionbar_title">我的简历</string>
-    <string name="user_resume_actionbar_button">添加</string>
     <string name="user_agent_actionbar_title">我的代理</string>
     <string name="user_ability_actionbar_title">我的能力</string>
     <string name="user_collect_actionbar_title">我的收藏</string>
@@ -138,4 +136,21 @@
     <string name="user_info_log_actionbar_title">个性签名</string>
     <string name="user_info_log_actionbar_ok">完成</string>
     <string name="user_info_log_input_hint">请输入个性签名</string>
+
+    <!--我的分享-->
+    <string name="user_chat_titlelayout_chat">我的吐槽</string>
+    <string name="user_chat_titlelayout_article">我的文章</string>
+
+    <!--我的简历-->
+    <string name="user_resume_clicklayout_info">基本信息</string>
+    <string name="user_resume_info_name">姓名</string>
+    <string name="user_resume_info_sex">性别</string>
+    <string name="user_resume_info_age">年龄</string>
+    <string name="user_resume_info_telephone">电话</string>
+    <string name="user_resume_info_address">居住地</string>
+    <string name="user_resume_info_school">学校</string>
+    <string name="user_resume_clicklayout_workexperience">工作经验</string>
+    <string name="user_resume_clicklayout_school">在校情况</string>
+    <string name="user_resume_nullitem_workexperience">尚未添加工作经验</string>
+    <string name="user_resume_nullitem_school">尚未添加在校情况</string>
 </resources>

@@ -29,6 +29,7 @@ public class UserInfoActivity extends Activity {
         areaFragment = (UserInfoCellFragment) getFragmentManager().findFragmentById(R.id.userinfo_area);
         schoolFragment = (UserInfoCellFragment) getFragmentManager().findFragmentById(R.id.userinfo_school);
         logFragment = (UserInfoCellFragment) getFragmentManager().findFragmentById(R.id.userinfo_log);
+        setCellAttribute();
 
         //头像栏点击事件
         avatarFragment.setOnLayoutClickListener(new UserInfoCellFragment.OnLayoutClickListener() {
@@ -68,7 +69,7 @@ public class UserInfoActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        setCellAttribute();
+//        setCellAttribute();
     }
 
     private void setCellAttribute() {

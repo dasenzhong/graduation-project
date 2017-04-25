@@ -86,7 +86,7 @@ public class UserFragment extends Fragment{
                 }
             });
 
-            //我的吐槽点击事件
+            //我的分享点击事件
             chatCell.setOnCellClickListener(new UserCellOfItemFragment.OnCellClickListener() {
                 @Override
                 public void onCellClick() {

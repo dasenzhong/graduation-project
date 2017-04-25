@@ -130,6 +130,25 @@
     <dimen name="userinfo_log_okwidth">55dp</dimen>
     <dimen name="userinfo_log_inputheight">40dp</dimen>
 
+    <!--userchat-->
+    <dimen name="userchat_titlelayoutheight">40dp</dimen>
+    <dimen name="userchat_titlelayouttextsize">16sp</dimen>
+
+    <!--userresume-->
+    <dimen name="userresume_clicklayoutheight">35dp</dimen>
+    <dimen name="userresume_clicklayouttextsize">18sp</dimen>
+    <dimen name="userresume_clicklayoutforwardheight">25dp</dimen>
+    <dimen name="userresume_clicklayoutimageheight">20dp</dimen>
+    <dimen name="userresume_infoimageheight">15dp</dimen>
+    <dimen name="userresume_info_name">16sp</dimen>
+    <dimen name="userrename_info_sex">12sp</dimen>
+    <dimen name="userresume_info_age">12sp</dimen>
+    <dimen name="userresume_info_address">14sp</dimen>
+    <dimen name="userresume_info_school">14sp</dimen>
+    <dimen name="userresume_info_telephone">12sp</dimen>
+    <dimen name="userresume_space">13dp</dimen>
+    <dimen name="userresume_nullitem_bigtextsize">14sp</dimen>
+
     <!--userSetting的关于-->
     <dimen name="usersetting_about_text">18sp</dimen>
 
