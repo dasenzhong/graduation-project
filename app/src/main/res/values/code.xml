@@ -7,6 +7,7 @@
     <!--选择工作地点/////chooseplace-->
     <integer name="CHOOSEPLACE_REQUESTCODE_AREA">0x0011</integer>
     <integer name="CHOOSEPLACE_REQUESTCODE_WORKPLACE">0x0012</integer>
+    <integer name="CHOOSEPLACE_REQUESTCODE_USERRESUME_INFOADDRESS">0x0013</integer>
     <integer name="CHOOSEPLACE_RESULTCODE">0x0010</integer>
 
     <!--头像修改/////请求码和结果码-->

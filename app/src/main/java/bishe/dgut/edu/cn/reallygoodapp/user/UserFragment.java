@@ -14,6 +14,7 @@ import bishe.dgut.edu.cn.reallygoodapp.api.GetAppSize;
 import bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfItemFragment;
 import bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfInfoFragment;
 import bishe.dgut.edu.cn.reallygoodapp.user.info.UserInfoActivity;
+import bishe.dgut.edu.cn.reallygoodapp.user.resume.UserResumeActivity;
 import bishe.dgut.edu.cn.reallygoodapp.user.setting.UserSettingActivity;
 
 /**

@@ -1,6 +1,7 @@
-package bishe.dgut.edu.cn.reallygoodapp.user;
+package bishe.dgut.edu.cn.reallygoodapp.user.resume;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,6 +40,12 @@ public class UserResumeActivity extends Activity {
 
         //基本信息栏
         RelativeLayout infoLayout = (RelativeLayout) findViewById(R.id.userresume_infoclicklayout);
+        infoLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UserResumeActivity.this, UserResumeInfoActivity.class));
+            }
+        });
 
         //工作经验栏
         RelativeLayout workExperienceLayout = (RelativeLayout) findViewById(R.id.userresume_workexperienceclicklayout);

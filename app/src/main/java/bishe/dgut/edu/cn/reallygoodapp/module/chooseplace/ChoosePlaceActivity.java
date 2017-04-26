@@ -4,11 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import bishe.dgut.edu.cn.reallygoodapp.R;
 
@@ -45,6 +43,9 @@ public class ChoosePlaceActivity extends Activity {
             provinceFragment = new ProvinceFragment();
             cityFragment = new CityFragment();
             townFragment = new TownFragment();
+            provinceNameGet = "";
+            cityNameGet = "";
+            townNameGet = "";
         }
 
         //返回键
@@ -74,9 +75,14 @@ public class ChoosePlaceActivity extends Activity {
             @Override
             public void onListItemClick(String provinceName) {
                 provinceNameGet = provinceName;
-                cityFragment.setResId(getCityResIdByProvinceName(provinceName));
-                showCityFragment();
-                title.setText(provinceName);
+                int id = getCityResIdByProvinceName(provinceName);
+                if (id == -1) {
+                    sendResult();
+                } else {
+                    cityFragment.setResId(getCityResIdByProvinceName(provinceName));
+                    showCityFragment();
+                    title.setText(provinceName);
+                }
             }
         });
 
@@ -85,12 +91,15 @@ public class ChoosePlaceActivity extends Activity {
             @Override
             public void onListItemClick(String cityName) {
                 cityNameGet = cityName;
-                if (cityName.equals(getResources().getStringArray(R.array.parttimejob_unable)[0])) {
-                    Toast toast = Toast.makeText(ChoosePlaceActivity.this, "暂不支持该区", Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER, 0, 0);
-                    toast.show();
+                int id = getTownResIdByCityName(cityName);
+                if (id == -1) {
+                    sendResult();
+//                if (cityName.equals(getResources().getStringArray(R.array.parttimejob_unable)[0])) {
+////                    Toast toast = Toast.makeText(ChoosePlaceActivity.this, "暂不支持该区", Toast.LENGTH_SHORT);
+////                    toast.setGravity(Gravity.CENTER, 0, 0);
+////                    toast.show();
                 } else {
-                    townFragment.setResId(getTownResIdByCityName(cityName));
+                    townFragment.setResId(id);
                     showTownFragment();
                     title.setText(provinceNameGet + "  " + cityName);
                 }
@@ -98,16 +107,18 @@ public class ChoosePlaceActivity extends Activity {
         });
 
         //设置城镇fragmen的点击事件回调
-        townFragment.setOnListItemClickListener(new TownFragment.OnListItemClickListener() {
+        townFragment.setOnListItemClickListener(new TownFragment.OnListItemClickListener()
+
+        {
             @Override
             public void onListItemClick(String townName) {
                 townNameGet = townName;
-                Intent intent = new Intent();
-                intent.putExtra("province", provinceNameGet);
-                intent.putExtra("city", cityNameGet);
-                intent.putExtra("town", townNameGet);
-                setResult(getResources().getInteger(R.integer.CHOOSEPLACE_RESULTCODE), intent);
-                finish();
+//                Intent intent = new Intent();
+//                intent.putExtra("province", provinceNameGet);
+//                intent.putExtra("city", cityNameGet);
+//                intent.putExtra("town", townNameGet);
+//                setResult(getResources().getInteger(R.integer.CHOOSEPLACE_RESULTCODE), intent);
+                sendResult();
             }
         });
 
@@ -120,6 +131,7 @@ public class ChoosePlaceActivity extends Activity {
      * @param provinceName 省份名
      * @return 城市资源
      */
+
     private int getCityResIdByProvinceName(String provinceName) {
         int resId;
         switch (provinceName) {
@@ -127,7 +139,8 @@ public class ChoosePlaceActivity extends Activity {
                 resId = R.array.citylist_guangdong;
                 break;
             default:
-                resId = R.array.parttimejob_unable;
+//                resId = R.array.parttimejob_unable;
+                resId = -1;
         }
         return resId;
     }
@@ -159,13 +172,28 @@ public class ChoosePlaceActivity extends Activity {
                         resId = R.array.townlist_foshan;
                         break;
                     default:
-                        resId = R.array.parttimejob_all;
+//                        resId = R.array.parttimejob_all;
+                        resId = -1;
                 }
                 break;
             default:
-                resId = R.array.parttimejob_unable;
+//                resId = R.array.parttimejob_unable;
+                resId = -1;
         }
         return resId;
+    }
+
+    private void sendResult() {
+        Intent intent = new Intent();
+        intent.putExtra("province", provinceNameGet);
+        if (cityNameGet != null && !cityNameGet.isEmpty()) {
+            intent.putExtra("city", cityNameGet);
+        }
+        if (townNameGet != null && !townNameGet.isEmpty()) {
+            intent.putExtra("town", townNameGet);
+        }
+        setResult(getResources().getInteger(R.integer.CHOOSEPLACE_RESULTCODE), intent);
+        finish();
     }
 
     /**

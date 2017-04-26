@@ -87,7 +87,10 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
             if (savedInstanceState != null) {               //被意外结束时
                 alpha = savedInstanceState.getInt("alpha", 0);
                 updateListOfMenuItem(savedInstanceState.getString("item"));
+                itemPosition = savedInstanceState.getInt("itemPosition");
+                preMenuItem = nvMenu.getMenu().getItem(0).getSubMenu().getItem(itemPosition);
             } else {                                        //初始化
+                itemPosition = 0;
                 preMenuItem = nvMenu.getMenu().getItem(0).getSubMenu().getItem(0);      //默认选择第一项
                 preMenuItem.setChecked(true);
                 stringList = allList;
@@ -225,15 +228,19 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
         switch (itemText) {
             case "全部":
                 stringList = allList;
+                itemPosition = 0;
                 break;
             case "外校":
                 stringList = externalList;
+                itemPosition = 1;
                 break;
             case "本校":
                 stringList = schoolList;
+                itemPosition = 2;
                 break;
             case "朋友":
                 stringList = friendList;
+                itemPosition = 3;
                 break;
             default:
         }
@@ -243,6 +250,7 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
     public void onSaveInstanceState(Bundle outState) {
         outState.putInt("alpha", alpha);
         outState.putString("item", preMenuItem.getTitle().toString().trim());
+        outState.putInt("itemPosition", itemPosition);
         super.onSaveInstanceState(outState);
     }
 }

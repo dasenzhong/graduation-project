@@ -165,13 +165,31 @@ public class EmployPersonJobAddressFragment extends Fragment {
                 provinceNameArea = data.getStringExtra("province");
                 cityNameArea = data.getStringExtra("city");
                 townNameArea = data.getStringExtra("town");
-                area.setText(provinceNameArea + "  " + cityNameArea + "  " + townNameArea);
+//                area.setText(provinceNameArea + "  " + cityNameArea + "  " + townNameArea);
+                if (cityNameArea != null) {
+                    if (townNameArea != null) {
+                        area.setText(data.getStringExtra("province") + " " + data.getStringExtra("city") + " " + data.getStringExtra("town"));
+                    } else {
+                        area.setText(data.getStringExtra("province") + " " + data.getStringExtra("city"));
+                    }
+                } else {
+                    area.setText(data.getStringExtra("province"));
+                }
             }
             if (requestCode == getResources().getInteger(R.integer.CHOOSEPLACE_REQUESTCODE_WORKPLACE)) {
                 provinceNameWorkPlace = data.getStringExtra("province");
                 cityNameWorkPlace = data.getStringExtra("city");
                 townNameWorkPlace = data.getStringExtra("town");
-                workplace.setText(provinceNameWorkPlace + "  " + cityNameWorkPlace + "  " + townNameWorkPlace);
+//                workplace.setText(provinceNameWorkPlace + "  " + cityNameWorkPlace + "  " + townNameWorkPlace);
+                if (cityNameWorkPlace != null) {
+                    if (townNameWorkPlace != null) {
+                        workplace.setText(data.getStringExtra("province") + " " + data.getStringExtra("city") + " " + data.getStringExtra("town"));
+                    } else {
+                        workplace.setText(data.getStringExtra("province") + " " + data.getStringExtra("city"));
+                    }
+                } else {
+                    workplace.setText(data.getStringExtra("province"));
+                }
             }
 
 //            Log.d("pa:", provinceNameArea);

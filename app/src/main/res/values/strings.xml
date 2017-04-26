@@ -153,4 +153,21 @@
     <string name="user_resume_clicklayout_school">在校情况</string>
     <string name="user_resume_nullitem_workexperience">尚未添加工作经验</string>
     <string name="user_resume_nullitem_school">尚未添加在校情况</string>
+
+    <!--编辑基本信息-->
+    <string name="user_resume_infoactivity_actionbar_title">编辑基本信息</string>
+    <string name="user_resume_infoactivity_actionbar_ok">保存</string>
+    <string name="user_resume_infoactivity_name">姓名</string>
+    <string name="user_resume_infoactivity_namehint">请输入姓名</string>
+    <string name="user_resume_infoactivity_sex">性别</string>
+    <string name="user_resume_infoactivity_birthday">出生年月</string>
+    <string name="user_resume_infoactivity_telephone">电话号码</string>
+    <string name="user_resume_infoactivity_teltphonehint">请输入电话号码</string>
+    <string name="user_resume_infoactivity_address">居住地</string>
+    <string name="user_resume_infoactivity_addresshint">请选择地址</string>
+    <string name="user_resume_infoactivity_school">学校</string>
+    <string name="user_resume_infoactivity_schoolhint">请输入学校</string>
+    <string name="user_resume_infoactivity_male">男</string>
+    <string name="user_resume_infoactivity_female">女</string>
+
 </resources>

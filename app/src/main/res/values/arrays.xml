@@ -11,7 +11,6 @@
     <!--////////////////////////////////城市列表////////////////////////////////////////-->
     <!--广东省-->
     <string-array name="citylist_guangdong">
-        <item>不限</item>
         <item>广州</item>
         <item>惠州</item>
         <item>汕头</item>
@@ -40,7 +39,7 @@
     <!--////////////////////广东省////////////////////////-->
     <!--东莞-->
     <string-array name="townlist_dongguan">
-        <item>不限</item>
+        <item>东莞</item>
         <item>莞城区</item>
         <item>南城区</item>
         <item>东城区</item>
@@ -78,7 +77,7 @@
 
     <!--广州-->
     <string-array name="townlist_guangzhou">
-        <item>不限</item>
+        <item>广州</item>
         <item>越秀区</item>
         <item>荔湾区</item>
         <item>海珠区</item>
@@ -95,7 +94,7 @@
 
     <!--深圳-->
     <string-array name="townlist_shenzhen">
-        <item>不限</item>
+        <item>深圳</item>
         <item>福田区</item>
         <item>罗湖区</item>
         <item>南山区</item>
@@ -110,7 +109,7 @@
 
     <!--珠海-->
     <string-array name="townlist_zhuhai">
-        <item>不限</item>
+        <item>珠海</item>
         <item>香洲区</item>
         <item>斗门区</item>
         <item>金湾区</item>
@@ -123,7 +122,7 @@
 
     <!--佛山-->
     <string-array name="townlist_foshan">
-        <item>不限</item>
+        <item>佛山</item>
         <item>禅城区</item>
         <item>顺德区</item>
         <item>南海区</item>

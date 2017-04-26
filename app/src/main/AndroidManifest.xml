@@ -30,7 +30,7 @@
             android:theme="@style/UserActivityTheme" />
         <!--我的简历-->
         <activity
-            android:name=".user.UserResumeActivity"
+            android:name=".user.resume.UserResumeActivity"
             android:theme="@style/UserActivityTheme" />
         <!--我的代理-->
         <activity
@@ -86,6 +86,11 @@
         <activity
             android:name=".user.info.LogActivity"
             android:theme="@style/UserActivityTheme" />
+        <!--我的简历基本信息页-->
+        <activity
+            android:name=".user.resume.UserResumeInfoActivity"
+            android:theme="@style/UserActivityTheme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
     </application>
 
 </manifest>
