@@ -154,7 +154,22 @@
     <dimen name="userresume_infoactivity_okwidth">50dp</dimen>
     <dimen name="userresume_infoactivity_layoutheight">45dp</dimen>
     <dimen name="userresume_infoactivity_layoutimageheight">15dp</dimen>
-    <dimen name="userresume_infoactivity_layouttextsize">18sp</dimen>
+    <dimen name="userresume_infoactivity_layouttextsize">16sp</dimen>
+
+    <!--编辑工作经验-->
+    <dimen name="userresume_workexperienceactivity_addlayout">30dp</dimen>
+    <dimen name="userresume_workexperienceactivity_addtextsize">16sp</dimen>
+    <dimen name="userresume_workexperienceactivity_addimagesize">15dp</dimen>
+
+    <!--添加工作经验-->
+    <dimen name="userresume_workexperience_addactivity_layoutheight">45dp</dimen>
+    <dimen name="userresume_workexperience_addactivity_layouttextsize">16sp</dimen>
+    <dimen name="userresume_workexperience_addactivity_layoutimageheight">20dp</dimen>
+
+    <!--职位描述-->
+    <dimen name="userresume_workexperience_add_describeactivity_editheight">250dp</dimen>
+    <dimen name="userresume_workexperience_add_describeactivity_edittextsize">14sp</dimen>
+    <dimen name="userresume_workexperience_add_describeactivity_edittip">10sp</dimen>
 
     <!--userSetting的关于-->
     <dimen name="usersetting_about_text">18sp</dimen>

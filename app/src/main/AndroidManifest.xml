@@ -91,6 +91,20 @@
             android:name=".user.resume.UserResumeInfoActivity"
             android:theme="@style/UserActivityTheme"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <!--工作经验-->
+        <activity
+            android:name=".user.resume.UserResumeWorkExperienceActivity"
+            android:theme="@style/UserActivityTheme" />
+        <!--添加工作经验-->
+        <activity
+            android:name=".user.resume.UserResumeWorkExperienceAddActivity"
+            android:theme="@style/UserActivityTheme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <!--职位描述-->
+        <activity
+            android:name=".user.resume.UserResumeWorkExperienceAddDescribeActivity"
+            android:theme="@style/UserActivityTheme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysVisible" />
     </application>
 
 </manifest>

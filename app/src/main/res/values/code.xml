@@ -13,4 +13,8 @@
     <!--头像修改/////请求码和结果码-->
     <integer name="AVATAR_REQUESTCODE_SHOT">0x0021</integer>
     <integer name="AVATAR_REQUESTCODE_ABLUM">0x0022</integer>
+
+    <!--职位描述-->
+    <integer name="USERRESUME_WORKEXPERIENCE_ADD_DESCRIBE_REQUESTCODE">0x43211</integer>
+    <integer name="USERRESUME_WORKEXPERIENCE_ADD_DESCRIBE_RESULTCODE">0x43210</integer>
 </resources>

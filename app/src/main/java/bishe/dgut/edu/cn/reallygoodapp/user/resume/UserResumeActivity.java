@@ -49,6 +49,12 @@ public class UserResumeActivity extends Activity {
 
         //工作经验栏
         RelativeLayout workExperienceLayout = (RelativeLayout) findViewById(R.id.userresume_workexperienceclicklayout);
+        workExperienceLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UserResumeActivity.this, UserResumeWorkExperienceActivity.class));
+            }
+        });
 
         //在校情况栏
         RelativeLayout schoolLayout = (RelativeLayout) findViewById(R.id.userresume_schoolclicklayout);

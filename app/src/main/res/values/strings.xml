@@ -170,4 +170,32 @@
     <string name="user_resume_infoactivity_male">男</string>
     <string name="user_resume_infoactivity_female">女</string>
 
+    <!--编辑工作经验-->
+    <string name="user_resume_workexperienceactivity_actionbar_title">工作经验</string>
+    <string name="user_resume_workexperienceactivity_actionbar_edit">编辑</string>
+    <string name="user_resume_workexperienceactivity_addlayout_text">添加工作经验</string>
+    
+    <!--添加工作经验-->
+    <string name="user_resume_workexperience_addactivity_actionbar_title">添加工作经验</string>
+    <string name="user_resume_workexperience_addactivity_actionbar_save">保存</string>
+    <string name="user_resume_workexperience_addactivity_entry">入职时间</string>
+    <string name="user_resume_workexperience_addactivity_entryhint">入职时间</string>
+    <string name="user_resume_workexperience_addactivity_leave">离职时间</string>
+    <string name="user_resume_workexperience_addactivity_leavehint">离职时间</string>
+    <string name="user_resume_workexperience_addactivity_companyname">公司</string>
+    <string name="user_resume_workexperience_addactivity_companynamehint">请输入公司名</string>
+    <string name="user_resume_workexperience_addactivity_job">职位</string>
+    <string name="user_resume_workexperience_addactivity_jobhint">请输入职位名</string>
+    <string name="user_resume_workexperience_addactivity_describe">工作描述</string>
+    <string name="user_resume_workexperience_addactivity_jobtype">工作类型</string>
+    <string name="user_resume_workexperience_addactivity_jobtype_quanzhi">全职</string>
+    <string name="user_resume_workexperience_addactivity_jobtype_jianzhi">兼职</string>
+
+    <!--职位描述-->
+    <string name="user_resume_workexperience_add_describeactivity_actionbar_title">职位描述</string>
+    <string name="user_resume_workexperience_add_describeactivity_actionbar_finish">完成</string>
+    <string name="user_resume_workexperience_add_describeactivity_describehint">请详细描述你的职责范围、工作任务以及取得的成绩等</string>
+    <string name="user_resume_workexperience_add_describeactivity_describetip">0</string>
+    <string name="user_resume_workexperience_add_describeactivity_describenumber">/500</string>
+
 </resources>

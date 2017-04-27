@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!--actionbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarheight"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:id="@+id/userresume_workexperience_addactivity_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/actionbar_imageheight_small"
+                android:layout_height="@dimen/actionbar_imageheight_small"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/user_resume_workexperienceactivity_actionbar_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbar_textviewtextsize" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/user_resume_workexperience_addactivity_actionbar_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_titletextsize" />
+
+        <Button
+            android:id="@+id/userresume_workexperience_addactivity_save"
+            android:layout_width="@dimen/userresume_infoactivity_okwidth"
+            android:layout_height="@dimen/userresume_infoactivity_okheight"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:padding="0dp"
+            android:text="@string/user_resume_workexperience_addactivity_actionbar_save"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_workexperience_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_resume_workexperience_addactivity_entry"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_workexperience_addactivity_layouttextsize" />
+
+        <RelativeLayout
+            android:id="@+id/userresume_workexperience_addactivity_entrylayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/userresume_workexperience_addactivity_entry"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:hint="@string/user_resume_workexperience_addactivity_entryhint"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userresume_workexperience_addactivity_layouttextsize" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_workexperience_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_resume_workexperience_addactivity_leave"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_workexperience_addactivity_layouttextsize" />
+
+        <RelativeLayout
+            android:id="@+id/userresume_workexperience_addactivity_leavelayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/userresume_workexperience_addactivity_leave"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:hint="@string/user_resume_workexperience_addactivity_leavehint"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userresume_workexperience_addactivity_layouttextsize" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_workexperience_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_resume_workexperience_addactivity_companyname"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_workexperience_addactivity_layouttextsize" />
+
+        <EditText
+            android:id="@+id/userresume_workexperience_addactivity_company"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@color/white"
+            android:gravity="end|center_vertical"
+            android:hint="@string/user_resume_workexperience_addactivity_companynamehint"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_workexperience_addactivity_layouttextsize" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_workexperience_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_resume_workexperience_addactivity_job"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_workexperience_addactivity_layouttextsize" />
+
+        <EditText
+            android:id="@+id/userresume_workexperience_addactivity_job"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@color/white"
+            android:gravity="end|center_vertical"
+            android:hint="@string/user_resume_workexperience_addactivity_jobhint"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_workexperience_addactivity_layouttextsize" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_workexperience_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_resume_workexperience_addactivity_describe"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_workexperience_addactivity_layouttextsize" />
+
+        <RelativeLayout
+            android:id="@+id/userresume_workexperience_addactivity_describelayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/userresume_workexperience_addactivity_describe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:textColor="@color/gray_80"
+                    android:textSize="@dimen/userresume_workexperience_addactivity_layouttextsize" />
+
+                <ImageView
+                    android:layout_width="@dimen/userresume_workexperience_addactivity_layoutimageheight"
+                    android:layout_height="@dimen/userresume_workexperience_addactivity_layoutimageheight"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/forward_40gray" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_workexperience_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_resume_workexperience_addactivity_jobtype"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_workexperience_addactivity_layouttextsize" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:id="@+id/userresume_workexperience_addactivity_alltime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/user_resume_workexperience_addactivity_jobtype_quanzhi" />
+
+                <CheckBox
+                    android:id="@+id/userresume_workexperience_addactivity_parttime"
+                    android:layout_marginStart="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/user_resume_workexperience_addactivity_jobtype_jianzhi" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>
