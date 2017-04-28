@@ -197,5 +197,42 @@
     <string name="user_resume_workexperience_add_describeactivity_describehint">请详细描述你的职责范围、工作任务以及取得的成绩等</string>
     <string name="user_resume_workexperience_add_describeactivity_describetip">0</string>
     <string name="user_resume_workexperience_add_describeactivity_describenumber">/500</string>
+    
+    <!--在校情况-->
+    <string name="user_resume_school_actionbar_title_honor">校内荣誉</string>
+    <string name="user_resume_school_actionbar_title_post">校内职务</string>
+    <string name="user_resume_school_actionbar_title_edit">编辑</string>
+    <string name="user_resume_school_honorfragment_addtext">添加校内荣誉</string>
+    <string name="user_resume_school_postfragment_addtext">添加校内职务</string>
+    <string name="user_resume_school_actionbar_tile">校内情况</string>
+
+    <!--添加校内荣誉-->
+    <string name="user_resume_school_honor_addactivity_actionbar_title">添加校内荣誉</string>
+    <string name="user_resume_school_honor_addactivity_actionbar_save">保存</string>
+    <string name="user_resume_school_honor_addactivity_time">时间</string>
+    <string name="user_resume_school_honor_addactivity_timehint">请选择</string>
+    <string name="user_resume_school_honor_addactivity_prize">奖项</string>
+    <string name="user_resume_school_honor_addactivity_prizehint">请填写</string>
+    <string name="user_resume_school_honor_addactivity_level">级别</string>
+    <string name="user_resume_school_honor_addactivity_levelhint">请填写级别,如:A级</string>
+
+    <!--添加校内职务-->
+    <string name="user_resume_school_post_addactivity_actionbar_title">添加校内职务</string>
+    <string name="user_resume_school_post_addactivity_actionbar_save">保存</string>
+    <string name="user_resume_school_post_addactivity_starttime">开始时间</string>
+    <string name="user_resume_school_post_addactivity_starttimehint">请选择</string>
+    <string name="user_resume_school_post_addactivity_endtime">结束时间</string>
+    <string name="user_resume_school_post_addactivity_endtimehint">至今</string>
+    <string name="user_resume_school_post_addactivity_postname">职务名称</string>
+    <string name="user_resume_school_post_addactivity_postnamehint">请填写</string>
+    <string name="user_resume_school_post_addactivity_postdescribe">职务描述</string>
+    <string name="user_resume_school_post_addactivity_postdescribehint">请填写</string>
+
+    <!--校内职务描述-->
+    <string name="user_resume_school_post_add_describeactivity_actionbar_title">职务描述</string>
+    <string name="user_resume_school_post_add_describeactivity_actionbar_finish">完成</string>
+    <string name="user_resume_school_post_add_describeactivity_describehint">请填写职务内容。获得的成就等。</string>
+    <string name="user_resume_school_post_add_describeactivity_describetip">0</string>
+    <string name="user_resume_school_post_add_describeactivity_describenumber">/200</string>
 
 </resources>

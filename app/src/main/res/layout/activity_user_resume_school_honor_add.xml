@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!--actionbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarheight"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:id="@+id/userresume_school_honor_addactivity_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/actionbar_imageheight_small"
+                android:layout_height="@dimen/actionbar_imageheight_small"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/user_resume_school_actionbar_tile"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbar_textviewtextsize" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/user_resume_school_honor_addactivity_actionbar_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_titletextsize" />
+
+        <Button
+            android:id="@+id/userresume_school_honor_addactivity_save"
+            android:layout_width="@dimen/userresume_school_honor_addactivity_okwidth"
+            android:layout_height="@dimen/userresume_school_honor_addactivity_okheight"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:padding="0dp"
+            android:text="@string/user_resume_school_honor_addactivity_actionbar_save"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_school_honor_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_resume_school_honor_addactivity_time"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        <RelativeLayout
+            android:id="@+id/userresume_school_honor_addactivity_timelayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/userresume_school_honor_addactivity_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:hint="@string/user_resume_school_honor_addactivity_timehint"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_school_honor_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_resume_school_honor_addactivity_prize"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        <EditText
+            android:id="@+id/userresume_school_honor_addactivity_prize"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@color/white"
+            android:gravity="end|center_vertical"
+            android:hint="@string/user_resume_school_honor_addactivity_prizehint"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_school_honor_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_resume_school_honor_addactivity_level"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        <EditText
+            android:id="@+id/userresume_school_honor_addactivity_level"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@color/white"
+            android:gravity="end|center_vertical"
+            android:hint="@string/user_resume_school_honor_addactivity_levelhint"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+    </LinearLayout>
+
+</LinearLayout>

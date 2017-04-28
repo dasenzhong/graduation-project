@@ -4,4 +4,97 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!--actionbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarheight"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:id="@+id/userresume_schoolactivity_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/actionbar_imageheight_small"
+                android:layout_height="@dimen/actionbar_imageheight_small"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/user_resume_actionbar_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbar_textviewtextsize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="1dp">
+
+            <FrameLayout
+                android:id="@+id/userresume_schoolactivity_honorlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/userresume_schoolactivity_actionbar_title_layoutbackground">
+
+                <TextView
+                    android:id="@+id/userresume_schoolactivity_honortext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/user_resume_school_actionbar_title_honor"
+                    android:textColor="@color/userresume_schoolactivity_actionbar_title_textcolor"
+                    android:textSize="@dimen/actionbar_textviewtextsize_small" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/userresume_schoolactivity_postlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/userresume_schoolactivity_actionbar_title_layoutbackground">
+
+                <TextView
+                    android:id="@+id/userresume_schoolactivity_posttext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/user_resume_school_actionbar_title_post"
+                    android:textColor="@color/userresume_schoolactivity_actionbar_title_textcolor"
+                    android:textSize="@dimen/actionbar_textviewtextsize_small" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/userresume_schoolactivity_edit"
+            android:layout_width="@dimen/userresume_schoolactivity_okwidth"
+            android:layout_height="@dimen/userresume_schoolactivity_okheight"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:padding="0dp"
+            android:text="@string/user_resume_school_actionbar_title_edit"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/userresume_schoolactivity_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
 </LinearLayout>

@@ -44,8 +44,8 @@
 
         <Button
             android:id="@+id/userresume_workexperience_addactivity_save"
-            android:layout_width="@dimen/userresume_infoactivity_okwidth"
-            android:layout_height="@dimen/userresume_infoactivity_okheight"
+            android:layout_width="@dimen/userresume_workexperience_addactivity_okwidth"
+            android:layout_height="@dimen/userresume_workexperience_addactivity_okheight"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"

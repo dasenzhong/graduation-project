@@ -17,4 +17,8 @@
     <!--职位描述-->
     <integer name="USERRESUME_WORKEXPERIENCE_ADD_DESCRIBE_REQUESTCODE">0x43211</integer>
     <integer name="USERRESUME_WORKEXPERIENCE_ADD_DESCRIBE_RESULTCODE">0x43210</integer>
+
+    <!--职务描述-->
+    <integer name="USERRESUME_SCHOOL_POST_ADD_DESCRIBE_REQUESTCODE">0x433231</integer>
+    <integer name="USERRESUME_SCHOOL_POST_ADD_DESCRIBE_RESULTCODE">0x433230</integer>
 </resources>

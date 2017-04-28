@@ -58,6 +58,12 @@ public class UserResumeActivity extends Activity {
 
         //在校情况栏
         RelativeLayout schoolLayout = (RelativeLayout) findViewById(R.id.userresume_schoolclicklayout);
+        schoolLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UserResumeActivity.this, UserResumeSchoolActivity.class));
+            }
+        });
 
         name = (TextView) findViewById(R.id.userresume_info_name);
         sex = (TextView) findViewById(R.id.userresume_info_sex);

@@ -105,6 +105,25 @@
             android:name=".user.resume.UserResumeWorkExperienceAddDescribeActivity"
             android:theme="@style/UserActivityTheme"
             android:windowSoftInputMode="adjustPan|stateAlwaysVisible" />
+        <!--在校情况-->
+        <activity
+            android:name=".user.resume.UserResumeSchoolActivity"
+            android:theme="@style/UserActivityTheme" />
+        <!--校内荣誉-->
+        <activity
+            android:name=".user.resume.UserResumeSchoolHonorAddActivity"
+            android:theme="@style/UserActivityTheme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysVisible" />
+        <!--校内职务-->
+        <activity
+            android:name=".user.resume.UserResumeSchoolPostAddActivity"
+            android:theme="@style/UserActivityTheme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysVisible" />
+        <!--职务描述-->
+        <activity
+            android:name=".user.resume.UserResumeSchoolPostAddDescribeActivty"
+            android:theme="@style/UserActivityTheme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysVisible" />
     </application>
 
 </manifest>

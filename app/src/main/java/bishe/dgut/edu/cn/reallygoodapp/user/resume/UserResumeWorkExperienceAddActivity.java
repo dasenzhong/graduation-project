@@ -33,7 +33,7 @@ import bishe.dgut.edu.cn.reallygoodapp.R;
 
 public class UserResumeWorkExperienceAddActivity extends Activity {
 
-    private String describeString;
+    private String describeString;          //职位描述
     private TextView describe;
 
     @Override

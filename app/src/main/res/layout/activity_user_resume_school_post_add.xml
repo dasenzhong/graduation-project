@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--actionbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarheight"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:id="@+id/userresume_school_post_addactivity_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/actionbar_imageheight_small"
+                android:layout_height="@dimen/actionbar_imageheight_small"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/user_resume_school_actionbar_tile"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbar_textviewtextsize" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/user_resume_school_post_addactivity_actionbar_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_titletextsize" />
+
+        <Button
+            android:id="@+id/userresume_school_post_addactivity_save"
+            android:layout_width="@dimen/userresume_school_post_addactivity_okwidth"
+            android:layout_height="@dimen/userresume_school_post_addactivity_okheight"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:padding="0dp"
+            android:text="@string/user_resume_school_post_addactivity_actionbar_save"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_school_post_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_resume_school_post_addactivity_starttime"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_post_addactivity_layouttextsize" />
+
+        <RelativeLayout
+            android:id="@+id/userresume_school_post_addactivity_starttimelayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/userresume_school_post_addactivity_starttime"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:hint="@string/user_resume_school_honor_addactivity_timehint"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_school_post_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_resume_school_post_addactivity_endtime"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_post_addactivity_layouttextsize" />
+
+        <RelativeLayout
+            android:id="@+id/userresume_school_post_addactivity_endtimelayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/userresume_school_post_addactivity_endtime"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:hint="@string/user_resume_school_honor_addactivity_timehint"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_school_post_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_resume_school_post_addactivity_postname"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_post_addactivity_layouttextsize" />
+
+        <EditText
+            android:id="@+id/userresume_school_post_addactivity_postname"
+            android:maxLines="1"
+            android:inputType="text"
+            android:imeOptions="actionNext"
+            android:gravity="end|center_vertical"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_post_addactivity_layouttextsize"
+            android:hint="@string/user_resume_school_post_addactivity_postnamehint"
+            android:background="@color/white"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_school_post_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_resume_school_post_addactivity_postdescribe"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_post_addactivity_layouttextsize" />
+
+        <RelativeLayout
+            android:id="@+id/userresume_school_post_addactivity_postdescribelayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/userresume_school_post_addactivity_postdescribenumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:textColor="@color/gray_80"
+                    android:textSize="@dimen/userresume_school_post_addactivity_layouttextsize" />
+
+                <ImageView
+                    android:layout_width="@dimen/userresume_school_post_addactivity_layoutimageheight"
+                    android:layout_height="@dimen/userresume_school_post_addactivity_layoutimageheight"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/forward_40gray" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

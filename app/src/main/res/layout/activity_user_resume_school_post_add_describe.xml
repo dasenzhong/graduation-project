@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_10"
     android:orientation="vertical">
 
     <!--actionbar-->
@@ -12,7 +11,7 @@
         android:background="@color/black">
 
         <LinearLayout
-            android:id="@+id/userresume_workexperience_add_describeactivity_back"
+            android:id="@+id/userresume_school_post_add_describeactivity_back"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="5dp"
@@ -28,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="@string/user_resume_workexperience_addactivity_actionbar_title"
+                android:text="@string/user_resume_school_post_addactivity_actionbar_title"
                 android:textColor="@color/white"
                 android:textSize="@dimen/actionbar_textviewtextsize" />
 
@@ -38,19 +37,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/user_resume_workexperience_add_describeactivity_actionbar_title"
+            android:text="@string/user_resume_school_post_add_describeactivity_actionbar_title"
             android:textColor="@color/white"
             android:textSize="@dimen/actionbar_titletextsize" />
 
         <Button
-            android:id="@+id/userresume_workexperience_add_describeactivity_finish"
-            android:layout_width="@dimen/userresume_workexperience_add_describeactivity_okwidth"
-            android:layout_height="@dimen/userresume_workexperience_add_describeactivity_okheight"
+            android:id="@+id/userresume_school_post_add_describeactivity_finish"
+            android:layout_width="@dimen/userresume_school_post_add_describeactivity_okwidth"
+            android:layout_height="@dimen/userresume_school_post_add_describeactivity_okheight"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"
             android:padding="0dp"
-            android:text="@string/user_resume_workexperience_add_describeactivity_actionbar_finish"
+            android:text="@string/user_resume_school_post_add_describeactivity_actionbar_finish"
             android:textColor="@color/black" />
 
     </RelativeLayout>
@@ -62,16 +61,16 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/userresume_workexperience_add_describeactivity_describe"
+            android:id="@+id/userresume_school_post_add_describeactivity_describe"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/userresume_workexperience_add_describeactivity_editheight"
+            android:layout_height="@dimen/userresume_school_post_add_describeactivity_editheight"
             android:background="@color/white"
             android:gravity="top"
-            android:hint="@string/user_resume_workexperience_add_describeactivity_describehint"
+            android:hint="@string/user_resume_school_post_add_describeactivity_describehint"
             android:imeOptions="actionNone"
             android:inputType="textMultiLine"
             android:textColor="@color/black"
-            android:textSize="@dimen/userresume_workexperience_add_describeactivity_edittextsize" />
+            android:textSize="@dimen/userresume_school_post_add_describeactivity_edittextsize" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -85,18 +84,18 @@
 
                 <TextView
                     android:layout_marginEnd="5dp"
-                    android:id="@+id/userresume_workexperience_add_describeactivity_tip"
+                    android:id="@+id/userresume_school_post_add_describeactivity_tip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/user_resume_workexperience_add_describeactivity_describetip"
+                    android:text="@string/user_resume_school_post_add_describeactivity_describetip"
                     android:textColor="@color/gray_70"
-                    android:textSize="@dimen/userresume_workexperience_add_describeactivity_edittip" />
+                    android:textSize="@dimen/userresume_school_post_add_describeactivity_edittip" />
 
                 <TextView
                     android:layout_marginEnd="10dp"
                     android:textColor="@color/gray_70"
-                    android:textSize="@dimen/userresume_workexperience_add_describeactivity_edittip"
-                    android:text="@string/user_resume_workexperience_add_describeactivity_describenumber"
+                    android:textSize="@dimen/userresume_school_post_add_describeactivity_edittip"
+                    android:text="@string/user_resume_school_post_add_describeactivity_describenumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>

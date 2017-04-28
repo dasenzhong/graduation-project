@@ -157,19 +157,52 @@
     <dimen name="userresume_infoactivity_layouttextsize">16sp</dimen>
 
     <!--编辑工作经验-->
+    <dimen name="userresume_workexperienceactivity_okheight">35dp</dimen>
+    <dimen name="userresume_workexperienceactivity_okwidth">50dp</dimen>
     <dimen name="userresume_workexperienceactivity_addlayout">30dp</dimen>
     <dimen name="userresume_workexperienceactivity_addtextsize">16sp</dimen>
     <dimen name="userresume_workexperienceactivity_addimagesize">15dp</dimen>
 
     <!--添加工作经验-->
+    <dimen name="userresume_workexperience_addactivity_okheight">35dp</dimen>
+    <dimen name="userresume_workexperience_addactivity_okwidth">50dp</dimen>
     <dimen name="userresume_workexperience_addactivity_layoutheight">45dp</dimen>
     <dimen name="userresume_workexperience_addactivity_layouttextsize">16sp</dimen>
     <dimen name="userresume_workexperience_addactivity_layoutimageheight">20dp</dimen>
 
     <!--职位描述-->
+    <dimen name="userresume_workexperience_add_describeactivity_okheight">35dp</dimen>
+    <dimen name="userresume_workexperience_add_describeactivity_okwidth">50dp</dimen>
     <dimen name="userresume_workexperience_add_describeactivity_editheight">250dp</dimen>
     <dimen name="userresume_workexperience_add_describeactivity_edittextsize">14sp</dimen>
     <dimen name="userresume_workexperience_add_describeactivity_edittip">10sp</dimen>
+
+    <!--在校荣誉fragment-->
+    <dimen name="userresume_schoolactivity_okheight">35dp</dimen>
+    <dimen name="userresume_schoolactivity_okwidth">50dp</dimen>
+    <dimen name="userresume_schoolactivity_addlayout">30dp</dimen>
+    <dimen name="userresume_schoolactivity_addtextsize">16sp</dimen>
+    <dimen name="userresume_schoolactivity_addimagesize">15dp</dimen>
+
+    <!--添加校内荣誉-->
+    <dimen name="userresume_school_honor_addactivity_okheight">35dp</dimen>
+    <dimen name="userresume_school_honor_addactivity_okwidth">50dp</dimen>
+    <dimen name="userresume_school_honor_addactivity_layoutheight">45dp</dimen>
+    <dimen name="userresume_school_honor_addactivity_layouttextsize">16sp</dimen>
+
+    <!--添加校内职务-->
+    <dimen name="userresume_school_post_addactivity_okheight">35dp</dimen>
+    <dimen name="userresume_school_post_addactivity_okwidth">50dp</dimen>
+    <dimen name="userresume_school_post_addactivity_layoutheight">45dp</dimen>
+    <dimen name="userresume_school_post_addactivity_layouttextsize">16sp</dimen>
+    <dimen name="userresume_school_post_addactivity_layoutimageheight">20dp</dimen>
+
+    <!--校内职务描述-->
+    <dimen name="userresume_school_post_add_describeactivity_okheight">35dp</dimen>
+    <dimen name="userresume_school_post_add_describeactivity_okwidth">50dp</dimen>
+    <dimen name="userresume_school_post_add_describeactivity_editheight">200dp</dimen>
+    <dimen name="userresume_school_post_add_describeactivity_edittextsize">14sp</dimen>
+    <dimen name="userresume_school_post_add_describeactivity_edittip">10sp</dimen>
 
     <!--userSetting的关于-->
     <dimen name="usersetting_about_text">18sp</dimen>
