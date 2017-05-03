@@ -235,4 +235,16 @@
     <string name="user_resume_school_post_add_describeactivity_describetip">0</string>
     <string name="user_resume_school_post_add_describeactivity_describenumber">/200</string>
 
+    <!--登录-->
+    <string name="login_actionbar_title">登录</string>
+    <string name="login_actionbar_register">注册</string>
+    <string name="login_signin">登录</string>
+    <string name="login_account">账号</string>
+    <string name="login_accounthint">请输入帐号</string>
+    <string name="login_password">密码</string>
+    <string name="login_passwordhint">请输入密码</string>
+
+    <!--digits-->
+    <string name="digits">0123456789qwertyuiopasdgfhjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
+
 </resources>

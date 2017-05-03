@@ -206,6 +206,12 @@
 
     <!--userSetting的关于-->
     <dimen name="usersetting_about_text">18sp</dimen>
+    
+    <!--登录-->
+    <dimen name="login_textsize">18sp</dimen>
+    <dimen name="login_layoutheight">40dp</dimen>
+    <dimen name="login_imageheight">30dp</dimen>
+    
 
     <!--退出按钮-->
     <dimen name="exit">16sp</dimen>
