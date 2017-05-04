@@ -37,6 +37,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
+            android:background="@drawable/login_register_actionbar_button_background"
+            android:padding="3dp"
             android:layout_marginEnd="5dp"
             android:text="@string/login_actionbar_register"
             android:textColor="@color/white"
@@ -51,9 +53,8 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="@dimen/login_textwidth"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:gravity="center"
             android:text="@string/login_account"
             android:textColor="@color/gray_80"
@@ -61,31 +62,39 @@
 
         <EditText
             android:id="@+id/login_account"
-            android:textColor="@color/black"
-            android:inputType="text"
-            android:digits="@string/digits"
-            android:imeOptions="actionNext"
-            android:maxLines="1"
-            android:maxEms="20"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="1"
             android:background="@color/transparent"
+            android:digits="@string/digits"
             android:hint="@string/login_accounthint"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxEms="20"
+            android:maxLines="1"
+            android:textColor="@color/black"
             android:textSize="@dimen/login_textsize" />
+
+        <ImageView
+            android:id="@+id/login_accountclear"
+            android:layout_width="@dimen/login_imageheight"
+            android:layout_height="@dimen/login_imageheight"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/clear80gray"
+            android:visibility="gone" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:background="@color/white"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/login_layoutheight">
+        android:layout_height="@dimen/login_layoutheight"
+        android:background="@color/white"
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="@dimen/login_textwidth"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:gravity="center"
             android:text="@string/login_password"
             android:textColor="@color/gray_80"
@@ -93,36 +102,60 @@
 
         <EditText
             android:id="@+id/login_password"
-            android:textColor="@color/black"
-            android:inputType="textPassword"
-            android:digits="@string/digits"
-            android:imeOptions="actionNext"
-            android:maxLines="1"
-            android:maxEms="20"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="1"
             android:background="@color/transparent"
+            android:digits="@string/digits"
             android:hint="@string/login_passwordhint"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:maxEms="20"
+            android:maxLines="1"
+            android:textColor="@color/black"
             android:textSize="@dimen/login_textsize" />
+
+        <ImageView
+            android:id="@+id/login_passwordclear"
+            android:layout_width="@dimen/login_imageheight"
+            android:layout_height="@dimen/login_imageheight"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/clear80gray"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/gray_80" />
+
+
+        <ImageView
+            android:id="@+id/login_visibility"
+            android:layout_width="@dimen/login_imageheight"
+            android:layout_height="@dimen/login_imageheight"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/visibility" />
 
     </LinearLayout>
 
     <FrameLayout
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/login_layoutheight">
+        android:layout_height="@dimen/login_layoutheight"
+        android:layout_marginTop="30dp"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp">
 
         <Button
             android:id="@+id/login_signin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="@color/black_blue"
             android:text="@string/login_signin"
-            android:textSize="@dimen/login_textsize"
             android:textColor="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:textSize="@dimen/login_textsize" />
 
 
     </FrameLayout>

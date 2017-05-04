@@ -208,10 +208,16 @@
     <dimen name="usersetting_about_text">18sp</dimen>
     
     <!--登录-->
-    <dimen name="login_textsize">18sp</dimen>
+    <dimen name="login_textsize">16sp</dimen>
     <dimen name="login_layoutheight">40dp</dimen>
-    <dimen name="login_imageheight">30dp</dimen>
-    
+    <dimen name="login_imageheight">20dp</dimen>
+    <dimen name="login_textwidth">60dp</dimen>
+
+    <!--注册-->
+    <dimen name="register_textsize">16sp</dimen>
+    <dimen name="register_layoutheight">40dp</dimen>
+    <dimen name="register_imagehight">20dp</dimen>
+    <dimen name="register_textwidth">60dp</dimen>
 
     <!--退出按钮-->
     <dimen name="exit">16sp</dimen>

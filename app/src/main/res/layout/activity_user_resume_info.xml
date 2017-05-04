@@ -134,7 +134,7 @@
                             android:layout_width="@dimen/userresume_infoactivity_layoutimageheight"
                             android:layout_height="@dimen/userresume_infoactivity_layoutimageheight"
                             android:layout_gravity="center_vertical"
-                            android:background="@drawable/userresume_infoactivity_sex_male" />
+                            android:background="@drawable/sex_male" />
 
                         <TextView
                             android:id="@+id/userresume_infoactivity_sex_maletext"
@@ -143,7 +143,7 @@
                             android:layout_marginStart="5dp"
                             android:gravity="center"
                             android:text="@string/user_resume_infoactivity_male"
-                            android:textColor="@color/userresume_infoactivity_sex_textcolor"
+                            android:textColor="@color/sex_textcolor"
                             android:textSize="@dimen/userresume_infoactivity_layouttextsize" />
 
                     </LinearLayout>
@@ -160,7 +160,7 @@
                             android:layout_width="@dimen/userresume_infoactivity_layoutimageheight"
                             android:layout_height="@dimen/userresume_infoactivity_layoutimageheight"
                             android:layout_gravity="center_vertical"
-                            android:background="@drawable/userresume_infoactivity_sex_female" />
+                            android:background="@drawable/sex_female" />
 
                         <TextView
                             android:id="@+id/userresume_infoactivity_sex_femaletext"
@@ -169,7 +169,7 @@
                             android:layout_marginStart="5dp"
                             android:gravity="center"
                             android:text="@string/user_resume_infoactivity_female"
-                            android:textColor="@color/userresume_infoactivity_sex_textcolor"
+                            android:textColor="@color/sex_textcolor"
                             android:textSize="@dimen/userresume_infoactivity_layouttextsize" />
 
                     </LinearLayout>

@@ -244,6 +244,22 @@
     <string name="login_password">密码</string>
     <string name="login_passwordhint">请输入密码</string>
 
+    <!--注册-->
+    <string name="register_student_actionbar_title">注册学生账号</string>
+    <string name="register_company_actionbar_title">注册公司账号</string>
+    <string name="register_account">账号</string>
+    <string name="register_accounthint">由10～20位的英文或数字组成</string>
+    <string name="register_password">密码</string>
+    <string name="register_passwordhint">由10～20位的英文或数字组成</string>
+    <string name="register_ok">完成</string>
+    <string name="register_student_sex">性别</string>
+    <string name="register_student_sex_male">男</string>
+    <string name="register_student_sex_female">女</string>
+    <string name="register_company_area">地区</string>
+    <string name="register_company_areahint">请选择</string>
+    <string name="register_company_name">公司</string>
+    <string name="register_company_namehint">请输入公司名</string>
+
     <!--digits-->
     <string name="digits">0123456789qwertyuiopasdgfhjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
 

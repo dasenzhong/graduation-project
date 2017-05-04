@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_10"
+    android:orientation="vertical">
+
+    <!--actionbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarheight"
+        android:background="@color/black_blue"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp">
+
+
+        <ImageView
+            android:id="@+id/register_student_back"
+            android:layout_width="@dimen/actionbar_imageheight"
+            android:layout_height="@dimen/actionbar_imageheight"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/back_white" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/register_student_actionbar_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_titletextsize" />
+
+        <TextView
+            android:id="@+id/register_student_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/login_register_actionbar_button_background"
+            android:padding="3dp"
+            android:text="@string/register_ok"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_textviewtextsize" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/register_layoutheight"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="@dimen/login_textwidth"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/register_account"
+            android:textColor="@color/gray_80"
+            android:textSize="@dimen/register_textsize" />
+
+        <EditText
+            android:id="@+id/register_student_account"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:digits="@string/digits"
+            android:hint="@string/register_accounthint"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxEms="20"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/register_textsize" />
+
+        <ImageView
+            android:id="@+id/register_student_accountclear"
+            android:layout_width="@dimen/register_imagehight"
+            android:layout_height="@dimen/register_imagehight"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/clear80gray"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/register_layoutheight"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="@dimen/register_textwidth"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/register_password"
+            android:textColor="@color/gray_80"
+            android:textSize="@dimen/register_textsize" />
+
+        <EditText
+            android:id="@+id/register_student_password"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:digits="@string/digits"
+            android:hint="@string/register_passwordhint"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:maxEms="20"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/register_textsize" />
+
+        <ImageView
+            android:id="@+id/register_student_passwordclear"
+            android:layout_width="@dimen/register_imagehight"
+            android:layout_height="@dimen/register_imagehight"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/clear80gray"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/gray_80" />
+
+        <ImageView
+            android:id="@+id/register_student_visibility"
+            android:layout_width="@dimen/register_imagehight"
+            android:layout_height="@dimen/register_imagehight"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/visibility" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/register_layoutheight"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="@dimen/register_textwidth"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/register_student_sex"
+            android:textColor="@color/gray_80"
+            android:textSize="@dimen/register_textsize" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_marginEnd="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/register_student_malelayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/register_student_maleimage"
+                        android:layout_width="@dimen/register_imagehight"
+                        android:layout_height="@dimen/register_imagehight"
+                        android:src="@drawable/sex_male" />
+
+                    <TextView
+                        android:id="@+id/register_student_maletext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/register_student_sex_male"
+                        android:textColor="@color/sex_textcolor"
+                        android:textSize="@dimen/register_textsize" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/register_student_femalelayout"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/register_student_femaleimage"
+                        android:src="@drawable/sex_female"
+                        android:layout_width="@dimen/register_imagehight"
+                        android:layout_height="@dimen/register_imagehight" />
+
+                    <TextView
+                        android:id="@+id/register_student_femaletext"
+                        android:textColor="@color/sex_textcolor"
+                        android:text="@string/register_student_sex_female"
+                        android:textSize="@dimen/register_textsize"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
