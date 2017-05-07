@@ -4,6 +4,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -124,6 +125,16 @@
             android:name=".user.resume.UserResumeSchoolPostAddDescribeActivty"
             android:theme="@style/UserActivityTheme"
             android:windowSoftInputMode="adjustPan|stateAlwaysVisible" />
+        <!--登录-->
+        <activity android:name=".LoginActivity"/>
+        <!--学生注册-->
+        <activity
+            android:name=".RegisterStudentActivity"
+            android:theme="@style/RegisterTheme" />
+        <!--公司注册-->
+        <activity
+            android:name=".RegisterCompanyActivity"
+            android:theme="@style/RegisterTheme" />
     </application>
 
 </manifest>

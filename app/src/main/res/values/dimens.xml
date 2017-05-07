@@ -217,7 +217,7 @@
     <dimen name="register_textsize">16sp</dimen>
     <dimen name="register_layoutheight">40dp</dimen>
     <dimen name="register_imagehight">20dp</dimen>
-    <dimen name="register_textwidth">60dp</dimen>
+    <dimen name="register_textwidth">70dp</dimen>
 
     <!--退出按钮-->
     <dimen name="exit">16sp</dimen>

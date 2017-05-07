@@ -52,7 +52,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="@dimen/login_textwidth"
+            android:layout_width="@dimen/register_textwidth"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="@string/register_account"
@@ -138,6 +138,61 @@
             android:src="@drawable/visibility" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/register_layoutheight"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="@dimen/register_textwidth"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/register_passwordrepeat"
+            android:textColor="@color/gray_80"
+            android:textSize="@dimen/register_textsize" />
+
+        <EditText
+            android:id="@+id/register_company_passwordrepeat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:digits="@string/digits"
+            android:hint="@string/register_passwordrepeathint"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:maxEms="20"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/register_textsize" />
+
+        <ImageView
+            android:id="@+id/register_company_passwordrepeatclear"
+            android:layout_width="@dimen/register_imagehight"
+            android:layout_height="@dimen/register_imagehight"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/clear80gray"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/gray_80" />
+
+        <ImageView
+            android:id="@+id/register_company_repeatvisibility"
+            android:layout_width="@dimen/register_imagehight"
+            android:layout_height="@dimen/register_imagehight"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/visibility" />
+
+    </LinearLayout>
+
     <LinearLayout
         android:background="@color/white"
         android:orientation="horizontal"
@@ -211,6 +266,14 @@
             android:background="@color/transparent"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/register_company_nameclear"
+            android:layout_width="@dimen/register_imagehight"
+            android:layout_height="@dimen/register_imagehight"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/clear80gray"
+            android:visibility="gone" />
 
     </LinearLayout>
 

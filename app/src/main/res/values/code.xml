@@ -8,6 +8,7 @@
     <integer name="CHOOSEPLACE_REQUESTCODE_AREA">0x0011</integer>
     <integer name="CHOOSEPLACE_REQUESTCODE_WORKPLACE">0x0012</integer>
     <integer name="CHOOSEPLACE_REQUESTCODE_USERRESUME_INFOADDRESS">0x0013</integer>
+    <integer name="CHOOSEPLACE_REQUESTCODE_REGISTER">0x0014</integer>
     <integer name="CHOOSEPLACE_RESULTCODE">0x0010</integer>
 
     <!--头像修改/////请求码和结果码-->
@@ -21,4 +22,6 @@
     <!--职务描述-->
     <integer name="USERRESUME_SCHOOL_POST_ADD_DESCRIBE_REQUESTCODE">0x433231</integer>
     <integer name="USERRESUME_SCHOOL_POST_ADD_DESCRIBE_RESULTCODE">0x433230</integer>
+
+    <!---->
 </resources>

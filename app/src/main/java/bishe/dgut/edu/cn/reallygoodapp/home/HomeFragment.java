@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bishe.dgut.edu.cn.reallygoodapp.JobInfoActivity;
+import bishe.dgut.edu.cn.reallygoodapp.LoginActivity;
 import bishe.dgut.edu.cn.reallygoodapp.R;
 import bishe.dgut.edu.cn.reallygoodapp.api.GetAppSize;
 import bishe.dgut.edu.cn.reallygoodapp.home.experience.HomeExperienceActivity;
@@ -81,9 +82,18 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
 
         if (homeview == null) {
             homeview = inflater.inflate(R.layout.fragment_home, null);
+
+            //actionbar
             LinearLayout actionbar = (LinearLayout) homeview.findViewById(R.id.home_actionbar);
             actionbarDrawable = actionbar.getBackground().mutate();
             actionbarDrawable.setAlpha(0);
+            ImageView actionbar_user = (ImageView) homeview.findViewById(R.id.home_actionbar_user);
+            actionbar_user.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                }
+            });
 
             //listhead的广告轮播位置
             listHead_advertisement = inflater.inflate(R.layout.fragment_home_listhead_advertisement, null);

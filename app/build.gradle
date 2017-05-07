@@ -3,6 +3,12 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+
     defaultConfig {
         applicationId "bishe.dgut.edu.cn.reallygoodapp"
         minSdkVersion 21
@@ -29,6 +35,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support:design:25.3.0'
     testCompile 'junit:junit:4.12'
-
     compile 'com.ashokvarma.android:bottom-navigation-bar:1.3.0'
+    compile files('libs/jackson-annotations-2.9.0.pr3.jar')
 }
