@@ -1,7 +1,10 @@
 package bishe.dgut.edu.cn.reallygoodapp.user.resume;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,10 +17,17 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.Calendar;
 
 import bishe.dgut.edu.cn.reallygoodapp.R;
+import bishe.dgut.edu.cn.reallygoodapp.api.Link;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MultipartBody;
+import okhttp3.Response;
 
 /**
  * ZDX
@@ -32,6 +42,9 @@ public class UserResumeSchoolPostAddActivity extends Activity {
     private String describeString;          //职务描述
 
     private TextView postDescribeNumber;
+    private TextView startTime;
+    private TextView endTime;
+    private EditText postName;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,7 +52,7 @@ public class UserResumeSchoolPostAddActivity extends Activity {
         setContentView(R.layout.activity_user_resume_school_post_add);
 
         //开始时间
-        final TextView startTime = (TextView) findViewById(R.id.userresume_school_post_addactivity_starttime);
+        startTime = (TextView) findViewById(R.id.userresume_school_post_addactivity_starttime);
         RelativeLayout startTimeLayout = (RelativeLayout) findViewById(R.id.userresume_school_post_addactivity_starttimelayout);
         startTimeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +69,7 @@ public class UserResumeSchoolPostAddActivity extends Activity {
         });
 
         //结束时间
-        final TextView endTime = (TextView) findViewById(R.id.userresume_school_post_addactivity_endtime);
+        endTime = (TextView) findViewById(R.id.userresume_school_post_addactivity_endtime);
         RelativeLayout endTimeLayout = (RelativeLayout) findViewById(R.id.userresume_school_post_addactivity_endtimelayout);
         endTimeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +86,7 @@ public class UserResumeSchoolPostAddActivity extends Activity {
         });
 
         //职务名称
-        EditText postName = (EditText) findViewById(R.id.userresume_school_post_addactivity_postname);
+        postName = (EditText) findViewById(R.id.userresume_school_post_addactivity_postname);
 
         //职务描述
         postDescribeNumber = (TextView) findViewById(R.id.userresume_school_post_addactivity_postdescribenumber);
@@ -91,6 +104,12 @@ public class UserResumeSchoolPostAddActivity extends Activity {
 
         //保存
         Button save = (Button) findViewById(R.id.userresume_school_post_addactivity_save);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendToServer();
+            }
+        });
 
         //返回
         LinearLayout back = (LinearLayout) findViewById(R.id.userresume_school_post_addactivity_back);
@@ -100,6 +119,85 @@ public class UserResumeSchoolPostAddActivity extends Activity {
                 finish();
             }
         });
+    }
+
+    private void sendToServer() {
+
+        if (startTime.getText().equals("")) {
+            Toast.makeText(this, "请选择开始时间", Toast.LENGTH_SHORT).show();
+        } else if (endTime.getText().equals("")) {
+            Toast.makeText(this, "请选择结束时间", Toast.LENGTH_SHORT).show();
+        } else if (postName.getText().toString().equals("")) {
+            Toast.makeText(this, "请填写职务名称", Toast.LENGTH_SHORT).show();
+        } else if (describeString.isEmpty() || describeString == null) {
+            Toast.makeText(this, "请填写职务描述", Toast.LENGTH_SHORT).show();
+        }  else {
+
+            MultipartBody body = new MultipartBody.Builder()
+                    .addFormDataPart("startTime", startTime.getText().toString())
+                    .addFormDataPart("endTime", endTime.getText().toString())
+                    .addFormDataPart("postName", postName.getText().toString())
+                    .addFormDataPart("describe", describeString)
+                    .build();
+
+            //稍等进度条
+            final ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage("请稍等");
+            progressDialog.setCancelable(false);
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.show();
+
+            Link.getClient().newCall(
+                    Link.getRequestAddress("/addpost").post(body).build()
+            ).enqueue(new Callback() {
+                @Override
+                public void onFailure(Call call, final IOException e) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            progressDialog.dismiss();
+
+                            new AlertDialog.Builder(UserResumeSchoolPostAddActivity.this)
+                                    .setMessage(e.getMessage())
+                                    .setTitle("请求失败")
+                                    .setNegativeButton("好", null).show();
+                        }
+                    });
+                }
+
+                @Override
+                public void onResponse(Call call, Response response) throws IOException {
+
+                    //从服务器接受到数据
+                    final String responseString = response.body().string();
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            progressDialog.dismiss();
+
+                            try {
+                                new AlertDialog.Builder(UserResumeSchoolPostAddActivity.this)
+                                        .setTitle("请求成功")
+                                        .setMessage(responseString)
+                                        .setPositiveButton("好", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                finish();
+                                            }
+                                        }).show();
+                            } catch (Exception e) {
+                                new AlertDialog.Builder(UserResumeSchoolPostAddActivity.this)
+                                        .setMessage(e.getMessage())
+                                        .setTitle("回应失败")
+                                        .setNegativeButton("好", null).show();
+                            }
+                        }
+                    });
+                }
+            });
+
+        }
     }
 
     private void hideSoftInput(View view) {

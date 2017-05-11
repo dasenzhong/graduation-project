@@ -1,12 +1,14 @@
 package bishe.dgut.edu.cn.reallygoodapp.home.parttimejob;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -15,7 +17,14 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 import bishe.dgut.edu.cn.reallygoodapp.R;
+import bishe.dgut.edu.cn.reallygoodapp.api.Link;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MultipartBody;
+import okhttp3.Response;
 
 /**
  * Created by Administrator on 2017/3/26.
@@ -102,58 +111,45 @@ public class EmployPersonActivity extends Activity {
                     if (jobName.isEmpty()) {
                         noticeToast.setText("请输入你要发布工作的名字");
                         noticeToast.show();
-                        return;
-                    }
-                    if (jobType.isEmpty()) {
+                    }else if (jobType.isEmpty()) {
                         noticeToast.setText("请选择工作类型");
                         noticeToast.show();
-                        return;
-                    }
-                    if (education.isEmpty()) {
+                    }else if (education.isEmpty()) {
                         education = "不限";
-                    }
-                    if (personNumber.isEmpty()) {
-                        personNumber = "若干人";
-                    }
-                    if (jobInfoFragment.getMoneyText().isEmpty()) {
+                    } else if (jobInfoFragment.getMoneyText().isEmpty()) {
                         noticeToast.setText("请输入薪酬");
                         noticeToast.show();
-                        return;
+                    } else {
+                        if (personNumber.isEmpty()) {
+                            personNumber = "若干人";
+                        }
+
+                        jobInfoLayout.setBackgroundColor(ContextCompat.getColor(EmployPersonActivity.this, R.color.orange));
+                        showJobAddressFragment();
+                        hideSoftwareInput();
+                        canInfoLayoutClick = true;
+                        ((Button) v).setText(getResources().getString(R.string.employperson_step_send));
                     }
-
-                    jobInfoLayout.setBackgroundColor(ContextCompat.getColor(EmployPersonActivity.this, R.color.orange));
-                    showJobAddressFragment();
-                    hideSoftwareInput();
-                    canInfoLayoutClick = true;
-//                    canAddressLayoutClick = true;
-                    ((Button) v).setText(getResources().getString(R.string.employperson_step_send));
-                    return;
-//                    Log.d("money-----", money);
-                }
-
-                //发布操作
-                if (((Button) v).getText().toString().equals(getResources().getString(R.string.employperson_step_send))) {
+                }else if (((Button) v).getText().toString().equals(getResources().getString(R.string.employperson_step_send))) {
 
                     //发布兼职招聘
                     if (jobAddressFragment.getAreaText().isEmpty()) {
                         noticeToast.setText("请选择招聘地址");
                         noticeToast.show();
-                        return;
-                    }
-
-                    if (jobAddressFragment.getWorkPlaceText().isEmpty() || jobAddressFragment.getDetailWorkPlaceText().isEmpty()) {
+                    } else if (jobAddressFragment.getWorkPlaceText().isEmpty() || jobAddressFragment.getDetailWorkPlaceText().isEmpty()) {
                         noticeToast.setText("工作地址未填写完成");
                         noticeToast.show();
-                        return;
+                    } else {
+                        sendToServer();     //发送到服务器
                     }
-                    Log.d("jobName:", jobName);
-                    Log.d("jobType:", jobType);
-                    Log.d("education", education);
-                    Log.d("personNumber", personNumber);
-                    Log.d("money:", money);
-                    Log.d("describe:", describe);
-                    Log.d("招聘地址：", jobAddressFragment.getProvinceNameArea() + "," + jobAddressFragment.getCityNameArea() + "," + jobAddressFragment.getTownNameArea());
-                    Log.d("工作地址:", jobAddressFragment.getProvinceNameWorkPlace() + "," + jobAddressFragment.getCityNameWorkPlace() + "," + jobAddressFragment.getTownNameWorkPlace());
+//                    Log.d("jobName:", jobName);
+//                    Log.d("jobType:", jobType);
+//                    Log.d("education", education);
+//                    Log.d("personNumber", personNumber);
+//                    Log.d("money:", money);
+//                    Log.d("describe:", describe);
+//                    Log.d("招聘地址：", jobAddressFragment.getProvinceNameArea() + "," + jobAddressFragment.getCityNameArea() + "," + jobAddressFragment.getTownNameArea());
+//                    Log.d("工作地址:", jobAddressFragment.getProvinceNameWorkPlace() + "," + jobAddressFragment.getCityNameWorkPlace() + "," + jobAddressFragment.getTownNameWorkPlace());
                 }
             }
         });
@@ -224,6 +220,84 @@ public class EmployPersonActivity extends Activity {
                 jobInfoFragment.setEducationViewText(educationText);
             }
         });
+    }
+
+    private void sendToServer() {
+        //传输数据
+        MultipartBody body = new MultipartBody.Builder()
+                .addFormDataPart("jobName", jobName)
+                .addFormDataPart("jobType", jobType)
+                .addFormDataPart("number", personNumber)
+                .addFormDataPart("education", education)
+                .addFormDataPart("money", money)
+                .addFormDataPart("describe", describe)
+                .addFormDataPart("employProvince", jobAddressFragment.getProvinceNameArea())
+                .addFormDataPart("employCity",jobAddressFragment.getCityNameArea())
+                .addFormDataPart("employTown",jobAddressFragment.getTownNameArea())
+                .addFormDataPart("workProvince",jobAddressFragment.getProvinceNameWorkPlace())
+                .addFormDataPart("workCity",jobAddressFragment.getCityNameWorkPlace())
+                .addFormDataPart("workTown",jobAddressFragment.getTownNameWorkPlace())
+                .addFormDataPart("workAddress",jobAddressFragment.getDetailWorkPlaceText())
+                .build();
+
+        //稍等进度条
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("请稍等");
+        progressDialog.setCancelable(false);
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.show();
+
+        //连接服务端
+        Link.getClient().newCall(
+                Link.getRequestAddress("/addjob").post(body).build()
+        ).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, final IOException e) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+
+                        new AlertDialog.Builder(EmployPersonActivity.this)
+                                .setMessage(e.getMessage())
+                                .setTitle("请求失败")
+                                .setNegativeButton("好", null).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+                //从服务器接受到数据
+                final String responseString = response.body().string();
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+
+                        try {
+                            new AlertDialog.Builder(EmployPersonActivity.this)
+                                    .setTitle("请求成功")
+                                    .setMessage(responseString)
+                                    .setPositiveButton("好", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            finish();
+                                        }
+                                    }).show();
+                        } catch (Exception e) {
+                            new AlertDialog.Builder(EmployPersonActivity.this)
+                                    .setMessage(e.getMessage())
+                                    .setTitle("回应失败")
+                                    .setNegativeButton("好", null).show();
+                        }
+                    }
+                });
+            }
+        });
+
     }
 
     /**

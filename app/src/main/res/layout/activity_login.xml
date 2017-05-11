@@ -37,9 +37,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
             android:background="@drawable/login_register_actionbar_button_background"
             android:padding="3dp"
-            android:layout_marginEnd="5dp"
             android:text="@string/login_actionbar_register"
             android:textColor="@color/white"
             android:textSize="@dimen/actionbar_textviewtextsize" />
@@ -143,8 +143,35 @@
 
     <FrameLayout
         android:layout_width="match_parent"
+        android:layout_height="@dimen/login_layoutheight">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <RadioButton
+                android:id="@+id/login_student"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_studentcheck" />
+
+            <RadioButton
+                android:id="@+id/login_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:text="@string/login_companycheck" />
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="@dimen/login_layoutheight"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:paddingEnd="20dp"
         android:paddingStart="20dp">
 

@@ -243,6 +243,8 @@
     <string name="login_accounthint">请输入帐号</string>
     <string name="login_password">密码</string>
     <string name="login_passwordhint">请输入密码</string>
+    <string name="login_studentcheck">学生</string>
+    <string name="login_companycheck">公司</string>
 
     <!--注册-->
     <string name="register_student_actionbar_title">注册学生账号</string>

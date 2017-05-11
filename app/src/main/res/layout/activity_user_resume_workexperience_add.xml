@@ -288,13 +288,13 @@
                 android:orientation="horizontal">
 
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/userresume_workexperience_addactivity_alltime"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="@string/user_resume_workexperience_addactivity_jobtype_quanzhi" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/userresume_workexperience_addactivity_parttime"
                     android:layout_marginStart="25dp"
                     android:layout_width="wrap_content"

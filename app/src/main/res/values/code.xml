@@ -23,5 +23,7 @@
     <integer name="USERRESUME_SCHOOL_POST_ADD_DESCRIBE_REQUESTCODE">0x433231</integer>
     <integer name="USERRESUME_SCHOOL_POST_ADD_DESCRIBE_RESULTCODE">0x433230</integer>
 
-    <!---->
+    <!--用户类型-->
+    <integer name="STUDENT">0</integer>
+    <integer name="COMPANY">1</integer>
 </resources>
