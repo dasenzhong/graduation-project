@@ -46,6 +46,7 @@
     <string name="home_hot_parttimejob_jobname">兼职名</string>
     <string name="home_hot_parttimejob_money">薪酬</string>
     <string name="home_hot_company">人气公司</string>
+    <string name="home_foot_text">已经到底了</string>
 
     <!--兼职activity-->
     <string name="parttimejob_navigation_collect">收藏</string>
@@ -152,7 +153,11 @@
     <string name="user_resume_clicklayout_workexperience">工作经验</string>
     <string name="user_resume_clicklayout_school">在校情况</string>
     <string name="user_resume_nullitem_workexperience">尚未添加工作经验</string>
-    <string name="user_resume_nullitem_school">尚未添加在校情况</string>
+    <string name="user_resume_nullitem_school_honor">尚未添加校内荣誉</string>
+    <string name="user_resume_nullitem_school_post">尚未添加校内职务</string>
+    <string name="user_resume_list_time">时间</string>
+    <string name="user_resume_list_name">名称</string>
+    <string name="user_resume_list_post">职务</string>
 
     <!--编辑基本信息-->
     <string name="user_resume_infoactivity_actionbar_title">编辑基本信息</string>
@@ -263,6 +268,9 @@
     <string name="register_company_areahint">请选择</string>
     <string name="register_company_name">公司</string>
     <string name="register_company_namehint">请输入公司名</string>
+    <string name="register_company_companytype">公司类型</string>
+    <string name="register_company_companynumber">公司规模</string>
+    <string name="register_company_companyindustry">公司行业</string>
 
     <!--digits-->
     <string name="digits">0123456789qwertyuiopasdgfhjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>

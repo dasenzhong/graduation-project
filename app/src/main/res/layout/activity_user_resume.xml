@@ -279,10 +279,8 @@
 
                 <ListView
                     android:id="@+id/userresume_workexperiencelist"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/userresume_clicklayoutimageheight"
                     android:layout_marginTop="5dp">
 
                 </ListView>
@@ -338,10 +336,17 @@
                     android:background="@color/gray_20" />
 
                 <ListView
-                    android:id="@+id/userresume_schoollist"
+                    android:id="@+id/userresume_honorlist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/userresume_clicklayoutimageheight"
+                    android:layout_marginTop="5dp">
+
+                </ListView>
+
+                <ListView
+                    android:id="@+id/userresume_postlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="5dp">
 
                 </ListView>

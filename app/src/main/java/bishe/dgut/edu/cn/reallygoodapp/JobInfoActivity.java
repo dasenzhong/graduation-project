@@ -3,11 +3,22 @@ package bishe.dgut.edu.cn.reallygoodapp;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+
+import bishe.dgut.edu.cn.reallygoodapp.api.Link;
+import bishe.dgut.edu.cn.reallygoodapp.bean.Job;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 /**
  * ZDX
@@ -31,11 +42,16 @@ public class JobInfoActivity extends Activity {
     private TextView describe;
 
     private JobInfoApplyFragment applyFragment;
+    private int jobId;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jobinfo);
+
+        if (getIntent() != null) {
+            jobId = getIntent().getIntExtra("jobid", 0);
+        }
 
         if (savedInstanceState != null) {
             applyFragment = (JobInfoApplyFragment) getFragmentManager().findFragmentByTag("apply");
@@ -82,6 +98,66 @@ public class JobInfoActivity extends Activity {
             @Override
             public void onClick(View v) {
                 showApplyLayout();
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadJob();
+    }
+
+    private void loadJob() {
+        Link.getClient().newCall(
+                Link.getRequestAddress("/getjob/" + jobId).get().build()
+        ).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, final IOException e) {
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Log.d("getnewjob--failure", e.getMessage());
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+                try {
+
+                    final Job job = new ObjectMapper().readValue(response.body().string(), Job.class);
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            jobName.setText(job.getJobName());
+                            createTime.setText(job.getCreateDate().toString());
+                            money.setText(job.getMoney());
+                            if (job.getWorkTown() != null) {
+                                workPlace.setText(job.getWorkTown());
+                            } else {
+                                if (job.getWorkCity() != null) {
+                                    workPlace.setText(job.getWorkCity());
+                                } else {
+                                    workPlace.setText(job.getWorkProvince());
+                                }
+                            }
+                            employPerson.setText(job.getNumber());
+                            education.setText(job.getEducation());
+                            workPlaceDetail.setText(job.getWorkAddress());
+                            companyName.setText(job.getCompanyUser().getCompanyName());
+                            companyType.setText(job.getCompanyUser().getCompanyType());
+                            companyPerson.setText(job.getCompanyUser().getCompanyNumber());
+                            companyIndustry.setText(job.getCompanyUser().getCompanyIndustry());
+                            describe.setText(job.getDecribe());
+                        }
+                    });
+                } catch (Exception e) {
+                    Log.d("addnewjob--failure", e.getMessage());
+                }
             }
         });
     }

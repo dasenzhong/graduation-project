@@ -736,4 +736,20 @@
         <item>/月</item>
         <item>/次</item>
     </string-array>
+
+    <!--/////////////////////////////////////////公司类型////////////////////////////////////////-->
+    <string-array name="companytype">
+        <item>民营企业</item>
+        <item>国有企业</item>
+        <item>外商投资企业</item>
+        <item>港澳台投资企业</item>
+    </string-array>
+
+    <!--/////////////////////////////////////////公司类型////////////////////////////////////////-->
+    <string-array name="companynumber">
+        <item>50以下</item>
+        <item>50～100</item>
+        <item>100～500</item>
+        <item>500以上</item>
+    </string-array>
 </resources>

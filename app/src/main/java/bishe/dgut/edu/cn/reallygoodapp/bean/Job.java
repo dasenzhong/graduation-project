@@ -3,6 +3,7 @@ package bishe.dgut.edu.cn.reallygoodapp.bean;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * ZDX
@@ -14,6 +15,8 @@ import java.io.Serializable;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Job implements Serializable {
+
+    Integer id;
 
     CompanyUser companyUser;	//工作所属
 
@@ -30,6 +33,24 @@ public class Job implements Serializable {
     String workCity;			//工作城市
     String workTown;			//工作城镇
     String workAddress;			//详细地址
+
+    Date createDate;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
 
     public CompanyUser getCompanyUser() {
         return companyUser;

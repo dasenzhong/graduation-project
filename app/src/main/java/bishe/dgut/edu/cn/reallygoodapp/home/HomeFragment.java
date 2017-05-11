@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,10 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,11 +32,17 @@ import bishe.dgut.edu.cn.reallygoodapp.JobInfoActivity;
 import bishe.dgut.edu.cn.reallygoodapp.LoginActivity;
 import bishe.dgut.edu.cn.reallygoodapp.R;
 import bishe.dgut.edu.cn.reallygoodapp.api.GetAppSize;
+import bishe.dgut.edu.cn.reallygoodapp.api.Link;
+import bishe.dgut.edu.cn.reallygoodapp.bean.Job;
+import bishe.dgut.edu.cn.reallygoodapp.bean.Page;
 import bishe.dgut.edu.cn.reallygoodapp.home.experience.HomeExperienceActivity;
 import bishe.dgut.edu.cn.reallygoodapp.home.organization.HomeOrganizationActivity;
 import bishe.dgut.edu.cn.reallygoodapp.home.parttimejob.HomePartTimeJobActivity;
 import bishe.dgut.edu.cn.reallygoodapp.home.recruit.HomeRecruitActivity;
 import bishe.dgut.edu.cn.reallygoodapp.module.imageviewpager.ViewPagerForShowingImageFragment;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 /**
  * Created by Administrator on 2017/2/25.
@@ -46,21 +57,15 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
     private Drawable actionbarDrawable;     //获取actionbar背景资源
     private View listHead_advertisement;    //广告
 
+    private int page;
 
-    //测试例子
-    private List<String> stringList;
+    private List<Job> newJobList;
     private List<String> hotJobStringList;
     private List<String> hotCompanyStringList;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        //测试例子
-        stringList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            stringList.add("测试，待服务器连接\n" + "这是放最新讯息的地方");
-        }
 
         hotJobStringList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
@@ -81,7 +86,7 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
         bitmapsList.add(BitmapFactory.decodeResource(getResources(),R.drawable.testfive));
 
         if (homeview == null) {
-            homeview = inflater.inflate(R.layout.fragment_home, null);
+            homeview = inflater.inflate(R.layout.fragment_home, container, false);
 
             //actionbar
             LinearLayout actionbar = (LinearLayout) homeview.findViewById(R.id.home_actionbar);
@@ -160,10 +165,13 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
             hotCompanyList.setAdapter(hotCompanyListAdapter);
             getListViewHeight(hotCompanyList);               //listview嵌套listview，要重新计算listview的高度
 
+            View listFoot = inflater.inflate(R.layout.fragment_home_listfoot, null);
+
             //listview的配置
             final ListView listView = (ListView) homeview.findViewById(R.id.home_listview);
             listView.addHeaderView(listHead_advertisement);
             listView.addHeaderView(listHead_navigation);
+            listView.addFooterView(listFoot);
             listView.setAdapter(listViewAdapter);
             listView.setOnScrollListener(this);
 
@@ -182,21 +190,78 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
             ViewGroup.LayoutParams params = view.getLayoutParams();
             params.height = GetAppSize.statusBarHeight(getResources());
             view.setLayoutParams(params);
+
+            newJobList = new ArrayList<>();
+            page = 0;
         }
 
         return homeview;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        reLoad();
+    }
 
+    private void reLoad() {
+
+        Link.getClient().newCall(
+                Link.getRequestAddress("/getnewjob/" + page).get().build()
+        ).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, final IOException e) {
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Log.d("getnewjob--failure", e.getMessage());
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+                try {
+                    final Page<Job> jobPage = new ObjectMapper().readValue(response.body().string(), new TypeReference<Page<Job>>() {
+                    });
+
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (jobPage.getNumber() > page) {
+                                if (newJobList == null) {
+                                    newJobList = jobPage.getContent();
+                                } else {
+                                    newJobList.addAll(jobPage.getContent());
+                                }
+                                page = jobPage.getNumber() + 1;
+
+                                listViewAdapter.notifyDataSetChanged();
+                            }
+                        }
+                    });
+                } catch (Exception e) {
+                    Log.d("addnewjob--failure", e.getMessage());
+                }
+            }
+        });
+
+    }
+
+    /**
+     * 新的工作消息列表适配器
+     */
     private BaseAdapter listViewAdapter = new BaseAdapter() {
         @Override
         public int getCount() {
-            return stringList.size();
+            return newJobList == null ? 0 : newJobList.size();
         }
 
         @Override
         public Object getItem(int position) {
-            return stringList.get(position);
+            return newJobList.get(position);
         }
 
         @Override
@@ -207,16 +272,48 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
+            NewJobListViewHolder newJobListViewHolder;
+
             if (convertView == null) {
-                convertView = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_home_listitem, null);
+                convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_home_listitem, parent, false);
+                newJobListViewHolder = new NewJobListViewHolder();
+                newJobListViewHolder.jobName = (TextView) convertView.findViewById(R.id.home_listview_jobname);
+                newJobListViewHolder.money = (TextView) convertView.findViewById(R.id.home_listview_money);
+                newJobListViewHolder.company = (TextView) convertView.findViewById(R.id.home_listview_company);
+                newJobListViewHolder.workPlace = (TextView) convertView.findViewById(R.id.home_listview_workplace);
+                convertView.setTag(newJobListViewHolder);
+            } else {
+                newJobListViewHolder = (NewJobListViewHolder) convertView.getTag();
             }
 
-            TextView textView = (TextView) convertView.findViewById(R.id.home_listview_item);
-            textView.setText("" + getItem(position) + position);
+            Job job = (Job) getItem(position);
+
+            newJobListViewHolder.jobName.setText(job.getJobName());
+            newJobListViewHolder.money.setText(job.getMoney());
+            newJobListViewHolder.company.setText(job.getCompanyUser().getCompanyName());
+            if (job.getWorkTown() != null) {
+                newJobListViewHolder.workPlace.setText(job.getWorkTown());
+            } else {
+                if (job.getWorkCity() != null) {
+                    newJobListViewHolder.workPlace.setText(job.getWorkCity());
+                } else {
+                    newJobListViewHolder.workPlace.setText(job.getWorkProvince());
+                }
+            }
 
             return convertView;
         }
     };
+
+    /**
+     * 新的工作列表容器
+     */
+    private class NewJobListViewHolder{
+        private TextView jobName;
+        private TextView money;
+        private TextView company;
+        private TextView workPlace;
+    }
 
     /**
      * 热门兼职列表

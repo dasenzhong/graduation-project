@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="@dimen/userresume_clicklayoutimageheight"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/orange_red_light" />
+
+        <ImageView
+            android:layout_width="@dimen/userresume_clicklayoutimageheight"
+            android:layout_height="@dimen/userresume_clicklayoutimageheight"
+            android:layout_gravity="center"
+            android:src="@drawable/userresume_list_dot" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_marginStart="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/userresume_workexperiencelist_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_resume_list_time"
+            android:textColor="@color/gray_70"
+            android:textSize="@dimen/userresume_list_time" />
+
+        <TextView
+            android:id="@+id/userresume_workexperiencelist_companyname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/user_resume_list_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_list_name" />
+
+        <TextView
+            android:layout_marginBottom="5dp"
+            android:id="@+id/userresume_workexperiencelist_companypost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/user_resume_list_post"
+            android:textColor="@color/gray_70"
+            android:textSize="@dimen/userresume_list_name_small" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

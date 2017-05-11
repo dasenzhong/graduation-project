@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +18,22 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import bishe.dgut.edu.cn.reallygoodapp.JobInfoActivity;
 import bishe.dgut.edu.cn.reallygoodapp.R;
+import bishe.dgut.edu.cn.reallygoodapp.api.Link;
+import bishe.dgut.edu.cn.reallygoodapp.bean.Job;
+import bishe.dgut.edu.cn.reallygoodapp.bean.Page;
 import bishe.dgut.edu.cn.reallygoodapp.module.applyclickview.ApplyClickView;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 /**
  * Created by Administrator on 2017/3/20.
@@ -30,11 +41,14 @@ import bishe.dgut.edu.cn.reallygoodapp.module.applyclickview.ApplyClickView;
 
 public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwitchPlaceFragment.OnCloseSwitchFragmentListener {
 
-    private List<String> stringList;
+    private List<Job> jobList;
     private PartTimeJobSwitchPlaceFragment switchPlaceFragment;
 
     private boolean isFindWork = true;              //记录title选择的类型，找兼职/做代理
     private boolean isdetail = false;
+    private PartTimeJobAdapter partTimeJobAdapter;
+
+    private int page;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,16 +67,10 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
             }
         }
 
-        //测试
-        stringList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            stringList.add("这是一条兼职消息");
-        }
-
         //兼职列表
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.parttimejob_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        final PartTimeJobAdapter partTimeJobAdapter = new PartTimeJobAdapter();
+        partTimeJobAdapter = new PartTimeJobAdapter();
         recyclerView.setAdapter(partTimeJobAdapter);
         recyclerView.addItemDecoration(new PartTimeJobItemDecoration(15));
 
@@ -160,6 +168,59 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
                 startActivity(new Intent(HomePartTimeJobActivity.this, EmployPersonActivity.class));
             }
         });
+
+        jobList = new ArrayList<>();
+        page = 0;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadJob();
+    }
+
+    private void loadJob() {
+        Link.getClient().newCall(
+                Link.getRequestAddress("/getnewjob/" + page).get().build()
+        ).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, final IOException e) {
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Log.d("getnewjob--failure", e.getMessage());
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+                try {
+                    final Page<Job> jobPage = new ObjectMapper().readValue(response.body().string(), new TypeReference<Page<Job>>() {
+                    });
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (jobPage.getNumber() > page) {
+                                if (jobList == null) {
+                                    jobList = jobPage.getContent();
+                                } else {
+                                    jobList.addAll(jobPage.getContent());
+                                }
+                                page = jobPage.getNumber() + 1;
+
+                                partTimeJobAdapter.notifyDataSetChanged();
+                            }
+                        }
+                    });
+                } catch (Exception e) {
+                    Log.d("addnewjob--failure", e.getMessage());
+                }
+            }
+        });
     }
 
     /**
@@ -202,11 +263,15 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
         @Override
         public void onBindViewHolder(PartTimeJobViewHolder holder, final int position) {
 
+            final Job job = jobList.get(position);
+
             //点击item处理
             holder.itemLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(HomePartTimeJobActivity.this, JobInfoActivity.class));
+                    Intent intent = new Intent(HomePartTimeJobActivity.this, JobInfoActivity.class);
+                    intent.putExtra("jobid", job.getId());
+                    startActivity(intent);
                 }
             });
 
@@ -224,7 +289,23 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
                 }
             });
 
-            holder.jobName.setText("" + stringList.get(position) + position);
+            holder.jobName.setText(job.getJobName());
+            holder.company.setText(job.getCompanyUser().getCompanyName());
+            holder.companyType.setText(job.getCompanyUser().getCompanyType());
+            holder.createTime.setText(job.getCreateDate().toString());
+            holder.describe.setText(job.getDecribe());
+            holder.education.setText(job.getEducation());
+            holder.money.setText(job.getMoney());
+            if (job.getWorkTown() != null) {
+                holder.workPlace.setText(job.getWorkTown());
+            } else {
+                if (job.getWorkCity() != null) {
+                    holder.workPlace.setText(job.getWorkCity());
+                } else {
+                    holder.workPlace.setText(job.getWorkProvince());
+                }
+            }
+
             if (isdetail) {
                 holder.detailLayout.setVisibility(View.VISIBLE);
             } else {
@@ -237,7 +318,7 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
          */
         @Override
         public int getItemCount() {
-            return stringList.size();
+            return jobList == null ? 0 : jobList.size();
         }
 
     }

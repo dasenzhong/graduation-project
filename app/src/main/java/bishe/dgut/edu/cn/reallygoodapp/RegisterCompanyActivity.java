@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +48,10 @@ public class RegisterCompanyActivity extends Activity {
     private String provinceGet;
     private String cityGet;
     private String townGet;
+
+    private Spinner companyType;
+    private Spinner companyNumber;
+    private Spinner companyIndustry;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -217,6 +222,10 @@ public class RegisterCompanyActivity extends Activity {
             }
         });
 
+        companyType = (Spinner) findViewById(R.id.register_company_companytype);
+        companyNumber = (Spinner) findViewById(R.id.register_company_companynumber);
+        companyIndustry = (Spinner) findViewById(R.id.register_company_companyindustry);
+
         //提交
         TextView ok = (TextView) findViewById(R.id.register_company_ok);
         ok.setOnClickListener(new View.OnClickListener() {
@@ -265,6 +274,9 @@ public class RegisterCompanyActivity extends Activity {
                         .addFormDataPart("city", cityGet)
                         .addFormDataPart("town", townGet)
                         .addFormDataPart("companyName", companyNameGet)
+                        .addFormDataPart("comapnyType", companyType.getSelectedItem().toString())
+                        .addFormDataPart("companyNumber", companyNumber.getSelectedItem().toString())
+                        .addFormDataPart("companyIndustry", companyIndustry.getSelectedItem().toString())
                         .build();
 
                 //稍等进度条

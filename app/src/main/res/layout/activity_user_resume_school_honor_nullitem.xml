@@ -9,7 +9,7 @@
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/user_resume_nullitem_workexperience"
+        android:text="@string/user_resume_nullitem_school_honor"
         android:textColor="@color/black"
         android:textSize="@dimen/userresume_nullitem_bigtextsize" />
 

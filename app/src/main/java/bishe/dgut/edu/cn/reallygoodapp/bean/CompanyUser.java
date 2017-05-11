@@ -18,6 +18,33 @@ public class CompanyUser implements Serializable {
     String companyName;
     String log;
     String avatar;
+    String companyType;
+    String companyNumber;
+    String companyIndustry;
+
+    public String getCompanyType() {
+        return companyType;
+    }
+
+    public void setCompanyType(String companyType) {
+        this.companyType = companyType;
+    }
+
+    public String getCompanyNumber() {
+        return companyNumber;
+    }
+
+    public void setCompanyNumber(String companyNumber) {
+        this.companyNumber = companyNumber;
+    }
+
+    public String getCompanyIndustry() {
+        return companyIndustry;
+    }
+
+    public void setCompanyIndustry(String companyIndustry) {
+        this.companyIndustry = companyIndustry;
+    }
 
     public String getProvince() {
         return province;

@@ -1,14 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--首页list的item-->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:minHeight="100dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-    <TextView
-        android:layout_gravity="center"
-        android:id="@+id/home_listview_item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <!--工作名、薪酬、公司名、工作市镇-->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/home_listview_jobname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:ellipsize="end"
+                android:maxEms="10"
+                android:maxLines="1"
+                android:text="@string/parttimejob_recyclerview_item_jobname"
+                android:textColor="@color/black"
+                android:textSize="@dimen/parttimejob_recyclerview_item_jobname" />
+
+            <TextView
+                android:id="@+id/home_listview_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/home_listview_jobname"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:text="@string/parttimejob_recyclerview_item_money"
+                android:textColor="@color/orange_red_light"
+                android:textSize="@dimen/parttimejob_recyclerview_item_money" />
+
+            <TextView
+                android:id="@+id/home_listview_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/home_listview_jobname"
+                android:layout_below="@id/home_listview_jobname"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxEms="11"
+                android:maxLines="1"
+                android:text="@string/parttimejob_recyclerview_item_company"
+                android:textColor="@color/gray_75"
+                android:textSize="@dimen/parttimejob_recyclerview_item_company" />
+
+            <TextView
+                android:id="@+id/home_listview_workplace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/home_listview_company"
+                android:layout_alignEnd="@id/home_listview_money"
+                android:text="@string/parttimejob_recyclerview_item_workplace"
+                android:textColor="@color/gray_75"
+                android:textSize="@dimen/parttimejob_recyclerview_item_workplace" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/parttimejob_recyclerview_item_forwardwidth"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="@dimen/parttimejob_recyclerview_item_imageheight"
+                android:layout_height="@dimen/parttimejob_recyclerview_item_imageheight"
+                android:layout_centerInParent="true"
+                android:src="@drawable/forward_40gray" />
+
+        </RelativeLayout>
+    </LinearLayout>
 </FrameLayout>
