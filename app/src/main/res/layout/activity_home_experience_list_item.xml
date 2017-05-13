@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="5dp"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="@dimen/experience_list_avatarlayout"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/experience_list_avatar"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/failure_gray"
+            android:layout_width="@dimen/experience_list_avatar"
+            android:layout_height="@dimen/experience_list_avatar" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginStart="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/experience_list_title"
+            android:text="@string/test2"
+            android:textSize="@dimen/experience_list_titletext"
+            android:textColor="@color/black"
+            android:maxEms="30"
+            android:maxLines="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/experience_list_look"
+                android:textColor="@color/gray_50"
+                android:textSize="@dimen/experience_list_looktext"
+                android:layout_alignParentStart="true"
+                android:text="@string/experience_list_look"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/experience_list_time"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/gray_50"
+                android:textSize="@dimen/experience_list_timetext"
+                android:text="@string/experience_list_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

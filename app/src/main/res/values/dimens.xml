@@ -83,6 +83,14 @@
     <dimen name="employperson_jobtypeactivity_list_itemchoosensize">14sp</dimen>
     <dimen name="employperson_jobtypeactivity_list_itemimageheight">25dp</dimen>
 
+    <!--////////////////////////////////////////文章activity设置/////////////////////////////////-->
+    <dimen name="experience_list_avatar">30dp</dimen>
+    <dimen name="experience_list_avatarlayout">40dp</dimen>
+    <dimen name="experience_list_titletext">18sp</dimen>
+    <dimen name="experience_list_looktext">14sp</dimen>
+    <dimen name="experience_list_timetext">12sp</dimen>
+
+
     <!--////////////////////////////////////////////////////////////////////////////////////////-->
 
     <!--////////////////////////////////////////社区fragment设置/////////////////////////////////-->
@@ -90,6 +98,12 @@
     <dimen name="share_nvmenu_avatar">60dp</dimen>
     <dimen name="share_nvmenu_nametextsize">16sp</dimen>
     <dimen name="share_nvmenu_schooltextsize">12sp</dimen>
+
+    <dimen name="share_list_item_avatar">45dp</dimen>
+    <dimen name="share_list_item_avatarlayout">55dp</dimen>
+    <dimen name="share_list_item_textsize">14sp</dimen>
+    <dimen name="share_list_item_btimage">20dp</dimen>
+    <dimen name="share_list_item_btimagelayout">25dp</dimen>
 
     <!--////////////////////////////////////////////////////////////////////////////////////////-->
 

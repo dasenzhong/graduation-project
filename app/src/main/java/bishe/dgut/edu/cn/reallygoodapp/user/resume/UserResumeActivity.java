@@ -47,11 +47,17 @@ public class UserResumeActivity extends Activity {
     private List<Honor> honorDataList;
     private List<Post> postDataList;
 
+    LinearLayout infoPrefectLayout;         //完善信息栏
+    LinearLayout infoNotPrefectLayout;      //未完善提示栏
+
+    private boolean isPrefect;              //是否完善信息
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_resume);
+
+        isPrefect = false;
 
         //基本信息栏
         RelativeLayout infoLayout = (RelativeLayout) findViewById(R.id.userresume_infoclicklayout);
@@ -80,6 +86,9 @@ public class UserResumeActivity extends Activity {
             }
         });
 
+        infoPrefectLayout = (LinearLayout) findViewById(R.id.userresume_infolayout);
+        infoNotPrefectLayout = (LinearLayout) findViewById(R.id.userresume_infonulllayout);
+
         name = (TextView) findViewById(R.id.userresume_info_name);
         sex = (TextView) findViewById(R.id.userresume_info_sex);
         age = (TextView) findViewById(R.id.userresume_info_age);
@@ -87,14 +96,17 @@ public class UserResumeActivity extends Activity {
         school = (TextView) findViewById(R.id.userresume_info_school);
         telephone = (TextView) findViewById(R.id.userresume_info_telephone);
 
+        //工作经验列表
         ListView workExperienceList = (ListView) findViewById(R.id.userresume_workexperiencelist);
         workExperienceList.setAdapter(workExperienceAdapter);
         getListViewHeight(workExperienceList);
 
+        //校内荣誉列表
         ListView honorList = (ListView) findViewById(R.id.userresume_honorlist);
         honorList.setAdapter(honorAdapter);
         getListViewHeight(honorList);
 
+        //校内职务列表
         ListView postList = (ListView) findViewById(R.id.userresume_postlist);
         postList.setAdapter(postAdapter);
         getListViewHeight(postList);
@@ -116,6 +128,13 @@ public class UserResumeActivity extends Activity {
         loadExperience();
         loadHonor();
         loadPost();
+        if (isPrefect) {
+            infoPrefectLayout.setVisibility(View.VISIBLE);
+            infoNotPrefectLayout.setVisibility(View.GONE);
+        } else {
+            infoNotPrefectLayout.setVisibility(View.VISIBLE);
+            infoPrefectLayout.setVisibility(View.GONE);
+        }
     }
 
     private void loadPost() {

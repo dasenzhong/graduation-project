@@ -53,7 +53,7 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
     private View homeview;
     private ImageView toTop;
 
-//    private LinearLayout actionbar;         //actionbar
+    //    private LinearLayout actionbar;         //actionbar
     private Drawable actionbarDrawable;     //获取actionbar背景资源
     private View listHead_advertisement;    //广告
 
@@ -79,11 +79,11 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
 
         //轮播测试例子
         List<Bitmap> bitmapsList = new ArrayList<>();
-        bitmapsList.add(BitmapFactory.decodeResource(getResources(),R.drawable.testone));
-        bitmapsList.add(BitmapFactory.decodeResource(getResources(),R.drawable.testtwo));
-        bitmapsList.add(BitmapFactory.decodeResource(getResources(),R.drawable.testthree));
-        bitmapsList.add(BitmapFactory.decodeResource(getResources(),R.drawable.testfour));
-        bitmapsList.add(BitmapFactory.decodeResource(getResources(),R.drawable.testfive));
+        bitmapsList.add(BitmapFactory.decodeResource(getResources(), R.drawable.testone));
+        bitmapsList.add(BitmapFactory.decodeResource(getResources(), R.drawable.testtwo));
+        bitmapsList.add(BitmapFactory.decodeResource(getResources(), R.drawable.testthree));
+        bitmapsList.add(BitmapFactory.decodeResource(getResources(), R.drawable.testfour));
+        bitmapsList.add(BitmapFactory.decodeResource(getResources(), R.drawable.testfive));
 
         if (homeview == null) {
             homeview = inflater.inflate(R.layout.fragment_home, container, false);
@@ -103,7 +103,7 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
             //listhead的广告轮播位置
             listHead_advertisement = inflater.inflate(R.layout.fragment_home_listhead_advertisement, null);
             ViewPagerForShowingImageFragment advertisement = (ViewPagerForShowingImageFragment) getChildFragmentManager().findFragmentById(R.id.home_listhead_advertisement);
-            advertisement.setDotUnSelectColor(ContextCompat.getColor(getActivity(),R.color.orange));           //设置未选时的颜色
+            advertisement.setDotUnSelectColor(ContextCompat.getColor(getActivity(), R.color.orange));           //设置未选时的颜色
 //            advertisement.setShowDot(false);                              //是否显示指示器，默认为显示
             advertisement.setAuto(true, 5000, 1500);                        //第一个参数为是否开启轮播服务，第二个参数为轮播时间间隔，第三个参数为动画滑动速度
             advertisement.setBitmapList(bitmapsList);
@@ -118,7 +118,7 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
             parttimejobLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(getActivity(),HomePartTimeJobActivity.class));
+                    startActivity(new Intent(getActivity(), HomePartTimeJobActivity.class));
                 }
             });
 
@@ -127,7 +127,7 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
             recruitLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(getActivity(),HomeRecruitActivity.class));
+                    startActivity(new Intent(getActivity(), HomeRecruitActivity.class));
                 }
             });
 
@@ -136,7 +136,7 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
             exprienceLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(getActivity(),HomeExperienceActivity.class));
+                    startActivity(new Intent(getActivity(), HomeExperienceActivity.class));
                 }
             });
 
@@ -145,7 +145,7 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
             organizationLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(getActivity(),HomeOrganizationActivity.class));
+                    startActivity(new Intent(getActivity(), HomeOrganizationActivity.class));
                 }
             });
 
@@ -212,12 +212,14 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
             @Override
             public void onFailure(Call call, final IOException e) {
 
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Log.d("getnewjob--failure", e.getMessage());
-                    }
-                });
+                if (getActivity() != null) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Log.d("getnewjob--failure", e.getMessage());
+                        }
+                    });
+                }
             }
 
             @Override
@@ -308,7 +310,7 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
     /**
      * 新的工作列表容器
      */
-    private class NewJobListViewHolder{
+    private class NewJobListViewHolder {
         private TextView jobName;
         private TextView money;
         private TextView company;
@@ -387,10 +389,11 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
 
     /**
      * 滚动监听
-     * @param view  监听的父容器
-     * @param firstVisibleItem  第一个可见item项
-     * @param visibleItemCount  可见item的总数
-     * @param totalItemCount    全部item的数量
+     *
+     * @param view             监听的父容器
+     * @param firstVisibleItem 第一个可见item项
+     * @param visibleItemCount 可见item的总数
+     * @param totalItemCount   全部item的数量
      */
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
@@ -408,7 +411,7 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
         if (firstVisibleItem > 2) {
             toTop.setVisibility(View.VISIBLE);
         } else {
-            if (toTop !=null && toTop.getVisibility() == View.VISIBLE ) {
+            if (toTop != null && toTop.getVisibility() == View.VISIBLE) {
                 toTop.setVisibility(View.GONE);
             }
         }
@@ -417,7 +420,8 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
 
     /**
      * 重新计量listview的高度
-     * @param listView  要测量的listview
+     *
+     * @param listView 要测量的listview
      */
     private void getListViewHeight(ListView listView) {
         ListAdapter listAdapter = listView.getAdapter();        //获取测量listview的适配器

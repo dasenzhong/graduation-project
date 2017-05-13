@@ -102,6 +102,7 @@
                     android:background="@color/gray_20" />
 
                 <LinearLayout
+                    android:id="@+id/userresume_infolayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/userresume_clicklayoutimageheight"
@@ -227,6 +228,24 @@
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/userresume_infonulllayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:textColor="@color/gray_75"
+                        android:textSize="@dimen/userresume_nullitem_bigtextsize"
+                        android:gravity="center"
+                        android:text="@string/user_resume_infonull_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -281,7 +300,8 @@
                     android:id="@+id/userresume_workexperiencelist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
+                    android:layout_marginTop="5dp"
+                    tools:listitem="@layout/activity_user_resume_workperiencelist_item">
 
                 </ListView>
 
@@ -339,7 +359,8 @@
                     android:id="@+id/userresume_honorlist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
+                    android:layout_marginTop="5dp"
+                    tools:listitem="@layout/activity_user_resume_school_honor_item">
 
                 </ListView>
 
@@ -347,7 +368,8 @@
                     android:id="@+id/userresume_postlist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
+                    android:layout_marginTop="5dp"
+                    tools:listitem="@layout/activity_user_resume_school_post_item">
 
                 </ListView>
 

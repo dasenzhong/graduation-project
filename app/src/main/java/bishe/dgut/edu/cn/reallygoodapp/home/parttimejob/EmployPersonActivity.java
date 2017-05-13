@@ -142,14 +142,6 @@ public class EmployPersonActivity extends Activity {
                     } else {
                         sendToServer();     //发送到服务器
                     }
-//                    Log.d("jobName:", jobName);
-//                    Log.d("jobType:", jobType);
-//                    Log.d("education", education);
-//                    Log.d("personNumber", personNumber);
-//                    Log.d("money:", money);
-//                    Log.d("describe:", describe);
-//                    Log.d("招聘地址：", jobAddressFragment.getProvinceNameArea() + "," + jobAddressFragment.getCityNameArea() + "," + jobAddressFragment.getTownNameArea());
-//                    Log.d("工作地址:", jobAddressFragment.getProvinceNameWorkPlace() + "," + jobAddressFragment.getCityNameWorkPlace() + "," + jobAddressFragment.getTownNameWorkPlace());
                 }
             }
         });

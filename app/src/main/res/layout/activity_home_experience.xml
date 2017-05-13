@@ -1,12 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_gravity="center"
-        android:text="经验"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <!--actionbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarheight"
+        android:background="@color/black_blue">
 
-</FrameLayout>
+        <LinearLayout
+            android:id="@+id/experience_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/actionbar_imageheight_small"
+                android:layout_height="@dimen/actionbar_imageheight_small"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/home_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbar_textviewtextsize" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/home_navigation_text_experiwnce"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_titletextsize" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/experience_list"
+        android:divider="@color/gray_20"
+        android:dividerHeight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/activity_home_experience_list_item">
+
+    </ListView>
+
+</LinearLayout>

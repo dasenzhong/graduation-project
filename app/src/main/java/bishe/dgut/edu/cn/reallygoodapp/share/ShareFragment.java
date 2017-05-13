@@ -17,7 +17,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -163,8 +162,6 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
                 convertView = LayoutInflater.from(getActivity()).inflate(R.layout.share_or_chat_listitem, null);
             }
 
-            TextView textView = (TextView) convertView.findViewById(R.id.share_listitem_text);
-            textView.setText("" + getItem(position) + position);
 
             return convertView;
         }

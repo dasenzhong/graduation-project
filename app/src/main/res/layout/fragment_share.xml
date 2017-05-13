@@ -20,6 +20,8 @@
             android:clipChildren="false"
             android:clipToPadding="false"
             android:paddingTop="@dimen/actionbarheight"
+            android:divider="@color/transparent"
+            android:dividerHeight="10dp"
             tools:listheader="@layout/fragment_share_listhead"
             tools:listitem="@layout/share_or_chat_listitem">
 

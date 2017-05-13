@@ -38,6 +38,7 @@
     <string name="share_nvmenu_group1_title">只看</string>
 
     <!--首页-->
+    <string name="home_name">首页</string>
     <string name="home_navigation_text_parttimejob">兼职</string>
     <string name="home_navigation_text_schoolrecruit">校园招聘</string>
     <string name="home_navigation_text_experiwnce">经验攻略</string>
@@ -144,6 +145,7 @@
 
     <!--我的简历-->
     <string name="user_resume_clicklayout_info">基本信息</string>
+    <string name="user_resume_infonull_text">你的基本信息未完善</string>
     <string name="user_resume_info_name">姓名</string>
     <string name="user_resume_info_sex">性别</string>
     <string name="user_resume_info_age">年龄</string>
@@ -272,7 +274,13 @@
     <string name="register_company_companynumber">公司规模</string>
     <string name="register_company_companyindustry">公司行业</string>
 
+    <!--文章-->
+    <string name="experience_list_look">已有100人浏览</string>
+    <string name="experience_list_time">时间</string>
+
     <!--digits-->
     <string name="digits">0123456789qwertyuiopasdgfhjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
 
+    <string name="test">在很多大学生的微信和QQ群里，每天都有大量兼职信息发布，工作内容多为网络刷单、打字录入等，而且普遍声称“日结工资”“回报率高”“不占时间”“月入过万”，听起来确实非常适合大学生开展课外兼职。然而记者走访了解到，其中很大一部分兼职的背后都隐藏着陷阱，许多学生不仅没赚到钱，反而被骗走了家里给的生活费。</string>
+    <string name="test2">大学生工作陷阱</string>
 </resources>
