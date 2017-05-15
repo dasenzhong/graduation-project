@@ -1,8 +1,13 @@
 package bishe.dgut.edu.cn.reallygoodapp.user.resume;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.KeyEvent;
@@ -12,15 +17,25 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
 import java.util.Calendar;
 
+import bishe.dgut.edu.cn.reallygoodapp.LoginActivity;
 import bishe.dgut.edu.cn.reallygoodapp.R;
+import bishe.dgut.edu.cn.reallygoodapp.api.Link;
+import bishe.dgut.edu.cn.reallygoodapp.bean.StudentUser;
 import bishe.dgut.edu.cn.reallygoodapp.module.chooseplace.ChoosePlaceActivity;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MultipartBody;
+import okhttp3.Response;
 
 /**
  * ZDX
@@ -31,6 +46,14 @@ import bishe.dgut.edu.cn.reallygoodapp.module.chooseplace.ChoosePlaceActivity;
 public class UserResumeInfoActivity extends Activity {
 
     private TextView address;
+    private EditText name;
+    private TextView birthday;
+    private EditText telephone;
+    private EditText school;
+
+    private String provinceGet;
+    private String cityGet;
+    private String townGet;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,7 +69,7 @@ public class UserResumeInfoActivity extends Activity {
         });
 
         //姓名输入框
-        EditText name = (EditText) findViewById(R.id.userresume_infoactivity_name);
+        name = (EditText) findViewById(R.id.userresume_infoactivity_name);
         name.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -57,43 +80,9 @@ public class UserResumeInfoActivity extends Activity {
             }
         });
 
-        //男性
-        final ImageView maleImage = (ImageView) findViewById(R.id.userresume_infoactivity_sex_maleimage);
-        final TextView maleText = (TextView) findViewById(R.id.userresume_infoactivity_sex_maletext);
-        LinearLayout maleLayout = (LinearLayout) findViewById(R.id.userresume_infoactivity_sex_malelayout);
-        //女性
-        final ImageView femaleImage = (ImageView) findViewById(R.id.userresume_infoactivity_sex_femaleimage);
-        final TextView femaleText = (TextView) findViewById(R.id.userresume_infoactivity_sex_femaletext);
-        LinearLayout femaleLayout = (LinearLayout) findViewById(R.id.userresume_infoactivity_sex_femalelayout);
-        //男性点击事件
-        maleLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hideSoftInput(v);
-                if (!maleImage.isSelected()) {
-                    maleImage.setSelected(true);
-                    maleText.setSelected(true);
-                    femaleImage.setSelected(false);
-                    femaleText.setSelected(false);
-                }
-            }
-        });
-        //女性点击事件
-        femaleLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hideSoftInput(v);
-                if (!femaleImage.isSelected()) {
-                    femaleImage.setSelected(true);
-                    femaleText.setSelected(true);
-                    maleImage.setSelected(false);
-                    maleText.setSelected(false);
-                }
-            }
-        });
 
         //出生年月
-        final TextView birthday = (TextView) findViewById(R.id.userresume_infoactivity_birthday);
+        birthday = (TextView) findViewById(R.id.userresume_infoactivity_birthday);
         RelativeLayout birthdayLayout = (RelativeLayout) findViewById(R.id.userresume_infoactivity_birthdaylayout);
         birthdayLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,7 +99,7 @@ public class UserResumeInfoActivity extends Activity {
         });
 
         //电话号码
-        EditText telephone = (EditText) findViewById(R.id.userresume_infoactivity_telephone);
+        telephone = (EditText) findViewById(R.id.userresume_infoactivity_telephone);
         telephone.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -132,7 +121,7 @@ public class UserResumeInfoActivity extends Activity {
         });
 
         //学校
-        EditText school = (EditText) findViewById(R.id.userresume_infoactivity_school);
+        school = (EditText) findViewById(R.id.userresume_infoactivity_school);
         school.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -158,10 +147,104 @@ public class UserResumeInfoActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                //上传数据
+                sendToServer();//上传数据
 
             }
         });
+    }
+
+    private void sendToServer() {
+        String nameGet = name.getText().toString();
+        String birthdayGet = birthday.getText().toString();
+        String telephoneGet = telephone.getText().toString();
+        String schoolGet = school.getText().toString();
+
+        if (nameGet.isEmpty()) {
+            Toast.makeText(this, "请输入姓名", Toast.LENGTH_SHORT).show();
+        } else if (birthdayGet.isEmpty() || birthdayGet.equals(getResources().getString(R.string.user_resume_infoactivity_birthdayhint))) {
+            Toast.makeText(this, "请选择出生年月", Toast.LENGTH_SHORT).show();
+        } else if (telephoneGet.isEmpty()) {
+            Toast.makeText(this, "请输入电话号码", Toast.LENGTH_SHORT).show();
+        } else if (provinceGet == null || provinceGet.isEmpty()) {
+            Toast.makeText(this, "请选择居住地", Toast.LENGTH_SHORT).show();
+        }else if (schoolGet.isEmpty()) {
+            Toast.makeText(this, "请输入学校名字", Toast.LENGTH_SHORT).show();
+        }else {
+            MultipartBody body = new MultipartBody.Builder()
+                    .addFormDataPart("account", accountGet)
+                    .addFormDataPart("password", passwordGet)
+                    .build();
+
+            //稍等进度条
+            final ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage("请稍等");
+            progressDialog.setCancelable(false);
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.show();
+
+            Link.getClient().newCall(
+                    Link.getRequestAddress("/loginstudent").post(body).build()
+            ).enqueue(new Callback() {
+                @Override
+                public void onFailure(Call call, final IOException e) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            progressDialog.dismiss();
+
+                            new AlertDialog.Builder(LoginActivity.this)
+                                    .setMessage(e.getMessage())
+                                    .setTitle("请求失败")
+                                    .setNegativeButton("好", null).show();
+                        }
+                    });
+                }
+
+                @Override
+                public void onResponse(Call call, Response response) throws IOException {
+
+                    //从服务器接受到数据
+                    final String responseString = response.body().string();
+                    ObjectMapper mapper = new ObjectMapper();
+                    //将数据存储在User类中
+                    StudentUser user = mapper.readValue(responseString, StudentUser.class);
+
+                    sharedPreferences = LoginActivity.this.getSharedPreferences("studentuser", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("sex", user.getSex());
+                    editor.putString("name", user.getName());
+                    editor.putString("area", user.getArea());
+                    editor.putString("school", user.getSchool());
+                    editor.putString("log", user.getLog());
+                    editor.putString("avatar", user.getAvatar());
+                    editor.apply();
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            progressDialog.dismiss();
+
+                            try {
+                                new AlertDialog.Builder(LoginActivity.this)
+                                        .setTitle("请求成功")
+                                        .setMessage(responseString)
+                                        .setPositiveButton("好", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                finish();
+                                            }
+                                        }).show();
+                            } catch (Exception e) {
+                                new AlertDialog.Builder(LoginActivity.this)
+                                        .setMessage(e.getMessage())
+                                        .setTitle("回应失败")
+                                        .setNegativeButton("好", null).show();
+                            }
+                        }
+                    });
+                }
+            });
+        }
     }
 
     private void hideSoftInput(View view) {
@@ -176,14 +259,17 @@ public class UserResumeInfoActivity extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == getResources().getInteger(R.integer.CHOOSEPLACE_RESULTCODE)) {
             if (requestCode == getResources().getInteger(R.integer.CHOOSEPLACE_REQUESTCODE_USERRESUME_INFOADDRESS)) {
-                if (data.getStringExtra("city") != null) {
-                    if (data.getStringExtra("town") != null) {
-                        address.setText(data.getStringExtra("province") + " " + data.getStringExtra("city") + " " + data.getStringExtra("town"));
+                provinceGet = data.getStringExtra("province");
+                cityGet = data.getStringExtra("city");
+                townGet = data.getStringExtra("town");
+                if (cityGet != null) {
+                    if (townGet != null) {
+                        address.setText(provinceGet + " " + cityGet + " " + townGet);
                     } else {
-                        address.setText(data.getStringExtra("province") + " " + data.getStringExtra("city"));
+                        address.setText(provinceGet + " " + cityGet);
                     }
                 } else {
-                    address.setText(data.getStringExtra("province"));
+                    address.setText(provinceGet);
                 }
             }
         }

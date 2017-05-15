@@ -168,6 +168,7 @@
     <string name="user_resume_infoactivity_namehint">请输入姓名</string>
     <string name="user_resume_infoactivity_sex">性别</string>
     <string name="user_resume_infoactivity_birthday">出生年月</string>
+    <string name="user_resume_infoactivity_birthdayhint">请选择</string>
     <string name="user_resume_infoactivity_telephone">电话号码</string>
     <string name="user_resume_infoactivity_teltphonehint">请输入电话号码</string>
     <string name="user_resume_infoactivity_address">居住地</string>

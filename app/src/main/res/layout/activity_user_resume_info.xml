@@ -108,91 +108,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/user_resume_infoactivity_sex"
-                android:textColor="@color/black"
-                android:textSize="@dimen/userresume_infoactivity_layouttextsize" />
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:id="@+id/userresume_infoactivity_sex_malelayout"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/userresume_infoactivity_sex_maleimage"
-                            android:layout_width="@dimen/userresume_infoactivity_layoutimageheight"
-                            android:layout_height="@dimen/userresume_infoactivity_layoutimageheight"
-                            android:layout_gravity="center_vertical"
-                            android:background="@drawable/sex_male" />
-
-                        <TextView
-                            android:id="@+id/userresume_infoactivity_sex_maletext"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="5dp"
-                            android:gravity="center"
-                            android:text="@string/user_resume_infoactivity_male"
-                            android:textColor="@color/sex_textcolor"
-                            android:textSize="@dimen/userresume_infoactivity_layouttextsize" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/userresume_infoactivity_sex_femalelayout"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="20dp"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/userresume_infoactivity_sex_femaleimage"
-                            android:layout_width="@dimen/userresume_infoactivity_layoutimageheight"
-                            android:layout_height="@dimen/userresume_infoactivity_layoutimageheight"
-                            android:layout_gravity="center_vertical"
-                            android:background="@drawable/sex_female" />
-
-                        <TextView
-                            android:id="@+id/userresume_infoactivity_sex_femaletext"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="5dp"
-                            android:gravity="center"
-                            android:text="@string/user_resume_infoactivity_female"
-                            android:textColor="@color/sex_textcolor"
-                            android:textSize="@dimen/userresume_infoactivity_layouttextsize" />
-
-                    </LinearLayout>
-                </LinearLayout>
-            </RelativeLayout>
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/gray_50" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/userresume_infoactivity_layoutheight"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:text="@string/user_resume_infoactivity_birthday"
                 android:textColor="@color/black"
                 android:textSize="@dimen/userresume_infoactivity_layouttextsize" />
@@ -209,7 +124,7 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:gravity="center"
-                    android:text="@string/user_resume_infoactivity_birthday"
+                    android:hint="@string/user_resume_infoactivity_birthdayhint"
                     android:textSize="@dimen/userresume_infoactivity_layouttextsize" />
 
             </RelativeLayout>

@@ -14,7 +14,7 @@ public class Resume implements Serializable {
 
     String name;				//简历名字
     String birthday;			//出生年月
-    String tlelephone;			//电话
+    String telephone;			//电话
     String liveProvince;		//省份
     String liveCity;			//城市
     String liveTown;			//城镇
@@ -38,12 +38,12 @@ public class Resume implements Serializable {
         this.birthday = birthday;
     }
 
-    public String getTlelephone() {
-        return tlelephone;
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setTlelephone(String tlelephone) {
-        this.tlelephone = tlelephone;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 
     public String getLiveProvince() {
