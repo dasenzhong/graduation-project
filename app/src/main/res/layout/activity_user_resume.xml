@@ -148,11 +148,11 @@
                             android:background="@color/gray_50" />
 
                         <TextView
-                            android:id="@+id/userresume_info_age"
+                            android:id="@+id/userresume_info_birthday"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="bottom"
-                            android:text="@string/user_resume_info_age"
+                            android:text="@string/user_resume_info_birthday"
                             android:textColor="@color/gray_75"
                             android:textSize="@dimen/userresume_info_age" />
 

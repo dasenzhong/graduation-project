@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -43,6 +42,7 @@ public class JobInfoActivity extends Activity {
 
     private JobInfoApplyFragment applyFragment;
     private int jobId;
+    private Job job;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -128,31 +128,33 @@ public class JobInfoActivity extends Activity {
 
                 try {
 
-                    final Job job = new ObjectMapper().readValue(response.body().string(), Job.class);
+                    job = new ObjectMapper().readValue(response.body().string(), Job.class);
 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            jobName.setText(job.getJobName());
-                            createTime.setText(job.getCreateDate().toString());
-                            money.setText(job.getMoney());
-                            if (job.getWorkTown() != null) {
-                                workPlace.setText(job.getWorkTown());
-                            } else {
-                                if (job.getWorkCity() != null) {
-                                    workPlace.setText(job.getWorkCity());
+                            if (job != null) {
+                                jobName.setText(job.getJobName());
+                                createTime.setText(job.getCreateDate().toString());
+                                money.setText(job.getMoney());
+                                if (job.getWorkTown() != null) {
+                                    workPlace.setText(job.getWorkTown());
                                 } else {
-                                    workPlace.setText(job.getWorkProvince());
+                                    if (job.getWorkCity() != null) {
+                                        workPlace.setText(job.getWorkCity());
+                                    } else {
+                                        workPlace.setText(job.getWorkProvince());
+                                    }
                                 }
+                                employPerson.setText(job.getNumber());
+                                education.setText(job.getEducation());
+                                workPlaceDetail.setText(job.getWorkAddress());
+                                companyName.setText(job.getCompanyUser().getCompanyName());
+                                companyType.setText(job.getCompanyUser().getCompanyType());
+                                companyPerson.setText(job.getCompanyUser().getCompanyNumber());
+                                companyIndustry.setText(job.getCompanyUser().getCompanyIndustry());
+                                describe.setText(job.getDecribe());
                             }
-                            employPerson.setText(job.getNumber());
-                            education.setText(job.getEducation());
-                            workPlaceDetail.setText(job.getWorkAddress());
-                            companyName.setText(job.getCompanyUser().getCompanyName());
-                            companyType.setText(job.getCompanyUser().getCompanyType());
-                            companyPerson.setText(job.getCompanyUser().getCompanyNumber());
-                            companyIndustry.setText(job.getCompanyUser().getCompanyIndustry());
-                            describe.setText(job.getDecribe());
                         }
                     });
                 } catch (Exception e) {
@@ -199,20 +201,28 @@ public class JobInfoActivity extends Activity {
             }
         });
 
-        //申请工作点击回调
+        //申请代理人点击回调
         applyFragment.setOnAgentLayoutClickListener(new JobInfoApplyFragment.OnAgentLayoutClickListener() {
             @Override
             public void onAgentLayoutClick() {
-                Toast.makeText(JobInfoActivity.this, "你申请了工作", Toast.LENGTH_SHORT).show();
+                applyAgent();
             }
         });
 
-        //申请代理人回调
+        //申请工作点击回调
         applyFragment.setOnJobLayoutClickListener(new JobInfoApplyFragment.OnJobLayoutClickListener() {
             @Override
             public void onJobLayoutClick() {
-                Toast.makeText(JobInfoActivity.this, "你申请了成为代理人", Toast.LENGTH_SHORT).show();
+                applyJob();
             }
         });
+    }
+
+    private void applyJob() {
+
+    }
+
+    private void applyAgent() {
+
     }
 }

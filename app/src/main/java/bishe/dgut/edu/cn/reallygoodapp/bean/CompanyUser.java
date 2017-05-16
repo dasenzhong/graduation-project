@@ -1,5 +1,7 @@
 package bishe.dgut.edu.cn.reallygoodapp.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 
 /**
@@ -10,7 +12,12 @@ import java.io.Serializable;
  * Created on 2017/5/8.
  */
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CompanyUser implements Serializable {
+
+    Integer id;
+
+    String account;			//账号
 
     String province;
     String city;
@@ -21,6 +28,22 @@ public class CompanyUser implements Serializable {
     String companyType;
     String companyNumber;
     String companyIndustry;
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getCompanyType() {
         return companyType;

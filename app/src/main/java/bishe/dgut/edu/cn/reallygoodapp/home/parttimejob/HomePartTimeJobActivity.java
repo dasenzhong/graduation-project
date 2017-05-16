@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -160,6 +161,15 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
             }
         });
 
+        //申请按钮
+        RelativeLayout applyLayout = (RelativeLayout) findViewById(R.id.parttimejob_apply);
+        applyLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendToServerForApply();
+            }
+        });
+
         //雇用按钮
         TextView employText = (TextView) findViewById(R.id.parttimejob_employ);
         employText.setOnClickListener(new View.OnClickListener() {
@@ -172,6 +182,11 @@ public class HomePartTimeJobActivity extends Activity implements PartTimeJobSwit
         jobList = new ArrayList<>();
         page = 0;
     }
+
+    private void sendToServerForApply() {
+
+    }
+
 
     @Override
     protected void onResume() {

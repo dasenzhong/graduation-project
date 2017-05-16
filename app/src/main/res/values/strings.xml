@@ -148,7 +148,7 @@
     <string name="user_resume_infonull_text">你的基本信息未完善</string>
     <string name="user_resume_info_name">姓名</string>
     <string name="user_resume_info_sex">性别</string>
-    <string name="user_resume_info_age">年龄</string>
+    <string name="user_resume_info_birthday">出生年月</string>
     <string name="user_resume_info_telephone">电话</string>
     <string name="user_resume_info_address">居住地</string>
     <string name="user_resume_info_school">学校</string>
@@ -258,11 +258,11 @@
     <string name="register_student_actionbar_title">注册学生账号</string>
     <string name="register_company_actionbar_title">注册公司账号</string>
     <string name="register_account">账号</string>
-    <string name="register_accounthint">由10～20位的英文或数字组成</string>
+    <string name="register_accounthint">由8～20位的英文或数字组成</string>
     <string name="register_password">密码</string>
-    <string name="register_passwordhint">由10～20位的英文或数字组成</string>
+    <string name="register_passwordhint">由8～20位的英文或数字组成</string>
     <string name="register_passwordrepeat">重复密码</string>
-    <string name="register_passwordrepeathint">由10～20位的英文或数字组成</string>
+    <string name="register_passwordrepeathint">由8～20位的英文或数字组成</string>
     <string name="register_ok">完成</string>
     <string name="register_student_sex">性别</string>
     <string name="register_student_sex_male">男</string>
@@ -278,6 +278,17 @@
     <!--文章-->
     <string name="experience_list_look">已有100人浏览</string>
     <string name="experience_list_time">时间</string>
+
+    <!--发布随想activity-->
+    <string name="share_sendactivity_title">发布随想</string>
+    <string name="share_sendactivity_talkhint">这一刻的想法…</string>
+    <string name="share_sendactivity_sendbt">发送</string>
+
+    <!--发布经验activity-->
+    <string name="experience_sendactivity_title">发布经验文章</string>
+    <string name="experience_sendactivity_articlehint">你的经验…</string>
+    <string name="experience_sendactivity_sendbt">发送</string>
+    <string name="experience_sendactivity_titlehint">标题</string>
 
     <!--digits-->
     <string name="digits">0123456789qwertyuiopasdgfhjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>

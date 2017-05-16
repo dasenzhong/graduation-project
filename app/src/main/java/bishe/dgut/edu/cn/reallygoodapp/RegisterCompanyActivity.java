@@ -124,7 +124,7 @@ public class RegisterCompanyActivity extends Activity {
             @Override
             public void onClick(View v) {
                 if (v.isSelected()) {
-                    password.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
                     password.setSelection(password.length());
                     v.setSelected(false);
                 } else {
@@ -171,12 +171,16 @@ public class RegisterCompanyActivity extends Activity {
             @Override
             public void onClick(View v) {
                 if (v.isSelected()) {
-                    passwordRepeat.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    passwordRepeat.setSelection(password.length());
+                    passwordRepeat.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    if (password.length() < 0) {
+                        passwordRepeat.setSelection(password.length());
+                    }
                     v.setSelected(false);
                 } else {
                     passwordRepeat.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    passwordRepeat.setSelection(password.length());
+                    if (password.length() < 0) {
+                        passwordRepeat.setSelection(password.length());
+                    }
                     v.setSelected(true);
                 }
             }
@@ -254,9 +258,9 @@ public class RegisterCompanyActivity extends Activity {
 
         if (accountGet.isEmpty()) {
             Toast.makeText(this, "请输入账号", Toast.LENGTH_SHORT).show();
-        }else if (passwordGet.isEmpty() || passwordRepeatGet.isEmpty()) {
+        } else if (passwordGet.isEmpty() || passwordRepeatGet.isEmpty()) {
             Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
-        }else if (!passwordGet.equals(passwordRepeatGet)) {
+        } else if (!passwordGet.equals(passwordRepeatGet)) {
             Toast.makeText(this, "两次密码输入不一致", Toast.LENGTH_SHORT).show();
         } else if (companyNameGet.isEmpty()) {
             Toast.makeText(this, "请输入公司名称", Toast.LENGTH_SHORT).show();

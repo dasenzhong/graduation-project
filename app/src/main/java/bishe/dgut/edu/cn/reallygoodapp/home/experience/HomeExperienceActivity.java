@@ -1,6 +1,7 @@
 package bishe.dgut.edu.cn.reallygoodapp.home.experience;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +39,16 @@ public class HomeExperienceActivity extends Activity {
         ListView experienceList = (ListView) findViewById(R.id.experience_list);
         experienceList.setAdapter(experienceListAdapter);
 
+        //发布
+        ImageView send = (ImageView) findViewById(R.id.experience_send);
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeExperienceActivity.this, ShareSendExperienceActivity.class));
+            }
+        });
+
+        //返回
         LinearLayout back = (LinearLayout) findViewById(R.id.experience_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override

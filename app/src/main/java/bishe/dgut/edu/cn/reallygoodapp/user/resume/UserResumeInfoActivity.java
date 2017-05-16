@@ -4,10 +4,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.KeyEvent;
@@ -27,10 +25,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.Calendar;
 
-import bishe.dgut.edu.cn.reallygoodapp.LoginActivity;
 import bishe.dgut.edu.cn.reallygoodapp.R;
 import bishe.dgut.edu.cn.reallygoodapp.api.Link;
-import bishe.dgut.edu.cn.reallygoodapp.bean.StudentUser;
+import bishe.dgut.edu.cn.reallygoodapp.bean.Resume;
 import bishe.dgut.edu.cn.reallygoodapp.module.chooseplace.ChoosePlaceActivity;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -54,6 +51,8 @@ public class UserResumeInfoActivity extends Activity {
     private String provinceGet;
     private String cityGet;
     private String townGet;
+
+//    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -151,6 +150,8 @@ public class UserResumeInfoActivity extends Activity {
 
             }
         });
+
+//        editor = this.getSharedPreferences("resume", Context.MODE_PRIVATE).edit();
     }
 
     private void sendToServer() {
@@ -171,8 +172,13 @@ public class UserResumeInfoActivity extends Activity {
             Toast.makeText(this, "请输入学校名字", Toast.LENGTH_SHORT).show();
         }else {
             MultipartBody body = new MultipartBody.Builder()
-                    .addFormDataPart("account", accountGet)
-                    .addFormDataPart("password", passwordGet)
+                    .addFormDataPart("name", nameGet)
+                    .addFormDataPart("birthday", birthdayGet)
+                    .addFormDataPart("telephone", telephoneGet)
+                    .addFormDataPart("liveProvince", provinceGet)
+                    .addFormDataPart("liveCity", cityGet)
+                    .addFormDataPart("liveTown", townGet)
+                    .addFormDataPart("school", schoolGet)
                     .build();
 
             //稍等进度条
@@ -183,7 +189,7 @@ public class UserResumeInfoActivity extends Activity {
             progressDialog.show();
 
             Link.getClient().newCall(
-                    Link.getRequestAddress("/loginstudent").post(body).build()
+                    Link.getRequestAddress("/saveresume").post(body).build()
             ).enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, final IOException e) {
@@ -192,7 +198,7 @@ public class UserResumeInfoActivity extends Activity {
                         public void run() {
                             progressDialog.dismiss();
 
-                            new AlertDialog.Builder(LoginActivity.this)
+                            new AlertDialog.Builder(UserResumeInfoActivity.this)
                                     .setMessage(e.getMessage())
                                     .setTitle("请求失败")
                                     .setNegativeButton("好", null).show();
@@ -201,23 +207,20 @@ public class UserResumeInfoActivity extends Activity {
                 }
 
                 @Override
-                public void onResponse(Call call, Response response) throws IOException {
+                public void onResponse(Call call, final Response response) throws IOException {
 
                     //从服务器接受到数据
-                    final String responseString = response.body().string();
-                    ObjectMapper mapper = new ObjectMapper();
-                    //将数据存储在User类中
-                    StudentUser user = mapper.readValue(responseString, StudentUser.class);
+                    Resume resume = new ObjectMapper().readValue(response.body().string(), Resume.class);
 
-                    sharedPreferences = LoginActivity.this.getSharedPreferences("studentuser", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("sex", user.getSex());
-                    editor.putString("name", user.getName());
-                    editor.putString("area", user.getArea());
-                    editor.putString("school", user.getSchool());
-                    editor.putString("log", user.getLog());
-                    editor.putString("avatar", user.getAvatar());
-                    editor.apply();
+//                    editor.putString("name", resume.getName());
+//                    editor.putString("birthday", resume.getBirthday());
+//                    editor.putString("telephone", resume.getTelephone());
+//                    editor.putString("liveprovince", resume.getLiveProvince());
+//                    editor.putString("livecity", resume.getLiveCity());
+//                    editor.putString("livetown", resume.getLiveTown());
+//                    editor.putString("school", resume.getSchool());
+//                    editor.putBoolean("isprefect", resume.isPrefect());
+
 
                     runOnUiThread(new Runnable() {
                         @Override
@@ -225,9 +228,9 @@ public class UserResumeInfoActivity extends Activity {
                             progressDialog.dismiss();
 
                             try {
-                                new AlertDialog.Builder(LoginActivity.this)
+                                new AlertDialog.Builder(UserResumeInfoActivity.this)
                                         .setTitle("请求成功")
-                                        .setMessage(responseString)
+                                        .setMessage(response.body().string())
                                         .setPositiveButton("好", new DialogInterface.OnClickListener() {
                                             @Override
                                             public void onClick(DialogInterface dialog, int which) {
@@ -235,7 +238,7 @@ public class UserResumeInfoActivity extends Activity {
                                             }
                                         }).show();
                             } catch (Exception e) {
-                                new AlertDialog.Builder(LoginActivity.this)
+                                new AlertDialog.Builder(UserResumeInfoActivity.this)
                                         .setMessage(e.getMessage())
                                         .setTitle("回应失败")
                                         .setNegativeButton("好", null).show();

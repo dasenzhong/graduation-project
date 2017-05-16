@@ -90,6 +90,9 @@
     <dimen name="experience_list_looktext">14sp</dimen>
     <dimen name="experience_list_timetext">12sp</dimen>
 
+    <dimen name="experience_send">45dp</dimen>
+    <dimen name="experience_sendactivity_edittextheight">300dp</dimen>
+    <dimen name="experience_sendactivity_textsize">16sp</dimen>
 
     <!--////////////////////////////////////////////////////////////////////////////////////////-->
 
@@ -104,6 +107,10 @@
     <dimen name="share_list_item_textsize">14sp</dimen>
     <dimen name="share_list_item_btimage">20dp</dimen>
     <dimen name="share_list_item_btimagelayout">25dp</dimen>
+
+    <dimen name="share_send">45dp</dimen>
+    <dimen name="share_sendactivity_edittextheight">150dp</dimen>
+    <dimen name="share_sendactivity_textsize">16sp</dimen>
 
     <!--////////////////////////////////////////////////////////////////////////////////////////-->
 

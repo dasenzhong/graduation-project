@@ -19,7 +19,7 @@
         android:orientation="vertical">
 
         <FrameLayout
-            android:id="@+id/jobinfo_apply_agentlayout"
+            android:id="@+id/jobinfo_apply_joblayout"
             android:layout_marginBottom="10dp"
             android:background="@drawable/jobinfo_apply_jobbackground"
             android:layout_gravity="center_horizontal"
@@ -36,7 +36,7 @@
 
         </FrameLayout>
         <FrameLayout
-            android:id="@+id/jobinfo_apply_joblayout"
+            android:id="@+id/jobinfo_apply_agentlayout"
             android:layout_marginBottom="10dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/jobinfo_apply_agentbackground"

@@ -3,6 +3,7 @@ package bishe.dgut.edu.cn.reallygoodapp.bean;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * ZDX
@@ -15,11 +16,30 @@ import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Honor implements Serializable {
 
+    Integer id;
+    Date createDate;
+
     Resume resume;			//荣誉所属
 
     String time;			//获得时间
     String honorName;		//荣耀名称
     String level;			//级别
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
 
     public Resume getResume() {
         return resume;

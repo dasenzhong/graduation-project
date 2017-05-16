@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/gray_10"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarheight"
+        android:background="@color/black_blue">
+
+        <ImageView
+            android:id="@+id/experience_sendactivity_back"
+            android:layout_width="@dimen/actionbar_imageheight"
+            android:layout_height="@dimen/actionbar_imageheight"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/experience_sendactivity_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_titletextsize" />
+
+        <TextView
+            android:id="@+id/experience_sendactivity_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:text="@string/experience_sendactivity_sendbt"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_textviewtextsize" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/experience_sendactivity_title"
+        android:background="@color/white"
+        android:textSize="@dimen/experience_sendactivity_textsize"
+        android:textColor="@color/black"
+        android:maxLines="1"
+        android:imeOptions="actionNext"
+        android:hint="@string/experience_sendactivity_titlehint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:layout_marginTop="5dp"
+        android:id="@+id/experience_sendactivity_edit"
+        android:textSize="@dimen/experience_sendactivity_textsize"
+        android:textColor="@color/black"
+        android:inputType="textMultiLine"
+        android:hint="@string/experience_sendactivity_articlehint"
+        android:gravity="top|start"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/experience_sendactivity_edittextheight" />
+
+</LinearLayout>

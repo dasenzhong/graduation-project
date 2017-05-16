@@ -1,6 +1,7 @@
 package bishe.dgut.edu.cn.reallygoodapp.share;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -123,6 +124,15 @@ public class ShareFragment extends Fragment implements AbsListView.OnScrollListe
                 public void onClick(View v) {
                     shareList.smoothScrollToPosition(0);
                     v.setVisibility(View.GONE);
+                }
+            });
+
+            //发表按钮
+            ImageView send = (ImageView) shareview.findViewById(R.id.share_send);
+            send.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getActivity(), ShareSendTalkActivity.class));
                 }
             });
 

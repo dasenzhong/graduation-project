@@ -53,7 +53,7 @@ public class JobInfoApplyFragment extends Fragment {
                 }
             });
 
-            //点击工作职位
+            //点击成为代理人
             FrameLayout agentLayout = (FrameLayout) view.findViewById(R.id.jobinfo_apply_agentlayout);
             agentLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -64,7 +64,7 @@ public class JobInfoApplyFragment extends Fragment {
                 }
             });
 
-            //点击成为代理人
+            //点击申请职位
             FrameLayout jobLayout = (FrameLayout) view.findViewById(R.id.jobinfo_apply_joblayout);
             jobLayout.setOnClickListener(new View.OnClickListener() {
                 @Override

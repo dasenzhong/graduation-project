@@ -1,5 +1,7 @@
 package bishe.dgut.edu.cn.reallygoodapp.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 
 /**
@@ -10,7 +12,12 @@ import java.io.Serializable;
  * Created on 2017/5/8.
  */
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class StudentUser implements Serializable {
+
+    Integer id;
+
+    String account;			//账号
 
     String sex;				//性别
     String name;			//昵称
@@ -18,6 +25,22 @@ public class StudentUser implements Serializable {
     String school;			//学校
     String log;				//个性签名
     String avatar;			//头像
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
 
     public String getSex() {
         return sex;

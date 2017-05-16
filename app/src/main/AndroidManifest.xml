@@ -135,6 +135,16 @@
         <activity
             android:name=".RegisterCompanyActivity"
             android:theme="@style/RegisterTheme" />
+        <!--发布随想-->
+        <activity
+            android:name=".share.ShareSendTalkActivity"
+            android:theme="@style/ShareSendTheme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysVisible" />
+        <!--发布经验-->
+        <activity
+            android:name=".home.experience.ShareSendExperienceActivity"
+            android:theme="@style/ShareSendTheme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysVisible" />
     </application>
 
 </manifest>

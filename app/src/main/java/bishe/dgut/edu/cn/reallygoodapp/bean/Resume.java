@@ -1,5 +1,7 @@
 package bishe.dgut.edu.cn.reallygoodapp.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 
 /**
@@ -10,7 +12,10 @@ import java.io.Serializable;
  * Created on 2017/5/12.
  */
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Resume implements Serializable {
+
+    Integer id;
 
     String name;				//简历名字
     String birthday;			//出生年月
@@ -20,7 +25,25 @@ public class Resume implements Serializable {
     String liveTown;			//城镇
     String school;				//学校
 
+    boolean isPrefect;			//是否完善
+
     StudentUser studentUser;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public boolean isPrefect() {
+        return isPrefect;
+    }
+
+    public void setPrefect(boolean prefect) {
+        isPrefect = prefect;
+    }
 
     public String getName() {
         return name;

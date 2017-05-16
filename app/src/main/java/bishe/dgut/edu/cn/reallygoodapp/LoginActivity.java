@@ -198,9 +198,9 @@ public class LoginActivity extends Activity {
             Toast.makeText(this, "请输入账号", Toast.LENGTH_SHORT).show();
         } else if (passwordGet.isEmpty()) {
             Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
-        } else if (!student.isChecked() || !company.isChecked()) {
+        } else if (!student.isChecked() && !company.isChecked()) {
             Toast.makeText(this, "请选择类型", Toast.LENGTH_SHORT).show();
-        } else {
+        }  else {
 
             passwordGet = MD5.getMD5(passwordGet);
             if (passwordGet == null) {

@@ -26,6 +26,7 @@ import bishe.dgut.edu.cn.reallygoodapp.bean.Experience;
 import bishe.dgut.edu.cn.reallygoodapp.bean.Honor;
 import bishe.dgut.edu.cn.reallygoodapp.bean.Page;
 import bishe.dgut.edu.cn.reallygoodapp.bean.Post;
+import bishe.dgut.edu.cn.reallygoodapp.bean.Resume;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
@@ -38,7 +39,7 @@ public class UserResumeActivity extends Activity {
 
     private TextView name;          //姓名
     private TextView sex;           //性别
-    private TextView age;           //年龄
+    private TextView birthday;           //年龄
     private TextView address;       //居住地
     private TextView school;        //学校
     private TextView telephone;     //电话
@@ -50,14 +51,14 @@ public class UserResumeActivity extends Activity {
     LinearLayout infoPrefectLayout;         //完善信息栏
     LinearLayout infoNotPrefectLayout;      //未完善提示栏
 
-    private boolean isPrefect;              //是否完善信息
+//    private boolean isPrefect;              //是否完善信息
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_resume);
 
-        isPrefect = false;
+//        isPrefect = false;
 
         //基本信息栏
         RelativeLayout infoLayout = (RelativeLayout) findViewById(R.id.userresume_infoclicklayout);
@@ -91,7 +92,7 @@ public class UserResumeActivity extends Activity {
 
         name = (TextView) findViewById(R.id.userresume_info_name);
         sex = (TextView) findViewById(R.id.userresume_info_sex);
-        age = (TextView) findViewById(R.id.userresume_info_age);
+        birthday = (TextView) findViewById(R.id.userresume_info_birthday);
         address = (TextView) findViewById(R.id.userresume_info_address);
         school = (TextView) findViewById(R.id.userresume_info_school);
         telephone = (TextView) findViewById(R.id.userresume_info_telephone);
@@ -125,16 +126,86 @@ public class UserResumeActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        loadExperience();
-        loadHonor();
-        loadPost();
-        if (isPrefect) {
-            infoPrefectLayout.setVisibility(View.VISIBLE);
-            infoNotPrefectLayout.setVisibility(View.GONE);
-        } else {
-            infoNotPrefectLayout.setVisibility(View.VISIBLE);
-            infoPrefectLayout.setVisibility(View.GONE);
-        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                loadInfo();
+            }
+        }).start();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                loadExperience();
+            }
+        }).start();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                loadHonor();
+            }
+        }).start();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                loadPost();
+            }
+        }).start();
+    }
+
+    private void loadInfo() {
+        Link.getClient().newCall(
+                Link.getRequestAddress("/getinfo").get().build()
+        ).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, final IOException e) {
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Log.d("getinfo--failure", e.getMessage());
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, final Response response) throws IOException {
+
+                try {
+                    final Resume resume = new ObjectMapper().readValue(response.body().string(), Resume.class);
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            name.setText(resume.getName());
+                            sex.setText(resume.getStudentUser().getSex());
+                            birthday.setText(resume.getBirthday());
+                            if (resume.getLiveTown() != null) {
+                                address.setText(resume.getLiveTown());
+                            } else {
+                                if (resume.getLiveCity() != null) {
+                                    address.setText(resume.getLiveCity());
+                                } else {
+                                    address.setText(resume.getLiveProvince());
+                                }
+                            }
+                            school.setText(resume.getSchool());
+                            telephone.setText(resume.getTelephone());
+
+                            if (resume.isPrefect()) {
+                                infoPrefectLayout.setVisibility(View.VISIBLE);
+                                infoNotPrefectLayout.setVisibility(View.GONE);
+                            } else {
+                                infoNotPrefectLayout.setVisibility(View.VISIBLE);
+                                infoPrefectLayout.setVisibility(View.GONE);
+                            }
+                        }
+                    });
+                } catch (Exception e) {
+                    Log.d("addinfo--failure", e.getMessage());
+                }
+            }
+        });
     }
 
     private void loadPost() {

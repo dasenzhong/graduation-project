@@ -122,6 +122,7 @@
                 android:id="@+id/employperson_address_noticebox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:checked="true"
                 android:text="@string/employperson_addressfragment_noticestudent"
                 android:textSize="@dimen/employperson_addressfragment_textsize_notice" />
