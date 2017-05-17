@@ -1,12 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:padding="5dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/news_noticelist_text"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+<ImageView
+    android:id="@+id/news_notice_listitem_image"
+    android:src="@drawable/news_jobandagent"
+    android:layout_width="@dimen/news_notice_listitem_imageheight"
+    android:layout_height="@dimen/news_notice_listitem_imageheight" />
 
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="@dimen/news_notice_listitem_dotheight"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/news_notice_listitem_dot"
+            android:src="@drawable/news_readdot"
+            android:layout_width="@dimen/news_notice_listitem_dotheight"
+            android:layout_height="@dimen/news_notice_listitem_dotheight" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/news_notice_listitem_title"
+            android:text="@string/news_notice_listitem_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/news_notice_listitem_textsize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/news_notice_listitem_newstext"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:textSize="@dimen/news_notice_listitem_textsize_small"
+            android:textColor="@color/gray_70"
+            android:text="@string/news_notice_listitem_newstext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/news_notice_listitem_time"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:textSize="@dimen/news_notice_listitem_textsize_small"
+            android:textColor="@color/gray_70"
+            android:text="@string/news_notice_listitem_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</LinearLayout>

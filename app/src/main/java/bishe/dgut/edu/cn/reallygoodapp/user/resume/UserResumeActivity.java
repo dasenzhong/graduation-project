@@ -24,7 +24,6 @@ import bishe.dgut.edu.cn.reallygoodapp.R;
 import bishe.dgut.edu.cn.reallygoodapp.api.Link;
 import bishe.dgut.edu.cn.reallygoodapp.bean.Experience;
 import bishe.dgut.edu.cn.reallygoodapp.bean.Honor;
-import bishe.dgut.edu.cn.reallygoodapp.bean.Page;
 import bishe.dgut.edu.cn.reallygoodapp.bean.Post;
 import bishe.dgut.edu.cn.reallygoodapp.bean.Resume;
 import okhttp3.Call;
@@ -227,13 +226,13 @@ public class UserResumeActivity extends Activity {
             public void onResponse(Call call, Response response) throws IOException {
 
                 try {
-                    final Page<Post> postPage = new ObjectMapper().readValue(response.body().string(), new TypeReference<Page<Post>>() {
+                    final List<Post> postList = new ObjectMapper().readValue(response.body().string(), new TypeReference<List<Post>>() {
                     });
 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            postDataList = postPage.getContent();
+                            postDataList = postList;
 
                             postAdapter.notifyDataSetChanged();
                         }
@@ -264,13 +263,13 @@ public class UserResumeActivity extends Activity {
             public void onResponse(Call call, Response response) throws IOException {
 
                 try {
-                    final Page<Honor> honorPage = new ObjectMapper().readValue(response.body().string(), new TypeReference<Page<Honor>>() {
+                    final List<Honor> honorList = new ObjectMapper().readValue(response.body().string(), new TypeReference<List<Honor>>() {
                     });
 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            honorDataList= honorPage.getContent();
+                            honorDataList = honorList;
 
                             honorAdapter.notifyDataSetChanged();
                         }
@@ -301,13 +300,13 @@ public class UserResumeActivity extends Activity {
             public void onResponse(Call call, Response response) throws IOException {
 
                 try {
-                    final Page<Experience> experiencePage = new ObjectMapper().readValue(response.body().string(), new TypeReference<Page<Experience>>() {
+                    final List<Experience> experienceList = new ObjectMapper().readValue(response.body().string(), new TypeReference<List<Experience>>() {
                     });
 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            workExperienceDataList = experiencePage.getContent();
+                            workExperienceDataList = experienceList;
 
                             workExperienceAdapter.notifyDataSetChanged();
                         }

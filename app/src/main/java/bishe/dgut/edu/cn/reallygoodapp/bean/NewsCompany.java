@@ -29,8 +29,8 @@ public class NewsCompany implements Serializable{
     Resume resume;
 
     boolean isRead;
-    boolean isAgent;
-    boolean isJob;
+    Integer deal;
+    boolean isdeal;
 
     public Integer getId() {
         return id;
@@ -96,19 +96,19 @@ public class NewsCompany implements Serializable{
         isRead = read;
     }
 
-    public boolean isAgent() {
-        return isAgent;
+    public Integer getDeal() {
+        return deal;
     }
 
-    public void setAgent(boolean agent) {
-        isAgent = agent;
+    public void setDeal(Integer deal) {
+        this.deal = deal;
     }
 
-    public boolean isJob() {
-        return isJob;
+    public boolean isdeal() {
+        return isdeal;
     }
 
-    public void setJob(boolean job) {
-        isJob = job;
+    public void setIsdeal(boolean isdeal) {
+        this.isdeal = isdeal;
     }
 }

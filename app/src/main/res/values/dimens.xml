@@ -114,6 +114,15 @@
 
     <!--////////////////////////////////////////////////////////////////////////////////////////-->
 
+    <!--////////////////////////////////////////消息fragment设置/////////////////////////////////-->
+
+    <dimen name="news_notice_listitem_imageheight">45dp</dimen>
+    <dimen name="news_notice_listitem_dotheight">5dp</dimen>
+    <dimen name="news_notice_listitem_textsize">16sp</dimen>
+    <dimen name="news_notice_listitem_textsize_small">12sp</dimen>
+    <dimen name="news_notice_listitem_nullitemlayoutheight">45dp</dimen>
+
+    <!--////////////////////////////////////////////////////////////////////////////////////////-->
 
     <!--////////////////////////////////////////我的fragment设置/////////////////////////////////-->
     <!--useritemCell设置大小-->
@@ -276,6 +285,17 @@
     <dimen name="jobinfo_apply_layoutheight">35dp</dimen>
     <dimen name="jobinfo_apply_layoutwidth">200dp</dimen>
     <dimen name="jobinfo_apply_textsize">18sp</dimen>
+
+    <!--////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!--////////////////////////////////////////简历录取activity/////////////////////////////////-->
+    <dimen name="applydealjob_jobinfolayoutheight">45dp</dimen>
+    <dimen name="applydealjob_jobnametext">16sp</dimen>
+    <dimen name="applydealjob_jobmoneytext">12sp</dimen>
+    <dimen name="applydealjob_jobdetailtext">14sp</dimen>
+    <dimen name="applydealjob_forword">35dp</dimen>
+    <dimen name="applydealjob_buttonlayout">55dp</dimen>
+    <dimen name="applydealjob_buttontext">18sp</dimen>
 
     <!--////////////////////////////////////////////////////////////////////////////////////////-->
 

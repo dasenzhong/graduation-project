@@ -290,6 +290,20 @@
     <string name="experience_sendactivity_sendbt">发送</string>
     <string name="experience_sendactivity_titlehint">标题</string>
 
+    <!--消息通知-->
+    <string name="news_notice_listitem_title">消息标题</string>
+    <string name="news_notice_listitem_newstext">收到的消息</string>
+    <string name="news_notice_listitem_time">时间</string>
+    <string name="news_notice_listitem_null">暂无消息</string>
+
+    <!--简历录用-->
+    <string name="applydealjob_actionbar_title">简历录用</string>
+    <string name="applydealjob_jobname">工作名称</string>
+    <string name="applydealjob_jobmoney">工作薪酬</string>
+    <string name="applydealjob_jobdetail">详情</string>
+    <string name="applydealjob_unpass">不录用</string>
+    <string name="applydealjob_pass">录用</string>
+
     <!--digits-->
     <string name="digits">0123456789qwertyuiopasdgfhjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
 

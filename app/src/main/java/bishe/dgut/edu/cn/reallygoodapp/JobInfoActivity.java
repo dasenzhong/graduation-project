@@ -1,6 +1,9 @@
 package bishe.dgut.edu.cn.reallygoodapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -17,6 +20,7 @@ import bishe.dgut.edu.cn.reallygoodapp.api.Link;
 import bishe.dgut.edu.cn.reallygoodapp.bean.Job;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.MultipartBody;
 import okhttp3.Response;
 
 /**
@@ -58,6 +62,7 @@ public class JobInfoActivity extends Activity {
             if (applyFragment != null) {
                 setApplyFragmentClick();
             }
+            jobId = savedInstanceState.getInt("jobId");
         }
 
 
@@ -219,10 +224,136 @@ public class JobInfoActivity extends Activity {
     }
 
     private void applyJob() {
+        MultipartBody body = new MultipartBody.Builder()
+                .addFormDataPart("companyUserId", String.valueOf(job.getCompanyUser().getId()))
+                .addFormDataPart("jobId", String.valueOf(job.getId()))
+                .build();
 
+        //稍等进度条
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("请稍等");
+        progressDialog.setCancelable(false);
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.show();
+
+        Link.getClient().newCall(
+                Link.getRequestAddress("/applyjob").post(body).build()
+        ).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, final IOException e) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+
+                        new AlertDialog.Builder(JobInfoActivity.this)
+                                .setMessage(e.getMessage())
+                                .setTitle("请求失败")
+                                .setNegativeButton("好", null).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+                //从服务器接受到数据
+                final String responseString = response.body().string();
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+
+                        try {
+                            new AlertDialog.Builder(JobInfoActivity.this)
+                                    .setTitle("请求成功")
+                                    .setMessage(responseString)
+                                    .setPositiveButton("好", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            finish();
+                                        }
+                                    }).show();
+                        } catch (Exception e) {
+                            new AlertDialog.Builder(JobInfoActivity.this)
+                                    .setMessage(e.getMessage())
+                                    .setTitle("回应失败")
+                                    .setNegativeButton("好", null).show();
+                        }
+                    }
+                });
+            }
+        });
     }
 
     private void applyAgent() {
+        MultipartBody body = new MultipartBody.Builder()
+                .addFormDataPart("companyUserId", String.valueOf(job.getCompanyUser().getId()))
+                .addFormDataPart("jobId", String.valueOf(job.getId()))
+                .build();
 
+        //稍等进度条
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("请稍等");
+        progressDialog.setCancelable(false);
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.show();
+
+        Link.getClient().newCall(
+                Link.getRequestAddress("/applyagent").post(body).build()
+        ).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, final IOException e) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+
+                        new AlertDialog.Builder(JobInfoActivity.this)
+                                .setMessage(e.getMessage())
+                                .setTitle("请求失败")
+                                .setNegativeButton("好", null).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+                //从服务器接受到数据
+                final String responseString = response.body().string();
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+
+                        try {
+                            new AlertDialog.Builder(JobInfoActivity.this)
+                                    .setTitle("请求成功")
+                                    .setMessage(responseString)
+                                    .setPositiveButton("好", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            finish();
+                                        }
+                                    }).show();
+                        } catch (Exception e) {
+                            new AlertDialog.Builder(JobInfoActivity.this)
+                                    .setMessage(e.getMessage())
+                                    .setTitle("回应失败")
+                                    .setNegativeButton("好", null).show();
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("jobId", jobId);
+        super.onSaveInstanceState(outState);
     }
 }

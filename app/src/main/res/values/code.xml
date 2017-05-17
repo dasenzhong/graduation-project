@@ -26,4 +26,9 @@
     <!--用户类型-->
     <integer name="STUDENT">0</integer>
     <integer name="COMPANY">1</integer>
+    
+    <!--消息的类型-->
+    <integer name="NEWS_DEAL_JOB">1</integer>
+    <integer name="NEWS_DEAL_AGENT">2</integer>
+    <integer name="NEWS_DEAL_EVALUATION">3</integer>
 </resources>

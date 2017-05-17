@@ -145,6 +145,8 @@
             android:name=".home.experience.ShareSendExperienceActivity"
             android:theme="@style/ShareSendTheme"
             android:windowSoftInputMode="adjustPan|stateAlwaysVisible" />
+        <!--录用界面-->
+        <activity android:name=".ApplyDealJobActivity" />
     </application>
 
 </manifest>
