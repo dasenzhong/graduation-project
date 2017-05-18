@@ -304,6 +304,36 @@
     <string name="applydealjob_unpass">不录用</string>
     <string name="applydealjob_pass">录用</string>
 
+    <!--代理人审阅-->
+    <string name="applydealagent_actionbar_title">代理人审阅</string>
+    <string name="applydealagent_jobname">工作名称</string>
+    <string name="applydealagent_jobmoney">工作薪酬</string>
+    <string name="applydealagent_jobdetail">详情</string>
+    <string name="applydealagent_unpass">不允许</string>
+    <string name="applydealagent_pass">允许</string>
+
+    <!--约见面试-->
+    <string name="meet_actionbar_title">约见面试</string>
+    <string name="meet_time1">年月日</string>
+    <string name="meet_time2">时间</string>
+    <string name="meet_address">地点</string>
+    <string name="meet_telephone">联系电话</string>
+    <string name="meet_ok">确认</string>
+
+    <!--查看通过页面-->
+    <string name="pass_dealapply_actionbar_title">简历通过</string>
+    <string name="pass_dealapply_time">面试时间</string>
+    <string name="pass_dealapply_address">面试地点</string>
+    <string name="pass_dealapply_telephone">联系电话</string>
+    <string name="pass_dealapply_evalaution">评价该公司</string>
+
+    <!--评价页面-->
+    <string name="evaluation_actionbar_title">评价</string>
+    <string name="evaluation_score">公司评分</string>
+    <string name="evaluation_text">评论</string>
+    <string name="evaluation_texthint">写写你在该公司工作的感觉....</string>
+    <string name="evaluation_submit">提交</string>
+
     <!--digits-->
     <string name="digits">0123456789qwertyuiopasdgfhjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
 

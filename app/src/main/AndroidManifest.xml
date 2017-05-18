@@ -23,7 +23,7 @@
         </activity>
         <!--个人信息-->
         <activity
-            android:name=".user.info.UserInfoActivity"
+            android:name=".user.info.StudentUserInfoActivity"
             android:theme="@style/UserActivityTheme" />
         <!--我的分享-->
         <activity
@@ -147,6 +147,10 @@
             android:windowSoftInputMode="adjustPan|stateAlwaysVisible" />
         <!--录用界面-->
         <activity android:name=".ApplyDealJobActivity" />
+        <!--面试时间地点界面-->
+        <activity android:name=".MeetActivity" />
+        <!--学生评价界面-->
+        <activity android:name=".EvaluationStudentActivity"/>
     </application>
 
 </manifest>

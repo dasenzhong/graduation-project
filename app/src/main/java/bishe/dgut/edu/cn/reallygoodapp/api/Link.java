@@ -19,6 +19,7 @@ public class Link {
 
     private static OkHttpClient client;
     private static String serverAddress = "http://172.27.185.46:8080/reallygoodapp/api";
+    private static String avatarAddress = "http://172.27.185.46:8080/reallygoodapp/";
 
     static {
         CookieManager cookieManager = new CookieManager();
@@ -35,5 +36,9 @@ public class Link {
     //返回请求地址
     public static Request.Builder getRequestAddress(String address) {
         return new Request.Builder().url(serverAddress + address);
+    }
+
+    public static Request.Builder getAvatarAddress(String address) {
+        return new Request.Builder().url(avatarAddress + address);
     }
 }

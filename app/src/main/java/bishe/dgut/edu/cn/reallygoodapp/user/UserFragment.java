@@ -13,7 +13,7 @@ import bishe.dgut.edu.cn.reallygoodapp.R;
 import bishe.dgut.edu.cn.reallygoodapp.api.GetAppSize;
 import bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfItemFragment;
 import bishe.dgut.edu.cn.reallygoodapp.cell.UserCellOfInfoFragment;
-import bishe.dgut.edu.cn.reallygoodapp.user.info.UserInfoActivity;
+import bishe.dgut.edu.cn.reallygoodapp.user.info.StudentUserInfoActivity;
 import bishe.dgut.edu.cn.reallygoodapp.user.resume.UserResumeActivity;
 import bishe.dgut.edu.cn.reallygoodapp.user.setting.UserSettingActivity;
 
@@ -83,7 +83,7 @@ public class UserFragment extends Fragment{
             infoCell.setOnCellClickListener(new UserCellOfInfoFragment.OnCellClickListener() {
                 @Override
                 public void onCellClick() {
-                    startActivity(new Intent(getActivity(),UserInfoActivity.class));
+                    startActivity(new Intent(getActivity(),StudentUserInfoActivity.class));
                 }
             });
 

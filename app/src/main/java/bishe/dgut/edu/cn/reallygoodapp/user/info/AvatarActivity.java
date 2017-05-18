@@ -1,7 +1,12 @@
 package bishe.dgut.edu.cn.reallygoodapp.user.info;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,13 +20,21 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 import bishe.dgut.edu.cn.reallygoodapp.R;
+import bishe.dgut.edu.cn.reallygoodapp.api.Link;
 import bishe.dgut.edu.cn.reallygoodapp.module.avatarview.ChangeAvatarView;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 /**
  * ZDX
@@ -196,6 +209,93 @@ public class AvatarActivity extends Activity {
                 }
                 removeMoreFragment();
             }
+            uploadAvatar();
+        }
+    }
+
+    private void uploadAvatar() {
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, baos);
+
+        byte[] pngData = baos.toByteArray();
+
+        MultipartBody body = new MultipartBody.Builder()
+                .addFormDataPart("avatar", "avatar", RequestBody.create(MediaType.parse("image/png"), pngData))
+                .build();
+
+        //稍等进度条
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("请稍等");
+        progressDialog.setCancelable(false);
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.show();
+
+        SharedPreferences sharedPreferences = this.getSharedPreferences("usertype", Context.MODE_PRIVATE);
+        int loginType = sharedPreferences.getInt("usertype", -1);
+        String linkAddress;
+
+        switch (loginType) {
+            case 0:
+                linkAddress = "/saveavatarstudent";
+                break;
+            case 1:
+                linkAddress = "/saveavatarcompany";
+                break;
+            default:
+                linkAddress = "";
+        }
+
+        if (!linkAddress.isEmpty()) {
+            Link.getClient().newCall(
+                    Link.getRequestAddress(linkAddress).post(body).build()
+            ).enqueue(new Callback() {
+                @Override
+                public void onFailure(Call call, final IOException e) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            progressDialog.dismiss();
+
+                            new AlertDialog.Builder(AvatarActivity.this)
+                                    .setMessage(e.getMessage())
+                                    .setTitle("请求失败")
+                                    .setNegativeButton("好", null).show();
+                        }
+                    });
+                }
+
+                @Override
+                public void onResponse(Call call, Response response) throws IOException {
+
+                    //从服务器接受到数据
+                    final String responseString = response.body().string();
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            progressDialog.dismiss();
+
+                            try {
+                                new AlertDialog.Builder(AvatarActivity.this)
+                                        .setTitle("请求成功")
+                                        .setMessage(responseString)
+                                        .setPositiveButton("好", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                finish();
+                                            }
+                                        }).show();
+                            } catch (Exception e) {
+                                new AlertDialog.Builder(AvatarActivity.this)
+                                        .setMessage(e.getMessage())
+                                        .setTitle("回应失败")
+                                        .setNegativeButton("好", null).show();
+                            }
+                        }
+                    });
+                }
+            });
         }
     }
 

@@ -13,7 +13,7 @@ import bishe.dgut.edu.cn.reallygoodapp.cell.UserInfoCellFragment;
  * Created by Administrator on 2017/3/8.
  */
 
-public class UserInfoActivity extends Activity {
+public class StudentUserInfoActivity extends Activity {
 
     private UserInfoCellFragment avatarFragment, accountFragment, nameFragment, sexFragment, areaFragment, schoolFragment, logFragment;
 
@@ -35,7 +35,7 @@ public class UserInfoActivity extends Activity {
         avatarFragment.setOnLayoutClickListener(new UserInfoCellFragment.OnLayoutClickListener() {
             @Override
             public void onLayoutClick() {
-                startActivity(new Intent(UserInfoActivity.this, AvatarActivity.class));
+                startActivity(new Intent(StudentUserInfoActivity.this, AvatarActivity.class));
             }
         });
 
@@ -43,7 +43,7 @@ public class UserInfoActivity extends Activity {
         nameFragment.setOnLayoutClickListener(new UserInfoCellFragment.OnLayoutClickListener() {
             @Override
             public void onLayoutClick() {
-                startActivity(new Intent(UserInfoActivity.this, NameActivity.class));
+                startActivity(new Intent(StudentUserInfoActivity.this, NameActivity.class));
             }
         });
 
@@ -51,7 +51,7 @@ public class UserInfoActivity extends Activity {
         logFragment.setOnLayoutClickListener(new UserInfoCellFragment.OnLayoutClickListener() {
             @Override
             public void onLayoutClick() {
-                startActivity(new Intent(UserInfoActivity.this, LogActivity.class));
+                startActivity(new Intent(StudentUserInfoActivity.this, LogActivity.class));
             }
         });
 
@@ -70,6 +70,11 @@ public class UserInfoActivity extends Activity {
     protected void onResume() {
         super.onResume();
 //        setCellAttribute();
+        load();
+    }
+
+    private void load() {
+
     }
 
     private void setCellAttribute() {

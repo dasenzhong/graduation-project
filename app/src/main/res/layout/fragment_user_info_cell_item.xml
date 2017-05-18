@@ -27,7 +27,7 @@
             android:orientation="horizontal">
 
 
-            <ImageView
+            <bishe.dgut.edu.cn.reallygoodapp.module.useravatar.UserAvatarRoundRectView
                 android:id="@+id/userinfo_cell_avatar"
                 android:layout_width="@dimen/userinfo_cell_avatar"
                 android:layout_height="@dimen/userinfo_cell_avatar"

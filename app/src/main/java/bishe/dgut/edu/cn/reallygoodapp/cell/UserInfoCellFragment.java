@@ -1,7 +1,6 @@
 package bishe.dgut.edu.cn.reallygoodapp.cell;
 
 import android.app.Fragment;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -12,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import bishe.dgut.edu.cn.reallygoodapp.R;
+import bishe.dgut.edu.cn.reallygoodapp.module.useravatar.UserAvatarRoundRectView;
 
 /**
  * Created by Administrator on 2017/3/7.
@@ -22,7 +22,8 @@ public class UserInfoCellFragment extends Fragment {
     private View view;
 
     private TextView inputText, text;
-    private ImageView avatar,foreward;
+    private ImageView foreward;
+    private UserAvatarRoundRectView avatar;
 
     public interface OnLayoutClickListener {
         void onLayoutClick();
@@ -39,7 +40,7 @@ public class UserInfoCellFragment extends Fragment {
 
             inputText = (TextView) view.findViewById(R.id.userinfo_cell_inputtext);
             text = (TextView) view.findViewById(R.id.userinfo_cell_text);
-            avatar = (ImageView) view.findViewById(R.id.userinfo_cell_avatar);
+            avatar = (UserAvatarRoundRectView) view.findViewById(R.id.userinfo_cell_avatar);
             foreward = (ImageView) view.findViewById(R.id.userinfo_cell_forward);
 
             RelativeLayout mainLayout = (RelativeLayout) view.findViewById(R.id.userinfo_cell_mainlayout);
@@ -80,8 +81,8 @@ public class UserInfoCellFragment extends Fragment {
     }
 
     //设置头像
-    public void setAvatar(Bitmap bmp) {
-        avatar.setImageBitmap(bmp);
+    public void setAvatar(String url) {
+        avatar.load(url);
     }
 
     //设置头像显隐

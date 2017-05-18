@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -42,10 +41,10 @@ import okhttp3.Response;
  *
  * @GitHub: https://github.com/dasenzhong
  * Created by Administrator.
- * Created on 2017/5/17.
+ * Created on 2017/5/18.
  */
 
-public class ApplyDealJobActivity extends Activity {
+public class ApplyDealAgentActivity extends Activity {
 
     private TextView jobName;
     private TextView jobMoney;
@@ -56,6 +55,7 @@ public class ApplyDealJobActivity extends Activity {
     private TextView resumeInfoAddress;
     private TextView resumeInfoSchool;
     private TextView resumeInfoTelephone;
+
     private LinearLayout dealLayout;
 
     private List<Experience> experienceList;
@@ -70,36 +70,36 @@ public class ApplyDealJobActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_applydeal_job);
+        setContentView(R.layout.activity_applydeal_agent);
 
         if (getIntent() != null) {
             newsId = getIntent().getIntExtra("newsid", -1);
         }
 
-        jobName = (TextView) findViewById(R.id.applydeal_job_jobname);
-        jobMoney = (TextView) findViewById(R.id.applydeal_job_jobmoney);
+        jobName = (TextView) findViewById(R.id.applydeal_agent_jobname);
+        jobMoney = (TextView) findViewById(R.id.applydeal_agent_jobmoney);
 
-        resumeInfoName = (TextView) findViewById(R.id.applydeal_job_resumeinfo_name);
-        resumeInfoSex = (TextView) findViewById(R.id.applydeal_job_resumeinfo_sex);
-        resumeInfobrithday = (TextView) findViewById(R.id.applydeal_job_resumeinfo_birthday);
-        resumeInfoAddress = (TextView) findViewById(R.id.applydeal_job_resumeinfo_address);
-        resumeInfoSchool = (TextView) findViewById(R.id.applydeal_job_resumeinfo_school);
-        resumeInfoTelephone = (TextView) findViewById(R.id.applydeal_job_resumeinfo_telephone);
+        resumeInfoName = (TextView) findViewById(R.id.applydeal_agent_resumeinfo_name);
+        resumeInfoSex = (TextView) findViewById(R.id.applydeal_agent_resumeinfo_sex);
+        resumeInfobrithday = (TextView) findViewById(R.id.applydeal_agent_resumeinfo_birthday);
+        resumeInfoAddress = (TextView) findViewById(R.id.applydeal_agent_resumeinfo_address);
+        resumeInfoSchool = (TextView) findViewById(R.id.applydeal_agent_resumeinfo_school);
+        resumeInfoTelephone = (TextView) findViewById(R.id.applydeal_agent_resumeinfo_telephone);
 
-        ListView resumeExperienceList = (ListView) findViewById(R.id.applydeal_job_resumeexperiencelist);
+        ListView resumeExperienceList = (ListView) findViewById(R.id.applydeal_agent_resumeexperiencelist);
         resumeExperienceList.setAdapter(resumeExperienceAdapter);
         getListViewHeight(resumeExperienceList);
 
-        ListView resumeHonorList = (ListView) findViewById(R.id.applydeal_job_resumehonorlist);
+        ListView resumeHonorList = (ListView) findViewById(R.id.applydeal_agent_resumehonorlist);
         resumeHonorList.setAdapter(resumeHonorAdapter);
         getListViewHeight(resumeHonorList);
 
-        ListView resumePostList = (ListView) findViewById(R.id.applydeal_job_resumepostlist);
+        ListView resumePostList = (ListView) findViewById(R.id.applydeal_agent_resumepostlist);
         resumePostList.setAdapter(resumePostAdapter);
         getListViewHeight(resumePostList);
 
         //返回
-        ImageView back = (ImageView) findViewById(R.id.applydeal_job_back);
+        ImageView back = (ImageView) findViewById(R.id.applydeal_agent_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,38 +107,28 @@ public class ApplyDealJobActivity extends Activity {
             }
         });
 
-        dealLayout = (LinearLayout) findViewById(R.id.applydeal_job_dealLayout);
+        dealLayout = (LinearLayout) findViewById(R.id.applydeal_agent_dealLayout);
 
         //录用
-        FrameLayout passLayout = (FrameLayout) findViewById(R.id.applydeal_job_pass);
+        FrameLayout passLayout = (FrameLayout) findViewById(R.id.applydeal_agent_pass);
         passLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goMeet();
+                passSendToServer();
             }
         });
 
-        FrameLayout unpassLayout = (FrameLayout) findViewById(R.id.applydeal_job_unpass);
+        FrameLayout unpassLayout = (FrameLayout) findViewById(R.id.applydeal_agent_unpass);
         unpassLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 unpassSendToServer();
             }
         });
+
     }
 
-    private void goMeet() {
-        Intent intent = new Intent(ApplyDealJobActivity.this, MeetActivity.class);
-        intent.putExtra("newscompanyid", newsCompany.getId());
-        intent.putExtra("jobid", job.getId());
-        intent.putExtra("studentuserid", resume.getStudentUser().getId());
-        startActivity(intent);
-    }
-
-    /**
-     * 不录用的处理
-     */
-    private void unpassSendToServer() {
+    private void passSendToServer() {
         MultipartBody body = new MultipartBody.Builder()
                 .addFormDataPart("studentUserId", String.valueOf(resume.getStudentUser().getId()))
                 .addFormDataPart("jobId", String.valueOf(job.getId()))
@@ -153,7 +143,7 @@ public class ApplyDealJobActivity extends Activity {
         progressDialog.show();
 
         Link.getClient().newCall(
-                Link.getRequestAddress("/jobapplyunpass").post(body).build()
+                Link.getRequestAddress("/agentapplypass").post(body).build()
         ).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, final IOException e) {
@@ -162,7 +152,7 @@ public class ApplyDealJobActivity extends Activity {
                     public void run() {
                         progressDialog.dismiss();
 
-                        new AlertDialog.Builder(ApplyDealJobActivity.this)
+                        new AlertDialog.Builder(ApplyDealAgentActivity.this)
                                 .setMessage(e.getMessage())
                                 .setTitle("请求失败")
                                 .setNegativeButton("好", null).show();
@@ -182,7 +172,7 @@ public class ApplyDealJobActivity extends Activity {
                         progressDialog.dismiss();
 
                         try {
-                            new AlertDialog.Builder(ApplyDealJobActivity.this)
+                            new AlertDialog.Builder(ApplyDealAgentActivity.this)
                                     .setTitle("请求成功")
                                     .setMessage(responseString)
                                     .setPositiveButton("好", new DialogInterface.OnClickListener() {
@@ -192,7 +182,72 @@ public class ApplyDealJobActivity extends Activity {
                                         }
                                     }).show();
                         } catch (Exception e) {
-                            new AlertDialog.Builder(ApplyDealJobActivity.this)
+                            new AlertDialog.Builder(ApplyDealAgentActivity.this)
+                                    .setMessage(e.getMessage())
+                                    .setTitle("回应失败")
+                                    .setNegativeButton("好", null).show();
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    private void unpassSendToServer() {
+        MultipartBody body = new MultipartBody.Builder()
+                .addFormDataPart("studentUserId", String.valueOf(resume.getStudentUser().getId()))
+                .addFormDataPart("jobId", String.valueOf(job.getId()))
+                .addFormDataPart("newscompanyId", String.valueOf(newsCompany.getId()))
+                .build();
+
+        //稍等进度条
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("请稍等");
+        progressDialog.setCancelable(false);
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.show();
+
+        Link.getClient().newCall(
+                Link.getRequestAddress("/agentapplyunpass").post(body).build()
+        ).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, final IOException e) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+
+                        new AlertDialog.Builder(ApplyDealAgentActivity.this)
+                                .setMessage(e.getMessage())
+                                .setTitle("请求失败")
+                                .setNegativeButton("好", null).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+                //从服务器接受到数据
+                final String responseString = response.body().string();
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+
+                        try {
+                            new AlertDialog.Builder(ApplyDealAgentActivity.this)
+                                    .setTitle("请求成功")
+                                    .setMessage(responseString)
+                                    .setPositiveButton("好", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            finish();
+                                        }
+                                    }).show();
+                        } catch (Exception e) {
+                            new AlertDialog.Builder(ApplyDealAgentActivity.this)
                                     .setMessage(e.getMessage())
                                     .setTitle("回应失败")
                                     .setNegativeButton("好", null).show();

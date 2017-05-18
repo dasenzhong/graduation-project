@@ -21,8 +21,10 @@ public class StudentUser implements Serializable {
 
     String sex;				//性别
     String name;			//昵称
+
     String area;			//地区
     String school;			//学校
+
     String log;				//个性签名
     String avatar;			//头像
 

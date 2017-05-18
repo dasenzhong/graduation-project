@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * ZDX
@@ -35,6 +36,16 @@ public class Job implements Serializable {
     String workAddress;			//详细地址
 
     Date createDate;
+
+    List<StudentUser> agentList;	//代理人列表
+
+    public List<StudentUser> getAgentList() {
+        return agentList;
+    }
+
+    public void setAgentList(List<StudentUser> agentList) {
+        this.agentList = agentList;
+    }
 
     public Integer getId() {
         return id;

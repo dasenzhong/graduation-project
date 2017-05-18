@@ -54,7 +54,7 @@ public class JobInfoActivity extends Activity {
         setContentView(R.layout.activity_jobinfo);
 
         if (getIntent() != null) {
-            jobId = getIntent().getIntExtra("jobid", 0);
+            jobId = getIntent().getIntExtra("jobid", -1);
         }
 
         if (savedInstanceState != null) {

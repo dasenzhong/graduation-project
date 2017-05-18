@@ -297,6 +297,10 @@
     <dimen name="applydealjob_buttonlayout">55dp</dimen>
     <dimen name="applydealjob_buttontext">18sp</dimen>
 
+    <!--约见地点-->
+    <dimen name="meet_address">75dp</dimen>
+    <dimen name="meet_telephone">45dp</dimen>
+
     <!--////////////////////////////////////////////////////////////////////////////////////////-->
 
     <!--回到顶部按钮-->

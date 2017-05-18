@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_20"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarheight"
+        android:background="@color/black_blue">
+
+        <ImageView
+            android:id="@+id/applydeal_agent_back"
+            android:layout_width="@dimen/actionbar_imageheight"
+            android:layout_height="@dimen/actionbar_imageheight"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/applydealagent_actionbar_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_titletextsize" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/applydealjob_jobinfolayoutheight"
+        android:background="@color/white"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/applydeal_agent_jobname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxEms="12"
+            android:maxLines="1"
+            android:text="@string/applydealagent_jobname"
+            android:textColor="@color/black"
+            android:textSize="@dimen/applydealjob_jobnametext" />
+
+        <TextView
+            android:id="@+id/applydeal_agent_jobmoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="@string/applydealagent_jobmoney"
+            android:textColor="@color/orange_red_light"
+            android:textSize="@dimen/applydealjob_jobmoneytext" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/applydealjob_jobdetail"
+                android:textColor="@color/gray_50"
+                android:textSize="@dimen/applydealjob_jobdetailtext" />
+
+            <ImageView
+                android:layout_width="@dimen/applydealjob_forword"
+                android:layout_height="@dimen/applydealjob_forword"
+                android:src="@drawable/forward_40gray" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/userresume_clicklayoutheight">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:layout_width="@dimen/userresume_clicklayoutimageheight"
+                            android:layout_height="@dimen/userresume_clicklayoutimageheight"
+                            android:src="@drawable/userresume_info" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/user_resume_clicklayout_info"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/userresume_clicklayouttextsize" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_20" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/userresume_clicklayoutimageheight"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/applydeal_agent_resumeinfo_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/user_resume_info_name"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/userresume_info_name" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="@dimen/userresume_space"
+                            android:layout_gravity="bottom"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/gray_50" />
+
+                        <TextView
+                            android:id="@+id/applydeal_agent_resumeinfo_sex"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/user_resume_info_sex"
+                            android:textColor="@color/gray_75"
+                            android:textSize="@dimen/userrename_info_sex" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="@dimen/userresume_space"
+                            android:layout_gravity="bottom"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/gray_50" />
+
+                        <TextView
+                            android:id="@+id/applydeal_agent_resumeinfo_birthday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/user_resume_info_birthday"
+                            android:textColor="@color/gray_75"
+                            android:textSize="@dimen/userresume_info_age" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/userresume_infoimageheight"
+                            android:layout_height="@dimen/userresume_infoimageheight"
+                            android:src="@drawable/userresume_info_address" />
+
+                        <TextView
+                            android:id="@+id/applydeal_agent_resumeinfo_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/user_resume_info_address"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/userresume_info_address" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="@dimen/userresume_space"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/gray_50" />
+
+                        <ImageView
+                            android:layout_width="@dimen/userresume_infoimageheight"
+                            android:layout_height="@dimen/userresume_infoimageheight"
+                            android:src="@drawable/userresume_info_school" />
+
+                        <TextView
+                            android:id="@+id/applydeal_agent_resumeinfo_school"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/user_resume_info_school"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/userresume_info_school" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/userresume_infoimageheight"
+                            android:layout_height="@dimen/userresume_infoimageheight"
+                            android:src="@drawable/userresume_info_telephone" />
+
+                        <TextView
+                            android:id="@+id/applydeal_agent_resumeinfo_telephone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:gravity="center"
+                            android:text="@string/user_resume_info_telephone"
+                            android:textColor="@color/gray_75"
+                            android:textSize="@dimen/userresume_info_telephone" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/userresume_clicklayoutheight">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:layout_width="@dimen/userresume_clicklayoutimageheight"
+                            android:layout_height="@dimen/userresume_clicklayoutimageheight"
+                            android:src="@drawable/userresume_workexperience" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/user_resume_clicklayout_workexperience"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/userresume_clicklayouttextsize" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_20" />
+
+                <ListView
+                    android:id="@+id/applydeal_agent_resumeexperiencelist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    tools:listitem="@layout/activity_user_resume_workperiencelist_item">
+
+                </ListView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/userresume_clicklayoutheight">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:layout_width="@dimen/userresume_clicklayoutimageheight"
+                            android:layout_height="@dimen/userresume_clicklayoutimageheight"
+                            android:src="@drawable/userresume_school" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/user_resume_clicklayout_school"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/userresume_clicklayouttextsize" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_20" />
+
+                <ListView
+                    android:id="@+id/applydeal_agent_resumehonorlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    tools:listitem="@layout/activity_user_resume_school_honor_item">
+
+                </ListView>
+
+                <ListView
+                    android:id="@+id/applydeal_agent_resumepostlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    tools:listitem="@layout/activity_user_resume_school_post_item">
+
+                </ListView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/applydeal_agent_dealLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:layout_height="@dimen/applydealjob_buttonlayout">
+
+
+        <FrameLayout
+            android:id="@+id/applydeal_agent_unpass"
+            android:layout_weight="1"
+            android:background="@color/orange"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_gravity="center"
+                android:textSize="@dimen/applydealjob_buttontext"
+                android:textColor="@color/white"
+                android:text="@string/applydealjob_unpass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/applydeal_agent_pass"
+            android:layout_weight="1"
+            android:background="@color/black_blue"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_gravity="center"
+                android:textSize="@dimen/applydealjob_buttontext"
+                android:textColor="@color/white"
+                android:text="@string/applydealjob_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

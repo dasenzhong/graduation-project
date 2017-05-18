@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarheight"
+        android:background="@color/black_blue">
+
+        <ImageView
+            android:id="@+id/meet_back"
+            android:layout_width="@dimen/actionbar_imageheight"
+            android:layout_height="@dimen/actionbar_imageheight"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/meet_actionbar_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_titletextsize" />
+
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_textviewtextsize"
+            android:text="@string/meet_ok"
+            android:id="@+id/meet_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_school_honor_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/meet_time1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        <RelativeLayout
+            android:id="@+id/meet_timelayout1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/meet_time1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:hint="@string/user_resume_school_honor_addactivity_timehint"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/userresume_school_honor_addactivity_layoutheight"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/meet_time2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        <RelativeLayout
+            android:id="@+id/meet_timelayout2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/meet_time2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:hint="@string/user_resume_school_honor_addactivity_timehint"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/meet_telephone"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/meet_telephone"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        <EditText
+            android:id="@+id/meet_telephone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@color/white"
+            android:gravity="start|center_vertical"
+            android:hint="@string/meet_telephone"
+            android:imeOptions="actionDone"
+            android:inputType="phone"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/meet_address"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/meet_address"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        <EditText
+            android:id="@+id/meet_address"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@color/white"
+            android:gravity="top|start"
+            android:hint="@string/meet_address"
+            android:inputType="textMultiLine"
+            android:textColor="@color/black"
+            android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+    </LinearLayout>
+
+</LinearLayout>

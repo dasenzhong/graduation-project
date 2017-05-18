@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/gray_20"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarheight"
+        android:background="@color/black_blue">
+
+        <ImageView
+            android:id="@+id/pass_dealapply_back"
+            android:layout_width="@dimen/actionbar_imageheight"
+            android:layout_height="@dimen/actionbar_imageheight"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/pass_dealapply_actionbar_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_titletextsize" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/applydealjob_jobinfolayoutheight"
+        android:background="@color/white"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/pass_dealapply_jobname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxEms="12"
+            android:maxLines="1"
+            android:text="@string/applydealagent_jobname"
+            android:textColor="@color/black"
+            android:textSize="@dimen/applydealjob_jobnametext" />
+
+        <TextView
+            android:id="@+id/pass_dealapply_jobmoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="@string/applydealagent_jobmoney"
+            android:textColor="@color/orange_red_light"
+            android:textSize="@dimen/applydealjob_jobmoneytext" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/applydealjob_jobdetail"
+                android:textColor="@color/gray_50"
+                android:textSize="@dimen/applydealjob_jobdetailtext" />
+
+            <ImageView
+                android:layout_width="@dimen/applydealjob_forword"
+                android:layout_height="@dimen/applydealjob_forword"
+                android:src="@drawable/forward_40gray" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/userresume_school_honor_addactivity_layoutheight"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/pass_dealapply_time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+                <TextView
+                    android:id="@+id/pass_dealapply_meettime"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:gravity="end|center_vertical"
+                    android:hint="@string/pass_dealapply_time"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_50" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/userresume_school_honor_addactivity_layoutheight"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/pass_dealapply_telephone"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+            <TextView
+                android:id="@+id/pass_dealapply_telephone"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="match_parent"
+                android:gravity="end|center_vertical"
+                android:hint="@string/pass_dealapply_telephone"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_50" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/meet_address"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/pass_dealapply_address"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+            <TextView
+                android:id="@+id/pass_dealapply_meetaddress"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="match_parent"
+                android:gravity="top|start"
+                android:hint="@string/pass_dealapply_address"
+                android:textColor="@color/black"
+                android:textSize="@dimen/userresume_school_honor_addactivity_layouttextsize" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/pass_dealapply_evalautionLayout"
+        android:layout_marginTop="10dp"
+        android:background="@color/black_blue"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:text="@string/pass_dealapply_evalaution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
+
+</LinearLayout>
